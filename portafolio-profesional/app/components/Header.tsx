@@ -82,7 +82,7 @@ export function Header({
                 aria-label={languageLabel}
                 value={language}
                 onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
-                className="absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-xl bg-transparent text-transparent outline-none"
+                className="language-overlay-select absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-xl bg-transparent opacity-0 outline-none"
               >
                 <option value="es">ESP</option>
                 <option value="en">ENG</option>
@@ -153,3 +153,5 @@ export function Header({
     </header>
   );
 }
+
+

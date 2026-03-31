@@ -930,3 +930,18 @@ body.theme-dark .language-control label {
 }
 
 
+
+.language-overlay-select {
+  color: transparent;
+}
+
+.language-overlay-select option {
+  color: #1f2937;
+  background: #ffffff;
+}
+
+html.theme-dark .language-overlay-select option,
+body.theme-dark .language-overlay-select option {
+  color: #e6eef8;
+  background: #0f1b2d;
+}
