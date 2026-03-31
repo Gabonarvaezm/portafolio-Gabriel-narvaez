@@ -16,10 +16,24 @@ body {
 }
 
 .hero-orb,
-.skill-orb {
+.skill-orb,
+.hero-grid::before {
   position: absolute;
   border-radius: 9999px;
   pointer-events: none;
+}
+
+.hero-grid::before {
+  content: "";
+  inset: auto;
+  right: 12%;
+  top: 12%;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255,255,255,0.28), transparent 68%);
+  filter: blur(12px);
+  animation: glowDrift 7s ease-in-out infinite;
 }
 
 .hero-orb-1 {
@@ -55,6 +69,7 @@ body {
   width: .7rem;
   height: .7rem;
   background: rgba(59, 130, 246, 0.24);
+  animation: shimmerDot 5s ease-in-out infinite;
 }
 
 .skill-orb-2 {
@@ -63,6 +78,7 @@ body {
   width: .95rem;
   height: .95rem;
   background: rgba(59, 130, 246, 0.16);
+  animation: shimmerDot 6.5s ease-in-out infinite;
 }
 
 .skill-orb-3 {
@@ -71,6 +87,123 @@ body {
   width: .65rem;
   height: .65rem;
   background: rgba(59, 130, 246, 0.2);
+  animation: shimmerDot 4.8s ease-in-out infinite;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(34px);
+  animation: revealUp 0.9s cubic-bezier(.22,1,.36,1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-42px);
+  animation: revealLeft 1s cubic-bezier(.22,1,.36,1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(42px);
+  animation: revealRight 1s cubic-bezier(.22,1,.36,1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  inset: -120% auto auto -30%;
+  width: 45%;
+  height: 260%;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: panelSweep 8s linear infinite;
+}
+
+.profile-card {
+  position: relative;
+}
+
+.profile-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), transparent 35%, transparent 65%, rgba(59,130,246,0.12));
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.lift-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.lift-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59,130,246,0.08), transparent 30%, transparent 70%, rgba(59,130,246,0.06));
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+
+.lift-card:hover::before {
+  opacity: 1;
+}
+
+.pill-animate {
+  transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.pill-animate:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.section-line {
+  transform-origin: left;
+  animation: lineGrow .9s cubic-bezier(.22,1,.36,1) forwards;
+  animation-delay: var(--delay, .2s);
+  transform: scaleX(0);
+}
+
+@keyframes revealUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes revealLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes revealRight {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes lineGrow {
+  to { transform: scaleX(1); }
+}
+
+@keyframes panelSweep {
+  0% { transform: translateX(-230%) rotate(18deg); }
+  100% { transform: translateX(520%) rotate(18deg); }
+}
+
+@keyframes glowDrift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: .55; }
+  50% { transform: translate3d(-8px, 16px, 0) scale(1.08); opacity: .85; }
+}
+
+@keyframes shimmerDot {
+  0%, 100% { transform: scale(1); opacity: .35; }
+  50% { transform: scale(1.7); opacity: .9; }
 }
 
 @keyframes floatY {
@@ -86,4 +219,19 @@ body {
 @keyframes pulseScale {
   0%, 100% { transform: scale(1) rotate(0deg); }
   50% { transform: scale(1.15) rotate(180deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-up,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+  }
 }
