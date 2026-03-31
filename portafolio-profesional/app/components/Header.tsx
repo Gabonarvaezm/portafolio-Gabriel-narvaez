@@ -75,15 +75,13 @@ export function Header({
 
         <div className="flex items-center gap-2">
           <div className="language-control relative hidden sm:block">
-            <label className="mb-1 block pl-1 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">
-              {languageLabel}
-            </label>
-            <div className="relative">
+            <div className="relative flex h-10 items-center rounded-xl border-2 border-gray-300 bg-white pl-3 pr-9 shadow-[0_8px_18px_rgba(15,23,42,0.06)] transition hover:border-blue-500 focus-within:border-blue-500">
+              <span className="pr-3 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500">{languageLabel}</span>
               <select
                 aria-label={languageLabel}
                 value={language}
                 onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
-                className="language-select h-10 min-w-[132px] appearance-none rounded-xl border-2 border-gray-300 bg-white pl-4 pr-10 text-sm font-semibold text-gray-700 outline-none transition hover:border-blue-500 focus:border-blue-500"
+                className="language-select h-full min-w-[68px] appearance-none bg-transparent pr-5 text-sm font-semibold text-gray-700 outline-none"
               >
                 <option value="es">ESP</option>
                 <option value="en">ENG</option>

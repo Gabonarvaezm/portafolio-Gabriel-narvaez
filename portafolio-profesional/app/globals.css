@@ -904,7 +904,7 @@ body.theme-dark .portfolio-shell section:nth-of-type(odd)::before {
 }
 
 .language-control {
-  min-width: 148px;
+  min-width: 174px;
 }
 
 .language-select {
@@ -928,3 +928,5 @@ html.theme-dark .language-control label,
 body.theme-dark .language-control label {
   color: #b8c7dc !important;
 }
+
+
