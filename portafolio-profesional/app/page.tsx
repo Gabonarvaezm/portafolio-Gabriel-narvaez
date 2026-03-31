@@ -147,7 +147,7 @@ function SectionTitle({ title }: { title: string }) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="portfolio-shell min-h-screen bg-white">
       <Header />
       <main>
         <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden bg-gray-50 pt-16">
@@ -396,4 +396,5 @@ export default function Home() {
     </div>
   );
 }
+
 
