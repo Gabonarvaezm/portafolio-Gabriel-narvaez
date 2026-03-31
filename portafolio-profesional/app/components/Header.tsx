@@ -2,14 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-const navItems = [
-  { href: "#sobre-mi", label: "Sobre mi" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#habilidades", label: "Habilidades" },
-  { href: "#testimonios", label: "Testimonios" },
-  { href: "#aprendizaje", label: "Aprendizaje" },
-  { href: "#contactos", label: "Contactos" },
-];
+type HeaderProps = {
+  navItems: Array<{ href: string; label: string }>;
+  darkLabel: string;
+  lightLabel: string;
+};
 
 type ThemeMode = "light" | "dark";
 
@@ -21,7 +18,7 @@ function applyTheme(theme: ThemeMode) {
   window.localStorage.setItem("portfolio-theme", theme);
 }
 
-export function Header() {
+export function Header({ navItems, darkLabel, lightLabel }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState<ThemeMode>("light");
   const [mounted, setMounted] = useState(false);
@@ -77,7 +74,7 @@ export function Header() {
             <span className={`text-base transition-transform duration-300 ${mounted && isDark ? "rotate-0 scale-100" : "rotate-180 scale-95"}`}>
               {mounted && isDark ? "☀" : "☾"}
             </span>
-            <span>{mounted && isDark ? "Modo claro" : "Modo dark"}</span>
+            <span>{mounted && isDark ? lightLabel : darkLabel}</span>
           </button>
 
           <button

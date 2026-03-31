@@ -1,4 +1,7 @@
-﻿import { Header } from "./components/Header";
+﻿"use client";
+
+import { useEffect, useState } from "react";
+import { Header } from "./components/Header";
 import { ScrollSection } from "./components/ScrollSection";
 
 const stats = [
@@ -136,6 +139,69 @@ const contactItems = [
   { title: "Ubicacion", detail: "Colombia, disponible para proyectos academicos y freelance", symbol: "#" },
 ];
 
+type Language = "es" | "en";
+
+const uiText = {
+  es: {
+    navItems: [
+      { href: "#sobre-mi", label: "Sobre mi" },
+      { href: "#proyectos", label: "Proyectos" },
+      { href: "#habilidades", label: "Habilidades" },
+      { href: "#testimonios", label: "Testimonios" },
+      { href: "#aprendizaje", label: "Aprendizaje" },
+      { href: "#contactos", label: "Contactos" },
+    ],
+    darkLabel: "Modo dark",
+    lightLabel: "Modo claro",
+    heroBadge: "Portafolio personal",
+    heroLead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.",
+    languageLabel: "Idioma",
+    sections: {
+      about: "Sobre mi",
+      value: "Lo que aporto",
+      projects: "Proyectos",
+      experience: "Experiencia y enfoque",
+      skills: "Habilidades",
+      testimonials: "Testimonios",
+      learning: "Aprendizaje continuo",
+      contacts: "Contactos",
+    },
+  },
+  en: {
+    navItems: [
+      { href: "#sobre-mi", label: "About" },
+      { href: "#proyectos", label: "Projects" },
+      { href: "#habilidades", label: "Skills" },
+      { href: "#testimonios", label: "Testimonials" },
+      { href: "#aprendizaje", label: "Learning" },
+      { href: "#contactos", label: "Contact" },
+    ],
+    darkLabel: "Dark mode",
+    lightLabel: "Light mode",
+    heroBadge: "Personal portfolio",
+    heroLead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.",
+    languageLabel: "Language",
+    sections: {
+      about: "About me",
+      value: "What I bring",
+      projects: "Projects",
+      experience: "Experience and approach",
+      skills: "Skills",
+      testimonials: "Testimonials",
+      learning: "Continuous learning",
+      contacts: "Contact",
+    },
+  },
+} satisfies Record<Language, {
+  navItems: Array<{ href: string; label: string }>;
+  darkLabel: string;
+  lightLabel: string;
+  heroBadge: string;
+  heroLead: string;
+  languageLabel: string;
+  sections: Record<string, string>;
+}>;
+
 function SectionTitle({ title }: { title: string }) {
   return (
     <div className="reveal-stack mb-12">
@@ -146,9 +212,25 @@ function SectionTitle({ title }: { title: string }) {
 }
 
 export default function Home() {
+  const [language, setLanguage] = useState<Language>("es");
+
+  useEffect(() => {
+    const savedLanguage = window.localStorage.getItem("portfolio-language");
+    if (savedLanguage === "es" || savedLanguage === "en") {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  const changeLanguage = (nextLanguage: Language) => {
+    setLanguage(nextLanguage);
+    window.localStorage.setItem("portfolio-language", nextLanguage);
+  };
+
+  const ui = uiText[language];
+
   return (
     <div className="portfolio-shell min-h-screen bg-white">
-      <Header />
+      <Header navItems={ui.navItems} darkLabel={ui.darkLabel} lightLabel={ui.lightLabel} />
       <main>
         <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden bg-gray-50 pt-16">
           <div className="hero-orb hero-orb-1" />
@@ -158,10 +240,10 @@ export default function Home() {
           <div className="hero-grid relative z-10 mx-auto grid w-full max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:gap-16 lg:px-8">
             <ScrollSection variant="left" className="order-2 md:order-1">
               <div className="hero-panel reveal-stack rounded-[2rem] border-2 border-gray-900 bg-gray-800 p-8 text-white shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition duration-500 hover:scale-[1.02] hover:shadow-[0_28px_55px_rgba(0,0,0,0.18)] md:p-10">
-                <p className="reveal-item mb-4 text-xs uppercase tracking-[0.24em] text-gray-300">Portafolio personal</p>
+                <div className="reveal-item mb-8 flex flex-wrap items-center justify-between gap-4"><p className="text-xs uppercase tracking-[0.24em] text-gray-300">{ui.heroBadge}</p><div className="rounded-2xl border border-white/15 bg-white/8 p-1 backdrop-blur-sm"><div className="mb-1 px-2 text-[10px] uppercase tracking-[0.22em] text-gray-300">{ui.languageLabel}</div><div className="flex gap-1">{([ ["es", "ESP"], ["en", "ENG"], ] as const).map(([code, label]) => (<button key={code} type="button" onClick={() => changeLanguage(code)} className={`rounded-xl px-3 py-2 text-xs font-semibold tracking-[0.12em] transition ${language === code ? "bg-white text-gray-900 shadow-[0_10px_24px_rgba(255,255,255,0.18)]" : "text-gray-200 hover:bg-white/10 hover:text-white"}`}>{label}</button>))}</div></div></div>
                 <h1 className="reveal-item text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">GABRIEL NARVAEZ</h1>
                 <p className="reveal-item mt-6 max-w-xl text-lg leading-relaxed text-gray-100 md:text-xl">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.
+                  {ui.heroLead}
                 </p>
               </div>
             </ScrollSection>
@@ -176,7 +258,7 @@ export default function Home() {
 
         <section id="sobre-mi" className="bg-white py-24">
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
-            <SectionTitle title="Sobre mi" />
+            <SectionTitle title={ui.sections.about} />
             <div className="grid gap-12 md:grid-cols-2">
               <div className="reveal-stack space-y-6 text-gray-700">
                 <p className="reveal-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.</p>
@@ -196,7 +278,7 @@ export default function Home() {
 
         <section id="valor" className="bg-gray-50 py-24">
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="scale">
-            <SectionTitle title="Lo que aporto" />
+            <SectionTitle title={ui.sections.value} />
             <div className="stagger-grid grid gap-6 md:grid-cols-3">
               {valueItems.map((item) => (
                 <article key={item.title} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
@@ -210,7 +292,7 @@ export default function Home() {
 
         <section id="proyectos" className="bg-gray-50 py-24">
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
-            <SectionTitle title="Proyectos" />
+            <SectionTitle title={ui.sections.projects} />
             <div className="stagger-grid grid gap-8 sm:grid-cols-2">
               {projects.map((project) => (
                 <article key={project.title} className="lift-card reveal-item overflow-hidden rounded-3xl border-2 border-gray-300 bg-white transition duration-300 hover:-translate-y-2 hover:border-gray-800 hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)]">
@@ -234,7 +316,7 @@ export default function Home() {
 
         <section id="experiencia" className="bg-white py-24">
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="left">
-            <SectionTitle title="Experiencia y enfoque" />
+            <SectionTitle title={ui.sections.experience} />
             <p className="reveal-item mb-10 max-w-3xl text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <div className="stagger-grid space-y-4">
               {timeline.map((item) => (
@@ -260,7 +342,7 @@ export default function Home() {
           <div className="skill-orb skill-orb-2" />
           <div className="skill-orb skill-orb-3" />
           <ScrollSection className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="right">
-            <SectionTitle title="Habilidades" />
+            <SectionTitle title={ui.sections.skills} />
             <p className="reveal-item mb-10 max-w-3xl text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <div className="stagger-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {skills.map((category) => (
@@ -282,7 +364,7 @@ export default function Home() {
 
         <section id="testimonios" className="bg-gray-50 py-24">
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="scale">
-            <SectionTitle title="Testimonios" />
+            <SectionTitle title={ui.sections.testimonials} />
             <div className="stagger-grid grid gap-6 md:grid-cols-3">
               {testimonials.map((item) => (
                 <article key={item.title} className="lift-card reveal-item relative rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
@@ -298,7 +380,7 @@ export default function Home() {
 
         <section id="aprendizaje" className="bg-white py-24">
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
-            <SectionTitle title="Aprendizaje continuo" />
+            <SectionTitle title={ui.sections.learning} />
             <div className="stagger-grid grid gap-6 md:grid-cols-3">
               {learningCards.map((card) => (
                 <article key={card.title} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-gray-50 p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
@@ -317,7 +399,7 @@ export default function Home() {
 
         <section id="contactos" className="bg-gray-50 py-24">
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="left">
-            <SectionTitle title="Contactos" />
+            <SectionTitle title={ui.sections.contacts} />
             <div className="grid gap-12 md:grid-cols-2">
               <div className="reveal-stack space-y-8">
                 <p className="reveal-item text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -396,5 +478,11 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+
+
 
 
