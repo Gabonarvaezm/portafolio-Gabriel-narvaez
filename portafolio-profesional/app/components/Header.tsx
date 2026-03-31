@@ -6,6 +6,9 @@ type HeaderProps = {
   navItems: Array<{ href: string; label: string }>;
   darkLabel: string;
   lightLabel: string;
+  languageLabel: string;
+  language: "es" | "en";
+  onLanguageChange: (language: "es" | "en") => void;
 };
 
 type ThemeMode = "light" | "dark";
@@ -18,7 +21,14 @@ function applyTheme(theme: ThemeMode) {
   window.localStorage.setItem("portfolio-theme", theme);
 }
 
-export function Header({ navItems, darkLabel, lightLabel }: HeaderProps) {
+export function Header({
+  navItems,
+  darkLabel,
+  lightLabel,
+  languageLabel,
+  language,
+  onLanguageChange,
+}: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState<ThemeMode>("light");
   const [mounted, setMounted] = useState(false);
@@ -64,6 +74,21 @@ export function Header({ navItems, darkLabel, lightLabel }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-2">
+          <div className="relative hidden sm:block">
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[11px] font-bold uppercase tracking-[0.16em] text-gray-500">
+              {languageLabel}
+            </span>
+            <select
+              aria-label={languageLabel}
+              value={language}
+              onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
+              className="h-10 rounded-xl border-2 border-gray-300 bg-white pl-18 pr-8 text-sm font-semibold text-gray-700 outline-none transition hover:border-blue-500 focus:border-blue-500"
+            >
+              <option value="es">ESP</option>
+              <option value="en">ENG</option>
+            </select>
+          </div>
+
           <button
             type="button"
             aria-label="Cambiar tema"
@@ -93,6 +118,19 @@ export function Header({ navItems, darkLabel, lightLabel }: HeaderProps) {
 
       {isOpen ? (
         <nav className="border-t border-black/10 bg-white px-4 py-4 md:hidden">
+          <div className="mb-4">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-gray-500">{languageLabel}</label>
+            <select
+              aria-label={languageLabel}
+              value={language}
+              onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
+              className="h-11 w-full rounded-xl border-2 border-gray-300 bg-white px-3 text-sm font-semibold text-gray-700 outline-none transition hover:border-blue-500 focus:border-blue-500"
+            >
+              <option value="es">ESP</option>
+              <option value="en">ENG</option>
+            </select>
+          </div>
+
           <div className="flex flex-col gap-3">
             {navItems.map((item) => (
               <a
