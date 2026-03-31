@@ -11,27 +11,38 @@ const navItems = [
   { href: "#contactos", label: "Contactos" },
 ];
 
+type ThemeMode = "light" | "dark";
+
+function applyTheme(theme: ThemeMode) {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.classList.toggle("theme-dark", isDark);
+  document.body.classList.toggle("theme-dark", isDark);
+  window.localStorage.setItem("portfolio-theme", theme);
+}
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
-  const [ready, setReady] = useState(false);
+  const [theme, setTheme] = useState<ThemeMode>("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("portfolio-theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const nextDark = savedTheme ? savedTheme === "dark" : prefersDark;
+    const initialTheme: ThemeMode = savedTheme === "dark" || (!savedTheme && prefersDark) ? "dark" : "light";
 
-    setIsDark(nextDark);
-    document.documentElement.classList.toggle("theme-dark", nextDark);
-    setReady(true);
+    setTheme(initialTheme);
+    applyTheme(initialTheme);
+    setMounted(true);
   }, []);
 
   const toggleTheme = () => {
-    const nextDark = !isDark;
-    setIsDark(nextDark);
-    document.documentElement.classList.toggle("theme-dark", nextDark);
-    window.localStorage.setItem("portfolio-theme", nextDark ? "dark" : "light");
+    const nextTheme: ThemeMode = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    applyTheme(nextTheme);
   };
+
+  const isDark = theme === "dark";
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white/90 backdrop-blur-sm transition-colors duration-300">
@@ -59,13 +70,14 @@ export function Header() {
           <button
             type="button"
             aria-label="Cambiar tema"
+            aria-pressed={isDark}
             onClick={toggleTheme}
-            className="flex h-10 items-center gap-2 rounded-xl border-2 border-gray-300 bg-white px-3 text-sm font-semibold text-gray-700 transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600"
+            className="flex h-10 min-w-[108px] items-center justify-center gap-2 rounded-xl border-2 border-gray-300 bg-white px-3 text-sm font-semibold text-gray-700 transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600"
           >
-            <span className={`text-base transition-transform duration-300 ${ready && isDark ? "rotate-0" : "rotate-180"}`}>
-              {ready && isDark ? "☀" : "☾"}
+            <span className={`text-base transition-transform duration-300 ${mounted && isDark ? "rotate-0 scale-100" : "rotate-180 scale-95"}`}>
+              {mounted && isDark ? "☀" : "☾"}
             </span>
-            <span className="hidden sm:inline">{ready && isDark ? "Light" : "Dark"}</span>
+            <span>{mounted && isDark ? "Modo claro" : "Modo dark"}</span>
           </button>
 
           <button

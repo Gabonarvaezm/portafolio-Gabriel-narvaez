@@ -447,3 +447,157 @@ body {
 .theme-dark .skill-orb-3 {
   filter: saturate(1.25);
 }
+
+html.theme-dark,
+body.theme-dark {
+  color-scheme: dark;
+}
+
+html.theme-dark body,
+body.theme-dark {
+  background:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.16), transparent 24%),
+    linear-gradient(180deg, #07111f 0%, #0d1728 45%, #111c31 100%) !important;
+}
+
+html.theme-dark body,
+html.theme-dark .portfolio-shell,
+html.theme-dark .portfolio-shell *,
+body.theme-dark,
+body.theme-dark .portfolio-shell,
+body.theme-dark .portfolio-shell * {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+
+html.theme-dark .portfolio-shell,
+html.theme-dark .portfolio-shell.bg-white,
+body.theme-dark .portfolio-shell,
+body.theme-dark .portfolio-shell.bg-white {
+  background-color: #0b1424 !important;
+  color: #dbe7f5 !important;
+}
+
+html.theme-dark header,
+body.theme-dark header {
+  background: rgba(7, 17, 31, 0.86) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+}
+
+html.theme-dark header a,
+html.theme-dark header button,
+html.theme-dark header nav,
+body.theme-dark header a,
+body.theme-dark header button,
+body.theme-dark header nav {
+  color: #e6eef8 !important;
+}
+
+html.theme-dark header .bg-white,
+body.theme-dark header .bg-white {
+  background-color: #0f1b2d !important;
+}
+
+html.theme-dark .portfolio-shell .bg-white,
+html.theme-dark .portfolio-shell.bg-white,
+body.theme-dark .portfolio-shell .bg-white,
+body.theme-dark .portfolio-shell.bg-white {
+  background-color: #0f1b2d !important;
+}
+
+html.theme-dark .portfolio-shell .bg-gray-50,
+body.theme-dark .portfolio-shell .bg-gray-50 {
+  background-color: #101b2f !important;
+}
+
+html.theme-dark .portfolio-shell .bg-gray-100,
+body.theme-dark .portfolio-shell .bg-gray-100 {
+  background-color: #162338 !important;
+}
+
+html.theme-dark .portfolio-shell .bg-gray-200,
+body.theme-dark .portfolio-shell .bg-gray-200 {
+  background-color: #1a2942 !important;
+}
+
+html.theme-dark .portfolio-shell .bg-gray-800,
+body.theme-dark .portfolio-shell .bg-gray-800 {
+  background-color: #050b15 !important;
+}
+
+html.theme-dark .portfolio-shell .text-gray-900,
+html.theme-dark .portfolio-shell .text-gray-700,
+html.theme-dark .portfolio-shell .text-gray-600,
+body.theme-dark .portfolio-shell .text-gray-900,
+body.theme-dark .portfolio-shell .text-gray-700,
+body.theme-dark .portfolio-shell .text-gray-600 {
+  color: #e6eef8 !important;
+}
+
+html.theme-dark .portfolio-shell .text-gray-500,
+body.theme-dark .portfolio-shell .text-gray-500 {
+  color: #b3c1d6 !important;
+}
+
+html.theme-dark .portfolio-shell .text-gray-400,
+html.theme-dark .portfolio-shell .text-gray-300,
+body.theme-dark .portfolio-shell .text-gray-400,
+body.theme-dark .portfolio-shell .text-gray-300 {
+  color: #c9d5e6 !important;
+}
+
+html.theme-dark .portfolio-shell .border-gray-300,
+html.theme-dark .portfolio-shell .border-gray-400,
+html.theme-dark .portfolio-shell .border-gray-700,
+html.theme-dark .portfolio-shell .border-gray-800,
+html.theme-dark header .border-gray-300,
+html.theme-dark header .border-gray-900,
+body.theme-dark .portfolio-shell .border-gray-300,
+body.theme-dark .portfolio-shell .border-gray-400,
+body.theme-dark .portfolio-shell .border-gray-700,
+body.theme-dark .portfolio-shell .border-gray-800,
+body.theme-dark header .border-gray-300,
+body.theme-dark header .border-gray-900 {
+  border-color: rgba(148, 163, 184, 0.22) !important;
+}
+
+html.theme-dark .portfolio-shell .hero-panel,
+body.theme-dark .portfolio-shell .hero-panel {
+  background: linear-gradient(160deg, #132540 0%, #0b1629 100%) !important;
+  border-color: rgba(96, 165, 250, 0.34) !important;
+  box-shadow: 0 28px 70px rgba(2, 8, 23, 0.5) !important;
+}
+
+html.theme-dark .portfolio-shell .profile-card,
+html.theme-dark .portfolio-shell .lift-card,
+body.theme-dark .portfolio-shell .profile-card,
+body.theme-dark .portfolio-shell .lift-card {
+  box-shadow: 0 18px 45px rgba(2, 8, 23, 0.34) !important;
+}
+
+html.theme-dark .portfolio-shell input,
+html.theme-dark .portfolio-shell textarea,
+body.theme-dark .portfolio-shell input,
+body.theme-dark .portfolio-shell textarea {
+  background-color: #0a1424 !important;
+  color: #e6eef8 !important;
+  border-color: rgba(148, 163, 184, 0.24) !important;
+}
+
+html.theme-dark .portfolio-shell input::placeholder,
+html.theme-dark .portfolio-shell textarea::placeholder,
+body.theme-dark .portfolio-shell input::placeholder,
+body.theme-dark .portfolio-shell textarea::placeholder {
+  color: #8fa2bc !important;
+}
+
+html.theme-dark .portfolio-shell .pill-animate,
+body.theme-dark .portfolio-shell .pill-animate {
+  background-color: rgba(96, 165, 250, 0.12) !important;
+  color: #dbeafe !important;
+  border-color: rgba(96, 165, 250, 0.25) !important;
+}
+
+html.theme-dark .portfolio-shell .section-line,
+body.theme-dark .portfolio-shell .section-line {
+  background-color: #60a5fa !important;
+}
