@@ -23,6 +23,10 @@ body {
   pointer-events: none;
 }
 
+.hero-grid {
+  perspective: 1400px;
+}
+
 .hero-grid::before {
   content: "";
   inset: auto;
@@ -90,30 +94,105 @@ body {
   animation: shimmerDot 4.8s ease-in-out infinite;
 }
 
-.reveal-up {
-  opacity: 0;
-  transform: translateY(34px);
-  animation: revealUp 0.9s cubic-bezier(.22,1,.36,1) forwards;
-  animation-delay: var(--delay, 0s);
+.scroll-section {
+  opacity: 0.16;
+  filter: blur(10px);
+  transform: translate3d(0, 88px, 0) scale(0.955) rotateX(10deg);
+  transform-origin: center top;
+  transition:
+    opacity 0.95s cubic-bezier(.16,1,.3,1),
+    transform 1.05s cubic-bezier(.16,1,.3,1),
+    filter 0.95s cubic-bezier(.16,1,.3,1);
+  will-change: transform, opacity, filter;
 }
 
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-42px);
-  animation: revealLeft 1s cubic-bezier(.22,1,.36,1) forwards;
-  animation-delay: var(--delay, 0s);
+.scroll-section[data-variant="left"] {
+  transform: translate3d(-92px, 18px, 0) scale(0.96) rotateY(8deg);
+  transform-origin: left center;
 }
 
-.reveal-right {
+.scroll-section[data-variant="right"] {
+  transform: translate3d(92px, 18px, 0) scale(0.96) rotateY(-8deg);
+  transform-origin: right center;
+}
+
+.scroll-section[data-variant="scale"] {
+  transform: translate3d(0, 54px, 0) scale(0.9);
+}
+
+.scroll-section[data-in-view="true"] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1) rotateX(0) rotateY(0);
+}
+
+.reveal-item {
   opacity: 0;
-  transform: translateX(42px);
-  animation: revealRight 1s cubic-bezier(.22,1,.36,1) forwards;
-  animation-delay: var(--delay, 0s);
+  filter: blur(8px);
+  transform: translate3d(0, 32px, 0) scale(0.98);
+  transition:
+    opacity 0.72s cubic-bezier(.2,.8,.2,1),
+    transform 0.9s cubic-bezier(.16,1,.3,1),
+    filter 0.72s cubic-bezier(.2,.8,.2,1);
+  transition-delay: var(--item-delay, 0ms);
+  will-change: transform, opacity, filter;
+}
+
+.scroll-section[data-in-view="true"] .reveal-item {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.scroll-section[data-in-view="false"] .reveal-item {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translate3d(0, 32px, 0) scale(0.98);
+}
+
+.reveal-stack > .reveal-item:nth-child(1),
+.stagger-grid > .reveal-item:nth-child(1) {
+  --item-delay: 90ms;
+}
+
+.reveal-stack > .reveal-item:nth-child(2),
+.stagger-grid > .reveal-item:nth-child(2) {
+  --item-delay: 180ms;
+}
+
+.reveal-stack > .reveal-item:nth-child(3),
+.stagger-grid > .reveal-item:nth-child(3) {
+  --item-delay: 270ms;
+}
+
+.reveal-stack > .reveal-item:nth-child(4),
+.stagger-grid > .reveal-item:nth-child(4) {
+  --item-delay: 360ms;
+}
+
+.reveal-stack > .reveal-item:nth-child(5),
+.stagger-grid > .reveal-item:nth-child(5) {
+  --item-delay: 450ms;
+}
+
+.reveal-stack > .reveal-item:nth-child(6),
+.stagger-grid > .reveal-item:nth-child(6) {
+  --item-delay: 540ms;
 }
 
 .hero-panel {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 26%), radial-gradient(circle at 88% 78%, rgba(96,165,250,0.18), transparent 22%);
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .hero-panel::after {
@@ -123,12 +202,27 @@ body {
   width: 45%;
   height: 260%;
   transform: rotate(18deg);
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
   animation: panelSweep 8s linear infinite;
 }
 
 .profile-card {
   position: relative;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(59,130,246,0.18), rgba(255,255,255,0.65));
+  opacity: 0;
+  transition: opacity .45s ease;
+  z-index: 0;
+}
+
+.profile-card:hover::before {
+  opacity: 1;
 }
 
 .profile-card::after {
@@ -141,9 +235,15 @@ body {
   pointer-events: none;
 }
 
+.profile-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .lift-card {
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
 
 .lift-card::before {
@@ -156,35 +256,38 @@ body {
   pointer-events: none;
 }
 
+.lift-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.32) 42%, transparent 64%);
+  transform: translateX(-140%);
+  transition: transform .8s cubic-bezier(.16,1,.3,1);
+  pointer-events: none;
+}
+
 .lift-card:hover::before {
   opacity: 1;
 }
 
+.lift-card:hover::after {
+  transform: translateX(140%);
+}
+
 .pill-animate {
-  transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+  transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
 .pill-animate:hover {
   transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 18px rgba(59,130,246,0.18);
 }
 
 .section-line {
   transform-origin: left;
-  animation: lineGrow .9s cubic-bezier(.22,1,.36,1) forwards;
-  animation-delay: var(--delay, .2s);
+  animation: lineGrow .95s cubic-bezier(.16,1,.3,1) forwards;
+  animation-delay: var(--delay, .24s);
   transform: scaleX(0);
-}
-
-@keyframes revealUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes revealLeft {
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes revealRight {
-  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes lineGrow {
@@ -221,17 +324,17 @@ body {
   50% { transform: scale(1.15) rotate(180deg); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
+@media (max-width: 768px) {
+  .scroll-section,
+  .scroll-section[data-variant="left"],
+  .scroll-section[data-variant="right"],
+  .scroll-section[data-variant="scale"] {
+    transform: translate3d(0, 48px, 0) scale(0.98);
   }
 
-  .reveal-up,
-  .reveal-left,
-  .reveal-right {
-    opacity: 1;
-    transform: none;
+  .scroll-section[data-in-view="true"] {
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
+
+

@@ -1,4 +1,5 @@
 ﻿import { Header } from "./components/Header";
+import { ScrollSection } from "./components/ScrollSection";
 
 const stats = [
   { number: "12+", label: "Tecnologias dominadas" },
@@ -135,11 +136,11 @@ const contactItems = [
   { title: "Ubicacion", detail: "Colombia, disponible para proyectos academicos y freelance", symbol: "#" },
 ];
 
-function SectionTitle({ title, delay = 0 }: { title: string; delay?: number }) {
+function SectionTitle({ title }: { title: string }) {
   return (
-    <div className="mb-12 reveal-up" style={{ ["--delay" as string]: `${delay}s` }}>
-      <h2 className="mb-4 text-4xl font-bold tracking-tight text-gray-900">{title}</h2>
-      <div className="section-line h-1 w-20 rounded-full bg-gray-400" style={{ ["--delay" as string]: `${delay + 0.15}s` }} />
+    <div className="reveal-stack mb-12">
+      <h2 className="reveal-item mb-4 text-4xl font-bold tracking-tight text-gray-900">{title}</h2>
+      <div className="section-line reveal-item h-1 w-20 rounded-full bg-gray-400" />
     </div>
   );
 }
@@ -155,64 +156,64 @@ export default function Home() {
           <div className="hero-orb hero-orb-3" />
 
           <div className="hero-grid relative z-10 mx-auto grid w-full max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:gap-16 lg:px-8">
-            <div className="order-2 md:order-1 reveal-left" style={{ ["--delay" as string]: "0.15s" }}>
-              <div className="hero-panel rounded-[2rem] border-2 border-gray-900 bg-gray-800 p-8 text-white shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition duration-500 hover:scale-[1.02] hover:shadow-[0_28px_55px_rgba(0,0,0,0.18)] md:p-10">
-                <p className="mb-4 text-xs uppercase tracking-[0.24em] text-gray-300">Portafolio personal</p>
-                <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">GABRIEL NARVAEZ</h1>
-                <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-100 md:text-xl">
+            <ScrollSection variant="left" className="order-2 md:order-1">
+              <div className="hero-panel reveal-stack rounded-[2rem] border-2 border-gray-900 bg-gray-800 p-8 text-white shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition duration-500 hover:scale-[1.02] hover:shadow-[0_28px_55px_rgba(0,0,0,0.18)] md:p-10">
+                <p className="reveal-item mb-4 text-xs uppercase tracking-[0.24em] text-gray-300">Portafolio personal</p>
+                <h1 className="reveal-item text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">GABRIEL NARVAEZ</h1>
+                <p className="reveal-item mt-6 max-w-xl text-lg leading-relaxed text-gray-100 md:text-xl">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.
                 </p>
               </div>
-            </div>
+            </ScrollSection>
 
-            <div className="order-1 md:order-2 reveal-right" style={{ ["--delay" as string]: "0.28s" }}>
-              <div className="profile-card mx-auto aspect-square max-w-lg overflow-hidden rounded-[2rem] border-2 border-gray-300 bg-gray-200 shadow-[0_25px_50px_rgba(0,0,0,0.15)] transition duration-500 hover:-translate-y-1 hover:scale-[1.03] hover:rotate-[1deg] hover:shadow-[0_34px_68px_rgba(0,0,0,0.22)]">
+            <ScrollSection variant="right" className="order-1 md:order-2">
+              <div className="profile-card reveal-item mx-auto aspect-square max-w-lg overflow-hidden rounded-[2rem] border-2 border-gray-300 bg-gray-200 shadow-[0_25px_50px_rgba(0,0,0,0.15)] transition duration-500 hover:-translate-y-1 hover:scale-[1.03] hover:rotate-[1deg] hover:shadow-[0_34px_68px_rgba(0,0,0,0.22)]">
                 <img src="/image.png" alt="Foto de perfil de Gabriel Narvaez" className="h-full w-full object-cover transition duration-700 hover:scale-110" />
               </div>
-            </div>
+            </ScrollSection>
           </div>
         </section>
 
         <section id="sobre-mi" className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
             <SectionTitle title="Sobre mi" />
             <div className="grid gap-12 md:grid-cols-2">
-              <div className="reveal-up space-y-6 text-gray-700" style={{ ["--delay" as string]: "0.1s" }}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor in risus posuere luctus a sit amet lorem.</p>
+              <div className="reveal-stack space-y-6 text-gray-700">
+                <p className="reveal-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.</p>
+                <p className="reveal-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor in risus posuere luctus a sit amet lorem.</p>
               </div>
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <article key={stat.label} className="lift-card reveal-up rounded-3xl border-2 border-gray-300 p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.1)]" style={{ ["--delay" as string]: `${0.14 + index * 0.08}s` }}>
-                    <div className="mb-2 text-3xl font-bold text-gray-900 transition duration-300 group-hover:text-blue-600">{stat.number}</div>
+              <div className="stagger-grid grid grid-cols-2 gap-6">
+                {stats.map((stat) => (
+                  <article key={stat.label} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.1)]">
+                    <div className="mb-2 text-3xl font-bold text-gray-900">{stat.number}</div>
                     <p className="text-sm text-gray-600">{stat.label}</p>
                   </article>
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollSection>
         </section>
 
         <section id="valor" className="bg-gray-50 py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="scale">
             <SectionTitle title="Lo que aporto" />
-            <div className="grid gap-6 md:grid-cols-3">
-              {valueItems.map((item, index) => (
-                <article key={item.title} className="lift-card reveal-up rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]" style={{ ["--delay" as string]: `${0.1 + index * 0.08}s` }}>
+            <div className="stagger-grid grid gap-6 md:grid-cols-3">
+              {valueItems.map((item) => (
+                <article key={item.title} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
                   <h3 className="mb-4 text-xl font-semibold text-gray-900">{item.title}</h3>
                   <p className="text-gray-700">{item.text}</p>
                 </article>
               ))}
             </div>
-          </div>
+          </ScrollSection>
         </section>
 
         <section id="proyectos" className="bg-gray-50 py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
             <SectionTitle title="Proyectos" />
-            <div className="grid gap-8 sm:grid-cols-2">
-              {projects.map((project, index) => (
-                <article key={project.title} className="lift-card reveal-up overflow-hidden rounded-3xl border-2 border-gray-300 bg-white transition duration-300 hover:-translate-y-2 hover:border-gray-800 hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)]" style={{ ["--delay" as string]: `${0.1 + index * 0.08}s` }}>
+            <div className="stagger-grid grid gap-8 sm:grid-cols-2">
+              {projects.map((project) => (
+                <article key={project.title} className="lift-card reveal-item overflow-hidden rounded-3xl border-2 border-gray-300 bg-white transition duration-300 hover:-translate-y-2 hover:border-gray-800 hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)]">
                   <div className="aspect-video overflow-hidden border-b-2 border-gray-300 bg-gray-200">
                     <img src={project.image} alt={project.title} className="h-full w-full object-cover transition duration-700 hover:scale-110" />
                   </div>
@@ -228,16 +229,16 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
+          </ScrollSection>
         </section>
 
         <section id="experiencia" className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="left">
             <SectionTitle title="Experiencia y enfoque" />
-            <p className="reveal-up mb-10 max-w-3xl text-gray-700" style={{ ["--delay" as string]: "0.12s" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div className="space-y-4">
-              {timeline.map((item, index) => (
-                <article key={item.phase} className="lift-card reveal-up grid gap-4 rounded-3xl border-2 border-gray-300 bg-gray-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.08)] md:grid-cols-[180px_1fr]" style={{ ["--delay" as string]: `${0.14 + index * 0.08}s` }}>
+            <p className="reveal-item mb-10 max-w-3xl text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div className="stagger-grid space-y-4">
+              {timeline.map((item) => (
+                <article key={item.phase} className="lift-card reveal-item grid gap-4 rounded-3xl border-2 border-gray-300 bg-gray-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.08)] md:grid-cols-[180px_1fr]">
                   <div className="pt-1 text-sm font-bold uppercase tracking-[0.12em] text-blue-600">{item.phase}</div>
                   <div>
                     <h3 className="mb-3 text-xl font-semibold text-gray-900">{item.title}</h3>
@@ -251,23 +252,23 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
+          </ScrollSection>
         </section>
 
         <section id="habilidades" className="relative overflow-hidden bg-white py-24">
           <div className="skill-orb skill-orb-1" />
           <div className="skill-orb skill-orb-2" />
           <div className="skill-orb skill-orb-3" />
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollSection className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="right">
             <SectionTitle title="Habilidades" />
-            <p className="reveal-up mb-10 max-w-3xl text-gray-700" style={{ ["--delay" as string]: "0.12s" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {skills.map((category, index) => (
-                <article key={category.title} className="lift-card reveal-up rounded-3xl border-2 border-gray-300 bg-white p-6 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]" style={{ ["--delay" as string]: `${0.12 + index * 0.08}s` }}>
+            <p className="reveal-item mb-10 max-w-3xl text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div className="stagger-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {skills.map((category) => (
+                <article key={category.title} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-white p-6 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
                   <h3 className="mb-4 text-lg font-semibold text-gray-900">{category.title}</h3>
                   <ul className="space-y-2 text-gray-700">
-                    {category.items.map((skill, skillIndex) => (
-                      <li key={skill} className="flex items-center gap-3 transition duration-300 hover:translate-x-1 hover:text-blue-600" style={{ ["--delay" as string]: `${0.2 + index * 0.05 + skillIndex * 0.03}s` }}>
+                    {category.items.map((skill) => (
+                      <li key={skill} className="flex items-center gap-3 transition duration-300 hover:translate-x-1 hover:text-blue-600">
                         <span className="h-2 w-2 rounded-full bg-blue-500 transition duration-300 hover:scale-150" />
                         <span>{skill}</span>
                       </li>
@@ -276,53 +277,53 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
+          </ScrollSection>
         </section>
 
         <section id="testimonios" className="bg-gray-50 py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="scale">
             <SectionTitle title="Testimonios" />
-            <div className="grid gap-6 md:grid-cols-3">
-              {testimonials.map((item, index) => (
-                <article key={item.title} className="lift-card reveal-up relative rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]" style={{ ["--delay" as string]: `${0.12 + index * 0.08}s` }}>
-                  <div className="absolute right-5 top-4 text-6xl font-extrabold leading-none text-blue-100 transition duration-300 group-hover:scale-110">"</div>
+            <div className="stagger-grid grid gap-6 md:grid-cols-3">
+              {testimonials.map((item) => (
+                <article key={item.title} className="lift-card reveal-item relative rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
+                  <div className="absolute right-5 top-4 text-6xl font-extrabold leading-none text-blue-100 transition duration-300">"</div>
                   <h3 className="mb-4 text-xl font-semibold text-gray-900">{item.title}</h3>
                   <p className="text-gray-700">{item.text}</p>
                   <div className="mt-5 text-sm text-gray-500">{item.note}</div>
                 </article>
               ))}
             </div>
-          </div>
+          </ScrollSection>
         </section>
 
         <section id="aprendizaje" className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
             <SectionTitle title="Aprendizaje continuo" />
-            <div className="grid gap-6 md:grid-cols-3">
-              {learningCards.map((card, index) => (
-                <article key={card.title} className="lift-card reveal-up rounded-3xl border-2 border-gray-300 bg-gray-50 p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]" style={{ ["--delay" as string]: `${0.12 + index * 0.08}s` }}>
+            <div className="stagger-grid grid gap-6 md:grid-cols-3">
+              {learningCards.map((card) => (
+                <article key={card.title} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-gray-50 p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
                   <h3 className="mb-4 text-xl font-semibold text-gray-900">{card.title}</h3>
                   <p className="text-gray-700">{card.text}</p>
                   <ul className="mt-5 space-y-3 text-gray-700">
-                    {card.items.map((item, itemIndex) => (
-                      <li key={item} className="flex items-start gap-3 transition duration-300 hover:translate-x-1 hover:text-blue-600" style={{ ["--delay" as string]: `${0.22 + itemIndex * 0.03}s` }}><span className="mt-2 h-2 w-2 rounded-full bg-blue-500" /><span>{item}</span></li>
+                    {card.items.map((item) => (
+                      <li key={item} className="flex items-start gap-3 transition duration-300 hover:translate-x-1 hover:text-blue-600"><span className="mt-2 h-2 w-2 rounded-full bg-blue-500" /><span>{item}</span></li>
                     ))}
                   </ul>
                 </article>
               ))}
             </div>
-          </div>
+          </ScrollSection>
         </section>
 
         <section id="contactos" className="bg-gray-50 py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="left">
             <SectionTitle title="Contactos" />
             <div className="grid gap-12 md:grid-cols-2">
-              <div className="space-y-8 reveal-up" style={{ ["--delay" as string]: "0.12s" }}>
-                <p className="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <div className="space-y-6 text-gray-700">
-                  {contactItems.map((item, index) => (
-                    <div key={item.title} className="lift-card reveal-up flex items-start gap-4 rounded-3xl border-2 border-transparent p-1 transition duration-300 hover:translate-x-1" style={{ ["--delay" as string]: `${0.18 + index * 0.06}s` }}>
+              <div className="reveal-stack space-y-8">
+                <p className="reveal-item text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div className="stagger-grid space-y-6 text-gray-700">
+                  {contactItems.map((item) => (
+                    <div key={item.title} className="lift-card reveal-item flex items-start gap-4 rounded-3xl border-2 border-transparent p-1 transition duration-300 hover:translate-x-1">
                       <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border-2 border-gray-800 transition duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500 hover:text-white"><span className="text-lg">{item.symbol}</span></div>
                       <div className="pt-2">
                         <p className="font-medium text-gray-900">{item.title}</p>
@@ -331,47 +332,47 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="pt-2">
-                  <p className="mb-4 text-gray-700">Redes y portafolio profesional</p>
-                  <div className="flex gap-4">
-                    {['GitHub', 'LinkedIn', 'Twitter'].map((item, index) => (
-                      <div key={item} className="reveal-up flex h-12 w-12 cursor-pointer items-center justify-center rounded-xl border-2 border-gray-800 text-sm font-semibold transition duration-300 hover:scale-110 hover:rotate-6 hover:border-blue-500 hover:bg-blue-500 hover:text-white" style={{ ["--delay" as string]: `${0.24 + index * 0.05}s` }}>{item.slice(0, 2)}</div>
+                <div className="reveal-stack pt-2">
+                  <p className="reveal-item mb-4 text-gray-700">Redes y portafolio profesional</p>
+                  <div className="stagger-grid flex gap-4">
+                    {["GitHub", "LinkedIn", "Twitter"].map((item) => (
+                      <div key={item} className="reveal-item flex h-12 w-12 cursor-pointer items-center justify-center rounded-xl border-2 border-gray-800 text-sm font-semibold transition duration-300 hover:scale-110 hover:rotate-6 hover:border-blue-500 hover:bg-blue-500 hover:text-white">{item.slice(0, 2)}</div>
                     ))}
                   </div>
                 </div>
               </div>
-              <form className="lift-card reveal-up space-y-6 rounded-3xl border-2 border-gray-300 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)] sm:p-8" style={{ ["--delay" as string]: "0.18s" }}>
-                <div>
+              <form className="lift-card reveal-stack rounded-3xl border-2 border-gray-300 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)] sm:p-8">
+                <div className="reveal-item mb-6">
                   <label className="mb-2 block text-sm text-gray-700">Nombre</label>
                   <input type="text" placeholder="Tu nombre" className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" />
                 </div>
-                <div>
+                <div className="reveal-item mb-6">
                   <label className="mb-2 block text-sm text-gray-700">Correo</label>
                   <input type="email" placeholder="tucorreo@ejemplo.com" className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" />
                 </div>
-                <div>
+                <div className="reveal-item mb-6">
                   <label className="mb-2 block text-sm text-gray-700">Asunto</label>
                   <input type="text" placeholder="Propuesta de proyecto o contacto academico" className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" />
                 </div>
-                <div>
+                <div className="reveal-item mb-6">
                   <label className="mb-2 block text-sm text-gray-700">Mensaje</label>
                   <textarea rows={5} placeholder="Hola Gabriel, vimos tu portafolio y queremos hablar contigo." className="w-full rounded-2xl border-2 border-gray-300 p-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" />
                 </div>
-                <button type="button" className="h-12 w-full rounded-2xl border-2 border-gray-800 bg-gray-800 font-medium text-white transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:bg-blue-500 hover:shadow-[0_14px_28px_rgba(59,130,246,0.25)]">Enviar mensaje</button>
+                <button type="button" className="reveal-item h-12 w-full rounded-2xl border-2 border-gray-800 bg-gray-800 font-medium text-white transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:bg-blue-500 hover:shadow-[0_14px_28px_rgba(59,130,246,0.25)]">Enviar mensaje</button>
               </form>
             </div>
-          </div>
+          </ScrollSection>
         </section>
       </main>
 
-      <footer className="bg-gray-800 py-10 text-white reveal-up" style={{ ["--delay" as string]: "0.1s" }}>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 grid gap-8 sm:grid-cols-3">
-            <div>
+      <footer className="bg-gray-800 py-10 text-white">
+        <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
+          <div className="stagger-grid mb-8 grid gap-8 sm:grid-cols-3">
+            <div className="reveal-item">
               <h3 className="mb-3 font-semibold">Gabriel Narvaez</h3>
               <p className="text-sm text-gray-300">Portafolio orientado a mostrar desarrollo web, diseño de interfaces y crecimiento constante como futuro profesional full stack.</p>
             </div>
-            <div>
+            <div className="reveal-item">
               <h3 className="mb-3 font-semibold">Secciones clave</h3>
               <ul className="space-y-1 text-sm text-gray-300">
                 <li>Sobre mi</li>
@@ -380,7 +381,7 @@ export default function Home() {
                 <li>Testimonios</li>
               </ul>
             </div>
-            <div>
+            <div className="reveal-item">
               <h3 className="mb-3 font-semibold">Contacto</h3>
               <ul className="space-y-1 text-sm text-gray-300">
                 <li>gabrielnarvaez.dev@gmail.com</li>
@@ -389,9 +390,10 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">Portafolio academico de Gabriel Narvaez, 2026.</div>
-        </div>
+          <div className="reveal-item border-t border-gray-700 pt-6 text-center text-sm text-gray-400">Portafolio academico de Gabriel Narvaez, 2026.</div>
+        </ScrollSection>
       </footer>
     </div>
   );
 }
+
