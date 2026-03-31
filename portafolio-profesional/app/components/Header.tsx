@@ -74,19 +74,22 @@ export function Header({
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="relative hidden sm:block">
-            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[11px] font-bold uppercase tracking-[0.16em] text-gray-500">
+          <div className="language-control relative hidden sm:block">
+            <label className="mb-1 block pl-1 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">
               {languageLabel}
-            </span>
-            <select
-              aria-label={languageLabel}
-              value={language}
-              onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
-              className="h-10 rounded-xl border-2 border-gray-300 bg-white pl-18 pr-8 text-sm font-semibold text-gray-700 outline-none transition hover:border-blue-500 focus:border-blue-500"
-            >
-              <option value="es">ESP</option>
-              <option value="en">ENG</option>
-            </select>
+            </label>
+            <div className="relative">
+              <select
+                aria-label={languageLabel}
+                value={language}
+                onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
+                className="language-select h-10 min-w-[132px] appearance-none rounded-xl border-2 border-gray-300 bg-white pl-4 pr-10 text-sm font-semibold text-gray-700 outline-none transition hover:border-blue-500 focus:border-blue-500"
+              >
+                <option value="es">ESP</option>
+                <option value="en">ENG</option>
+              </select>
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">▾</span>
+            </div>
           </div>
 
           <button
@@ -120,15 +123,18 @@ export function Header({
         <nav className="border-t border-black/10 bg-white px-4 py-4 md:hidden">
           <div className="mb-4">
             <label className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-gray-500">{languageLabel}</label>
-            <select
-              aria-label={languageLabel}
-              value={language}
-              onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
-              className="h-11 w-full rounded-xl border-2 border-gray-300 bg-white px-3 text-sm font-semibold text-gray-700 outline-none transition hover:border-blue-500 focus:border-blue-500"
-            >
-              <option value="es">ESP</option>
-              <option value="en">ENG</option>
-            </select>
+            <div className="relative">
+              <select
+                aria-label={languageLabel}
+                value={language}
+                onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
+                className="language-select h-11 w-full appearance-none rounded-xl border-2 border-gray-300 bg-white px-3 pr-10 text-sm font-semibold text-gray-700 outline-none transition hover:border-blue-500 focus:border-blue-500"
+              >
+                <option value="es">ESP</option>
+                <option value="en">ENG</option>
+              </select>
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">▾</span>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">
