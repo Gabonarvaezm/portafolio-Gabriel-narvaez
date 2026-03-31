@@ -7,8 +7,8 @@ type HeaderProps = {
   darkLabel: string;
   lightLabel: string;
   languageLabel: string;
-  language: "es" | "en";
-  onLanguageChange: (language: "es" | "en") => void;
+  language: "es" | "en" | "zh" | "de";
+  onLanguageChange: (language: "es" | "en" | "zh" | "de") => void;
 };
 
 type ThemeMode = "light" | "dark";
@@ -24,6 +24,8 @@ function applyTheme(theme: ThemeMode) {
 const languageOptions = [
   { value: "es" as const, label: "ESP" },
   { value: "en" as const, label: "ENG" },
+  { value: "zh" as const, label: "中文" },
+  { value: "de" as const, label: "DEU" },
 ];
 
 export function Header({

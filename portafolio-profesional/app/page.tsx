@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { ScrollSection } from "./components/ScrollSection";
 
-type Language = "es" | "en";
+type Language = "es" | "en" | "zh" | "de";
 
 type PortfolioContent = {
   navItems: Array<{ href: string; label: string }>;
@@ -56,6 +56,8 @@ type PortfolioContent = {
     copyright: string;
   };
 };
+
+const heroLanguageOptions = [{ value: "es" as const, label: "ESP" }, { value: "en" as const, label: "ENG" }, { value: "zh" as const, label: "中文" }, { value: "de" as const, label: "DEU" }];
 
 const projectImages = [
   "https://images.unsplash.com/photo-1719400471588-575b23e27bd7?auto=format&fit=crop&w=1200&q=80",
@@ -157,6 +159,194 @@ const content: Record<Language, PortfolioContent> = {
       sectionsTitle: "Secciones clave",
       contactTitle: "Contacto",
       copyright: "Portafolio academico de Gabriel Narvaez, 2026.",
+    },
+  },
+  zh: {
+    navItems: [
+      { href: "#sobre-mi", label: "关于我" },
+      { href: "#proyectos", label: "项目" },
+      { href: "#habilidades", label: "技能" },
+      { href: "#testimonios", label: "评价" },
+      { href: "#aprendizaje", label: "学习" },
+      { href: "#contactos", label: "联系" },
+    ],
+    darkLabel: "深色模式",
+    lightLabel: "浅色模式",
+    languageLabel: "语言",
+    heroBadge: "个人作品集",
+    heroLead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.",
+    sections: {
+      about: "关于我",
+      value: "我的优势",
+      projects: "项目",
+      experience: "经验与方法",
+      skills: "技能",
+      testimonials: "评价",
+      learning: "持续学习",
+      contacts: "联系我",
+    },
+    stats: [
+      { number: "12+", label: "掌握的技术" },
+      { number: "6", label: "工作领域" },
+      { number: "100%", label: "响应式专注" },
+      { number: "24/7", label: "持续学习" },
+    ],
+    aboutParagraphs: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor in risus posuere luctus a sit amet lorem.",
+    ],
+    valueItems: [
+      { title: "简洁界面", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere velit sed sem porta, nec efficitur lectus malesuada." },
+      { title: "功能逻辑", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eros a neque faucibus, at faucibus justo faucibus." },
+      { title: "持续改进", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae eros vel justo tristique fermentum in quis odio." },
+    ],
+    projects: [
+      { title: "销售仪表盘", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "创业着陆页", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "预订系统", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "交互式作品集", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+    ],
+    timelineIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    timeline: [
+      { phase: "分析与规划", title: "我先组织项目结构", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lectus ac lacus dapibus, a auctor metus posuere.", tags: ["Wireframes", "UI Architecture", "Planning"] },
+      { phase: "开发", title: "以实用思维构建界面与逻辑", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet lorem non dui tincidunt, sed posuere augue condimentum.", tags: ["React", "Node.js", "APIs"] },
+      { phase: "交付与优化", title: "打磨视觉与功能细节", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque neque et mi molestie, vel maximus lectus rutrum.", tags: ["Responsive", "Visual Testing", "Refactor"] },
+    ],
+    skillsIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    skills: [
+      { title: "前端", items: ["Angular", "JavaScript", "React", "Next.js", "Vite", "Tailwind CSS", "CSS", "TypeScript"] },
+      { title: "后端", items: ["Node.js", "Python", "MySQL", "SQLite", "Java", "Express.js"] },
+      { title: "工具", items: ["Git and GitHub", "Postman", "VS Code", "Vercel", "Trello", "Notion"] },
+      { title: "设计", items: ["Figma", "Canva", "Wireframing", "Prototyping", "Responsive design", "Visual hierarchy"] },
+    ],
+    testimonials: [
+      { title: "项目伙伴", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem eu turpis vestibulum, sed tincidunt neque sodales.", note: "协作能力与技术支持" },
+      { title: "学术评审", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra augue at quam posuere, ac gravida risus porttitor.", note: "整体思维与持续改进" },
+      { title: "模拟客户", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue augue ac ipsum luctus, sed tristique tortor hendrerit.", note: "清晰、判断力与功能性" },
+    ],
+    learningCards: [
+      { title: "正在强化的主题", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a nibh vel sem posuere finibus quis eu mauris.", items: ["组件架构", "后端最佳实践", "响应式优化"] },
+      { title: "成长方式", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget arcu quis mauris maximus varius a in quam.", items: ["版本控制", "云端部署", "技术文档"] },
+      { title: "职业目标", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue est sed mauris feugiat, id tristique nibh facilisis.", items: ["完整应用", "令人难忘的界面", "可维护代码"] },
+    ],
+    contactIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    contactItems: [
+      { title: "邮箱", detail: "gabrielnarvaez.dev@gmail.com", symbol: "@" },
+      { title: "电话", detail: "+57 300 000 0000", symbol: "+" },
+      { title: "地点", detail: "哥伦比亚，可参与学术与自由职业项目", symbol: "#" },
+    ],
+    socialLabel: "社交链接与专业作品集",
+    form: {
+      name: "姓名",
+      email: "邮箱",
+      subject: "主题",
+      message: "消息",
+      namePlaceholder: "你的名字",
+      emailPlaceholder: "yourmail@example.com",
+      subjectPlaceholder: "项目提案或学术联系",
+      messagePlaceholder: "你好 Gabriel，我们看了你的作品集，想和你聊聊。",
+      submit: "发送消息",
+    },
+    footer: {
+      bioTitle: "Gabriel Narvaez",
+      bioText: "该作品集用于展示网页开发、界面设计以及作为未来全栈人才的持续成长。",
+      sectionsTitle: "主要部分",
+      contactTitle: "联系",
+      copyright: "Gabriel Narvaez 学术作品集，2026。",
+    },
+  },
+  de: {
+    navItems: [
+      { href: "#sobre-mi", label: "Über mich" },
+      { href: "#proyectos", label: "Projekte" },
+      { href: "#habilidades", label: "Fähigkeiten" },
+      { href: "#testimonios", label: "Referenzen" },
+      { href: "#aprendizaje", label: "Lernen" },
+      { href: "#contactos", label: "Kontakt" },
+    ],
+    darkLabel: "Dunkelmodus",
+    lightLabel: "Hellmodus",
+    languageLabel: "Sprache",
+    heroBadge: "Persönliches Portfolio",
+    heroLead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.",
+    sections: {
+      about: "Über mich",
+      value: "Mein Mehrwert",
+      projects: "Projekte",
+      experience: "Erfahrung und Ansatz",
+      skills: "Fähigkeiten",
+      testimonials: "Referenzen",
+      learning: "Kontinuierliches Lernen",
+      contacts: "Kontakt",
+    },
+    stats: [
+      { number: "12+", label: "Beherrschte Technologien" },
+      { number: "6", label: "Arbeitsbereiche" },
+      { number: "100%", label: "Responsive Fokus" },
+      { number: "24/7", label: "Kontinuierliches Lernen" },
+    ],
+    aboutParagraphs: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor in risus posuere luctus a sit amet lorem.",
+    ],
+    valueItems: [
+      { title: "Klare Interfaces", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere velit sed sem porta, nec efficitur lectus malesuada." },
+      { title: "Funktionale Logik", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eros a neque faucibus, at faucibus justo faucibus." },
+      { title: "Ständige Verbesserung", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae eros vel justo tristique fermentum in quis odio." },
+    ],
+    projects: [
+      { title: "Verkaufs-Dashboard", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "Startup-Landingpage", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Reservierungssystem", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Interaktives Portfolio", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+    ],
+    timelineIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    timeline: [
+      { phase: "Analyse und Planung", title: "Ich organisiere zuerst die Projektstruktur", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lectus ac lacus dapibus, a auctor metus posuere.", tags: ["Wireframes", "UI-Architektur", "Planung"] },
+      { phase: "Entwicklung", title: "Ich entwickle Interfaces und Logik mit praktischem Fokus", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet lorem non dui tincidunt, sed posuere augue condimentum.", tags: ["React", "Node.js", "APIs"] },
+      { phase: "Lieferung und Feinschliff", title: "Ich optimiere visuelle und funktionale Details", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque neque et mi molestie, vel maximus lectus rutrum.", tags: ["Responsive", "Visuelles Testing", "Refactor"] },
+    ],
+    skillsIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    skills: [
+      { title: "Frontend", items: ["Angular", "JavaScript", "React", "Next.js", "Vite", "Tailwind CSS", "CSS", "TypeScript"] },
+      { title: "Backend", items: ["Node.js", "Python", "MySQL", "SQLite", "Java", "Express.js"] },
+      { title: "Werkzeuge", items: ["Git and GitHub", "Postman", "VS Code", "Vercel", "Trello", "Notion"] },
+      { title: "Design", items: ["Figma", "Canva", "Wireframing", "Prototyping", "Responsive Design", "Visuelle Hierarchie"] },
+    ],
+    testimonials: [
+      { title: "Projektpartner", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem eu turpis vestibulum, sed tincidunt neque sodales.", note: "Zusammenarbeit und technischer Support" },
+      { title: "Akademische Bewertung", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra augue at quam posuere, ac gravida risus porttitor.", note: "Ganzheitlicher Ansatz und Verbesserung" },
+      { title: "Simulierter Kunde", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue augue ac ipsum luctus, sed tristique tortor hendrerit.", note: "Klarheit, Urteilskraft und Funktionalität" },
+    ],
+    learningCards: [
+      { title: "Themen, die ich vertiefe", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a nibh vel sem posuere finibus quis eu mauris.", items: ["Komponentenarchitektur", "Backend-Best-Practices", "Responsive Optimierung"] },
+      { title: "Wachstumsansatz", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget arcu quis mauris maximus varius a in quam.", items: ["Versionskontrolle", "Cloud-Deployment", "Technische Dokumentation"] },
+      { title: "Berufliches Ziel", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue est sed mauris feugiat, id tristique nibh facilisis.", items: ["Vollständige Anwendungen", "Einprägsame Interfaces", "Wartbarer Code"] },
+    ],
+    contactIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    contactItems: [
+      { title: "E-Mail", detail: "gabrielnarvaez.dev@gmail.com", symbol: "@" },
+      { title: "Telefon", detail: "+57 300 000 0000", symbol: "+" },
+      { title: "Standort", detail: "Kolumbien, verfügbar für akademische und Freelance-Projekte", symbol: "#" },
+    ],
+    socialLabel: "Soziale Netzwerke und professionelles Portfolio",
+    form: {
+      name: "Name",
+      email: "E-Mail",
+      subject: "Betreff",
+      message: "Nachricht",
+      namePlaceholder: "Dein Name",
+      emailPlaceholder: "yourmail@example.com",
+      subjectPlaceholder: "Projektvorschlag oder akademischer Kontakt",
+      messagePlaceholder: "Hallo Gabriel, wir haben dein Portfolio gesehen und möchten mit dir sprechen.",
+      submit: "Nachricht senden",
+    },
+    footer: {
+      bioTitle: "Gabriel Narvaez",
+      bioText: "Portfolio zur Präsentation von Webentwicklung, Interface-Design und stetigem Wachstum als zukünftiger Full-Stack-Profi.",
+      sectionsTitle: "Wichtige Bereiche",
+      contactTitle: "Kontakt",
+      copyright: "Akademisches Portfolio von Gabriel Narvaez, 2026.",
     },
   },
   en: {
@@ -269,7 +459,7 @@ export default function Home() {
 
   useEffect(() => {
     const savedLanguage = window.localStorage.getItem("portfolio-language");
-    if (savedLanguage === "es" || savedLanguage === "en") {
+    if (savedLanguage === "es" || savedLanguage === "en" || savedLanguage === "zh" || savedLanguage === "de") {
       setLanguage(savedLanguage);
     }
   }, []);
@@ -283,14 +473,7 @@ export default function Home() {
 
   return (
     <div className="portfolio-shell min-h-screen bg-white">
-      <Header
-        navItems={t.navItems}
-        darkLabel={t.darkLabel}
-        lightLabel={t.lightLabel}
-        languageLabel={t.languageLabel}
-        language={language}
-        onLanguageChange={changeLanguage}
-      />
+      <Header navItems={t.navItems} darkLabel={t.darkLabel} lightLabel={t.lightLabel} languageLabel={t.languageLabel} language={language} onLanguageChange={changeLanguage} />
       <main>
         <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden bg-gray-50 pt-16">
           <div className="hero-orb hero-orb-1" />
@@ -537,3 +720,11 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
