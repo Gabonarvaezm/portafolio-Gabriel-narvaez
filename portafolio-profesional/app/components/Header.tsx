@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type HeaderProps = {
   navItems: Array<{ href: string; label: string }>;
@@ -21,6 +21,11 @@ function applyTheme(theme: ThemeMode) {
   window.localStorage.setItem("portfolio-theme", theme);
 }
 
+const languageOptions = [
+  { value: "es" as const, label: "ESP" },
+  { value: "en" as const, label: "ENG" },
+];
+
 export function Header({
   navItems,
   darkLabel,
@@ -30,8 +35,10 @@ export function Header({
   onLanguageChange,
 }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const [theme, setTheme] = useState<ThemeMode>("light");
   const [mounted, setMounted] = useState(false);
+  const langRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("portfolio-theme");
@@ -43,6 +50,17 @@ export function Header({
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(event.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const toggleTheme = () => {
     const nextTheme: ThemeMode = theme === "dark" ? "light" : "dark";
     setTheme(nextTheme);
@@ -50,6 +68,7 @@ export function Header({
   };
 
   const isDark = theme === "dark";
+  const activeLanguage = languageOptions.find((option) => option.value === language)?.label ?? "ESP";
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white/90 backdrop-blur-sm transition-colors duration-300">
@@ -74,21 +93,43 @@ export function Header({
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="language-control relative hidden sm:block">
-            <div className="relative flex h-10 min-w-[174px] items-center rounded-xl border-2 border-gray-300 bg-white pl-3 pr-9 shadow-[0_8px_18px_rgba(15,23,42,0.06)] transition hover:border-blue-500 focus-within:border-blue-500">
-              <span className="pointer-events-none pr-3 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500">{languageLabel}</span>
-              <span className="pointer-events-none text-sm font-semibold text-gray-700">{language.toUpperCase()}</span>
-              <select
-                aria-label={languageLabel}
-                value={language}
-                onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
-                className="language-overlay-select absolute inset-0 h-full w-full cursor-pointer appearance-none rounded-xl bg-transparent opacity-0 outline-none"
-              >
-                <option value="es">ESP</option>
-                <option value="en">ENG</option>
-              </select>
-              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">▾</span>
-            </div>
+          <div ref={langRef} className="language-control relative hidden sm:block">
+            <button
+              type="button"
+              aria-label={languageLabel}
+              aria-expanded={langOpen}
+              onClick={() => setLangOpen((prev) => !prev)}
+              className="flex h-10 min-w-[174px] items-center justify-between gap-3 rounded-xl border-2 border-gray-300 bg-white px-3 text-sm font-semibold text-gray-700 shadow-[0_8px_18px_rgba(15,23,42,0.06)] transition hover:-translate-y-0.5 hover:border-blue-500"
+            >
+              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500">{languageLabel}</span>
+              <span className="rounded-md bg-gray-100 px-2 py-1 text-sm text-gray-800">{activeLanguage}</span>
+              <span className={`text-xs text-gray-500 transition ${langOpen ? "rotate-180" : ""}`}>▾</span>
+            </button>
+
+            {langOpen ? (
+              <div className="absolute right-0 top-[calc(100%+0.55rem)] z-50 min-w-[174px] overflow-hidden rounded-2xl border border-gray-200 bg-white/95 p-2 shadow-[0_20px_50px_rgba(15,23,42,0.18)] backdrop-blur-xl">
+                {languageOptions.map((option) => {
+                  const active = option.value === language;
+
+                  return (
+                    <button
+                      key={option.value}
+                      type="button"
+                      onClick={() => {
+                        onLanguageChange(option.value);
+                        setLangOpen(false);
+                      }}
+                      className={`mb-1 flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-left text-sm font-semibold transition last:mb-0 ${active ? "bg-blue-600 text-white shadow-[0_12px_24px_rgba(37,99,235,0.28)]" : "text-gray-700 hover:bg-gray-100 hover:text-blue-600"}`}
+                    >
+                      <span>{option.label}</span>
+                      <span className={`text-[10px] uppercase tracking-[0.18em] ${active ? "text-blue-100" : "text-gray-400"}`}>
+                        {active ? "active" : "select"}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            ) : null}
           </div>
 
           <button
@@ -120,19 +161,23 @@ export function Header({
 
       {isOpen ? (
         <nav className="border-t border-black/10 bg-white px-4 py-4 md:hidden">
-          <div className="mb-4">
-            <label className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-gray-500">{languageLabel}</label>
-            <div className="relative">
-              <select
-                aria-label={languageLabel}
-                value={language}
-                onChange={(event) => onLanguageChange(event.target.value as "es" | "en")}
-                className="language-select h-11 w-full appearance-none rounded-xl border-2 border-gray-300 bg-white px-3 pr-10 text-sm font-semibold text-gray-700 outline-none transition hover:border-blue-500 focus:border-blue-500"
-              >
-                <option value="es">ESP</option>
-                <option value="en">ENG</option>
-              </select>
-              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">▾</span>
+          <div className="mb-4 rounded-2xl border border-gray-200 bg-gray-50 p-3">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-gray-500">{languageLabel}</p>
+            <div className="grid grid-cols-2 gap-2">
+              {languageOptions.map((option) => {
+                const active = option.value === language;
+
+                return (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => onLanguageChange(option.value)}
+                    className={`rounded-xl px-3 py-2 text-sm font-semibold transition ${active ? "bg-blue-600 text-white" : "bg-white text-gray-700 hover:border-blue-500 hover:text-blue-600"}`}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -153,5 +198,3 @@ export function Header({
     </header>
   );
 }
-
-
