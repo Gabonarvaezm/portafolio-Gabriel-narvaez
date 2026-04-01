@@ -70,7 +70,7 @@ const projectImages = [
 const content: Record<Language, PortfolioContent> = {
   es: {
     navItems: [
-      { href: "#sobre-mi", label: "Sobre mi" },
+      { href: "#sobre-mi", label: "Sobre mí" },
       { href: "#proyectos", label: "Proyectos" },
       { href: "#habilidades", label: "Habilidades" },
       { href: "#testimonios", label: "Testimonios" },
@@ -81,9 +81,9 @@ const content: Record<Language, PortfolioContent> = {
     lightLabel: "Modo claro",
     languageLabel: "Idioma",
     heroBadge: "Backend developer | Salmos 23:1",
-    heroLead: "Soy desarrollador web backend con mentalidad de liderazgo y enfoque colaborativo. Me destaco por priorizar el bienestar del equipo y construir soluciones eficientes y escalables. Psalm 23:1: El Se?or es mi pastor; nada me faltar?.",
+    heroLead: "Soy desarrollador web backend con mentalidad de liderazgo y enfoque colaborativo. Me destaco por priorizar el bienestar del equipo y construir soluciones eficientes y escalables. Salmos 23:1: El Señor es mi pastor; nada me faltará.",
     sections: {
-      about: "Sobre m?",
+      about: "Sobre mí",
       value: "Lo que aporto",
       projects: "Proyectos",
       experience: "Experiencia y enfoque",
