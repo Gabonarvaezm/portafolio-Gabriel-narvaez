@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -12,12 +12,18 @@ export function CustomCursor() {
 
     if (!finePointer || reducedMotion) {
       setEnabled(false);
-      document.documentElement.classList.remove("cursor-ready");
+      document.documentElement.classList.remove("cursor-ready", "cursor-visible", "cursor-pressed");
+      document.body.classList.remove("cursor-ready", "cursor-visible", "cursor-pressed");
       return;
     }
 
     setEnabled(true);
-    document.documentElement.classList.add("cursor-ready");
+    document.documentElement.classList.add("cursor-ready", "cursor-visible");
+    document.body.classList.add("cursor-ready", "cursor-visible");
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
 
     const cursor = document.querySelector<HTMLElement>("[data-cursor-shell]");
     const glow = document.querySelector<HTMLElement>("[data-cursor-glow]");
@@ -53,14 +59,14 @@ export function CustomCursor() {
       mouseY = event.clientY;
       const target = event.target as HTMLElement | null;
       setHovering(Boolean(target?.closest(interactiveSelector)));
-      document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
-      document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
+      document.documentElement.classList.add("cursor-visible");
+      document.body.classList.add("cursor-visible");
     };
 
-    const onDown = () => document.documentElement.classList.add("cursor-pressed");
-    const onUp = () => document.documentElement.classList.remove("cursor-pressed");
-    const onLeave = () => document.documentElement.classList.remove("cursor-visible");
-    const onEnter = () => document.documentElement.classList.add("cursor-visible");
+    const onDown = () => { document.documentElement.classList.add("cursor-pressed"); document.body.classList.add("cursor-pressed"); };
+    const onUp = () => { document.documentElement.classList.remove("cursor-pressed"); document.body.classList.remove("cursor-pressed"); };
+    const onLeave = () => { document.documentElement.classList.remove("cursor-visible"); document.body.classList.remove("cursor-visible"); };
+    const onEnter = () => { document.documentElement.classList.add("cursor-visible"); document.body.classList.add("cursor-visible"); };
 
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mousedown", onDown);
@@ -72,14 +78,15 @@ export function CustomCursor() {
 
     return () => {
       window.cancelAnimationFrame(raf);
-      document.documentElement.classList.remove("cursor-ready", "cursor-visible", "cursor-pressed");
+      document.documentElement.classList.remove("cursor-visible", "cursor-pressed", "cursor-ready");
+      document.body.classList.remove("cursor-visible", "cursor-pressed", "cursor-ready");
       document.removeEventListener("mousemove", onMove);
       document.removeEventListener("mousedown", onDown);
       document.removeEventListener("mouseup", onUp);
       document.removeEventListener("mouseleave", onLeave);
       document.removeEventListener("mouseenter", onEnter);
     };
-  }, []);
+  }, [enabled]);
 
   if (!enabled) return null;
 

@@ -2,16 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type Language = "es" | "en" | "zh" | "de";
+type ThemeMode = "light" | "dark";
+
 type HeaderProps = {
   navItems: Array<{ href: string; label: string }>;
   darkLabel: string;
   lightLabel: string;
   languageLabel: string;
-  language: "es" | "en" | "zh" | "de";
-  onLanguageChange: (language: "es" | "en" | "zh" | "de") => void;
+  language: Language;
+  onLanguageChange: (language: Language) => void;
 };
-
-type ThemeMode = "light" | "dark";
 
 function applyTheme(theme: ThemeMode) {
   const isDark = theme === "dark";
@@ -21,11 +22,11 @@ function applyTheme(theme: ThemeMode) {
   window.localStorage.setItem("portfolio-theme", theme);
 }
 
-const languageOptions = [
-  { value: "es" as const, label: "ESP" },
-  { value: "en" as const, label: "ENG" },
-  { value: "zh" as const, label: "中文" },
-  { value: "de" as const, label: "DEU" },
+const languageOptions: Array<{ value: Language; label: string }> = [
+  { value: "es", label: "ESP" },
+  { value: "en", label: "ENG" },
+  { value: "zh", label: "中文" },
+  { value: "de", label: "DEU" },
 ];
 
 export function Header({

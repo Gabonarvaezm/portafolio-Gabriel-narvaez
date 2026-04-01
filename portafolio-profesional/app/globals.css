@@ -1052,19 +1052,18 @@ body.theme-dark .language-control > div button.bg-blue-600 span:last-child {
 
 .cursor-ready,
 .cursor-ready body,
-.cursor-ready a,
-.cursor-ready button,
-.cursor-ready input,
-.cursor-ready textarea,
-.cursor-ready select,
-.cursor-ready label,
-.cursor-ready [role="button"] {
+.cursor-ready *,
+body.cursor-ready,
+body.cursor-ready * {
   cursor: none !important;
 }
 
 .cursor-ready.cursor-visible .custom-cursor-glow,
 .cursor-ready.cursor-visible .custom-cursor,
-.cursor-ready.cursor-visible .custom-cursor-dot {
+.cursor-ready.cursor-visible .custom-cursor-dot,
+body.cursor-ready.cursor-visible .custom-cursor-glow,
+body.cursor-ready.cursor-visible .custom-cursor,
+body.cursor-ready.cursor-visible .custom-cursor-dot {
   opacity: 1;
 }
 
@@ -1133,7 +1132,7 @@ body.theme-dark .custom-cursor-dot.is-hovering {
   box-shadow: 0 0 0 10px rgba(59,130,246,0.14), 0 0 30px rgba(56,189,248,0.52);
 }
 
-@media (pointer: coarse), (max-width: 900px) {
+@media (pointer: coarse) {
   .custom-cursor-glow,
   .custom-cursor,
   .custom-cursor-dot {
