@@ -535,7 +535,7 @@ export default function Home() {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={t.aboutSpotify.cta}
-                        className="lift-card reveal-item group flex min-h-[170px] flex-col items-center justify-center rounded-3xl border-2 border-gray-300 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-[#1DB954] hover:bg-[#1DB954] hover:text-white hover:shadow-[0_20px_45px_rgba(29,185,84,0.28)]"
+                        className="spotify-card lift-card reveal-item group flex min-h-[170px] flex-col items-center justify-center rounded-3xl border-2 border-gray-300 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-[#1DB954] hover:bg-[#1DB954] hover:text-white hover:shadow-[0_20px_45px_rgba(29,185,84,0.28)]"
                       >
                         <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-gray-300 bg-gray-100 text-gray-900 transition duration-300 group-hover:border-white/30 group-hover:bg-white/15 group-hover:text-white">
                           <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">

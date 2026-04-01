@@ -1151,3 +1151,26 @@ body.theme-dark .custom-cursor-dot.is-hovering {
     cursor: auto !important;
   }
 }
+
+
+html.theme-dark .portfolio-shell .spotify-card,
+body.theme-dark .portfolio-shell .spotify-card {
+  border-color: rgba(29, 185, 84, 0.28) !important;
+}
+
+html.theme-dark .portfolio-shell .spotify-card:hover,
+body.theme-dark .portfolio-shell .spotify-card:hover {
+  border-color: #1DB954 !important;
+  background: #1DB954 !important;
+  box-shadow:
+    0 30px 60px rgba(5, 46, 22, 0.38),
+    0 0 0 1px rgba(29,185,84,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.16) !important;
+}
+
+html.theme-dark .portfolio-shell .spotify-card:hover::before,
+body.theme-dark .portfolio-shell .spotify-card:hover::before,
+html.theme-dark .portfolio-shell .spotify-card:hover::after,
+body.theme-dark .portfolio-shell .spotify-card:hover::after {
+  opacity: 0 !important;
+}
