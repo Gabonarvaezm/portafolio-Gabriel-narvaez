@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
+import { CustomCursor } from "./components/CustomCursor";
 import { ScrollSection } from "./components/ScrollSection";
 
 type Language = "es" | "en" | "zh" | "de";
@@ -79,10 +80,10 @@ const content: Record<Language, PortfolioContent> = {
     darkLabel: "Modo dark",
     lightLabel: "Modo claro",
     languageLabel: "Idioma",
-    heroBadge: "Portafolio personal",
-    heroLead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.",
+    heroBadge: "Backend developer | Salmos 23:1",
+    heroLead: "Soy desarrollador web backend con mentalidad de liderazgo y enfoque colaborativo. Me destaco por priorizar el bienestar del equipo y construir soluciones eficientes y escalables. Psalm 23:1: El Se?or es mi pastor; nada me faltar?.",
     sections: {
-      about: "Sobre mi",
+      about: "Sobre m?",
       value: "Lo que aporto",
       projects: "Proyectos",
       experience: "Experiencia y enfoque",
@@ -98,48 +99,48 @@ const content: Record<Language, PortfolioContent> = {
       { number: "24/7", label: "Aprendizaje continuo" },
     ],
     aboutParagraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor in risus posuere luctus a sit amet lorem.",
+      "Me caracterizo por ser una persona altamente concentrada, disciplinada y comprometida con cada objetivo que asumo. Cuando me enfoco en una meta, trabajo con determinacion y constancia hasta hacerla realidad, cuidando cada detalle del proceso.",
+      "Soy cantautor y compositor con musica disponible en plataformas digitales. Tambien he liderado equipos de baloncesto en Pasto y grupos de baile en mi institucion, fortaleciendo liderazgo, trabajo en equipo y expresion artistica.",
     ],
     valueItems: [
-      { title: "Interfaces limpias", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere velit sed sem porta, nec efficitur lectus malesuada." },
-      { title: "Logica funcional", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eros a neque faucibus, at faucibus justo faucibus." },
-      { title: "Mejora constante", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae eros vel justo tristique fermentum in quis odio." },
+      { title: "Disciplina", text: "Mantengo constancia en el desarrollo de software, enfocandome en escribir codigo limpio, cumplir objetivos tecnicos y llevar cada proyecto backend hasta su correcta implementacion." },
+      { title: "Orden", text: "Estructuro sistemas y procesos de manera clara, aplicando buenas practicas que facilitan la escalabilidad, el mantenimiento del codigo y la eficiencia en el trabajo en equipo." },
+      { title: "Trabajo fluido", text: "Me adapto con facilidad a los flujos de desarrollo, colaborando eficazmente con equipos y manteniendo un ritmo constante que permite avanzar proyectos de forma agil y organizada." },
     ],
     projects: [
-      { title: "Dashboard de ventas", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
-      { title: "Landing para startup", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
-      { title: "Sistema de reservas", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
-      { title: "Portafolio interactivo", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Dashboard de ventas", description: "Panel administrativo orientado al seguimiento de ventas, metricas clave y visualizacion de rendimiento para apoyar la toma de decisiones con datos claros y accionables.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "Landing para startup", description: "Landing page pensada para presentar una propuesta de valor de forma clara, moderna y atractiva, con enfoque en conversion, estructura visual y adaptacion responsive.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Sistema de reservas", description: "Aplicacion enfocada en la gestion de reservas con operaciones CRUD, organizacion de informacion y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Portafolio interactivo", description: "Sitio personal disenado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegacion clara y enfoque academico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
     ],
-    timelineIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    timelineIntro: "Mi enfoque de trabajo se basa en planear con claridad, desarrollar con disciplina y mejorar continuamente cada entrega para lograr resultados funcionales, ordenados y escalables.",
     timeline: [
-      { phase: "Analisis y planeacion", title: "Organizo primero la estructura del proyecto", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lectus ac lacus dapibus, a auctor metus posuere.", tags: ["Wireframes", "Arquitectura UI", "Planificacion"] },
-      { phase: "Desarrollo", title: "Construyo interfaces y logica con enfoque practico", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet lorem non dui tincidunt, sed posuere augue condimentum.", tags: ["React", "Node.js", "APIs"] },
-      { phase: "Entrega y mejora", title: "Pulo detalles visuales y funcionales", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque neque et mi molestie, vel maximus lectus rutrum.", tags: ["Responsive", "Testing visual", "Refactor"] },
+      { phase: "Analisis y planeacion", title: "Organizo primero la estructura del proyecto", text: "Defino objetivos, estructura y prioridades antes de desarrollar, lo que me permite avanzar con orden, reducir errores y tomar decisiones tecnicas con mayor claridad.", tags: ["Wireframes", "Arquitectura UI", "Planificacion"] },
+      { phase: "Desarrollo", title: "Construyo interfaces y logica con enfoque practico", text: "Desarrollo soluciones priorizando funcionalidad, limpieza del codigo y colaboracion efectiva, buscando que cada modulo sea claro, util y facil de mantener.", tags: ["React", "Node.js", "APIs"] },
+      { phase: "Entrega y mejora", title: "Pulo detalles visuales y funcionales", text: "Reviso cada resultado para optimizar experiencia, estabilidad y presentacion final, aplicando ajustes que eleven la calidad general del proyecto.", tags: ["Responsive", "Testing visual", "Refactor"] },
     ],
-    skillsIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    skillsIntro: "Mi stack combina desarrollo frontend, backend, herramientas de trabajo moderno y bases de diseno orientadas a construir productos funcionales, escalables y visualmente claros.",
     skills: [
-      { title: "Frontend", items: ["Angular", "JavaScript", "React", "Next.js", "Vite", "Tailwind CSS", "CSS", "TypeScript"] },
-      { title: "Backend", items: ["Node.js", "Python", "MySQL", "SQLite", "Java", "Express.js"] },
-      { title: "Herramientas", items: ["Git y GitHub", "Postman", "VS Code", "Vercel", "Trello", "Notion"] },
-      { title: "Diseno", items: ["Figma", "Canva", "Wireframing", "Prototipado", "Diseno responsive", "Jerarquia visual"] },
+      { title: "Frontend", items: ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "Angular", "Responsive Design", "Bootstrap / Tailwind", "Consumo de APIs"] },
+      { title: "Backend", items: ["Node.js", "Express.js", "APIs REST", "Bases de datos (MySQL / MongoDB)", "Autenticacion (JWT)", "Arquitectura MVC"] },
+      { title: "Herramientas", items: ["Git & GitHub", "Postman", "Docker (basico)", "VS Code", "npm / yarn", "Linux (basico)"] },
+      { title: "Diseno", items: ["UI/UX basico", "Figma", "Prototipado", "Diseno responsive", "Principios de usabilidad"] },
     ],
     testimonials: [
-      { title: "Compañero de proyecto", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem eu turpis vestibulum, sed tincidunt neque sodales.", note: "Trabajo colaborativo y apoyo tecnico" },
-      { title: "Revision academica", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra augue at quam posuere, ac gravida risus porttitor.", note: "Enfoque integral y mejora continua" },
-      { title: "Cliente simulado", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue augue ac ipsum luctus, sed tristique tortor hendrerit.", note: "Claridad, criterio y funcionalidad" },
+      { title: "Compañero de proyecto", text: "Gabriel mantiene una actitud enfocada y colaborativa. Siempre busca que el trabajo avance con orden y que cada integrante del equipo pueda aportar de la mejor manera.", note: "Trabajo colaborativo y apoyo técnico" },
+      { title: "Revision academica", text: "Destaca por su disciplina, su interes por mejorar continuamente y su capacidad para presentar soluciones bien estructuradas tanto en lo tecnico como en lo visual.", note: "Enfoque integral y mejora continua" },
+      { title: "Cliente simulado", text: "Su trabajo transmite compromiso y claridad. Las propuestas que desarrolla se sienten organizadas, funcionales y pensadas para resolver necesidades reales.", note: "Claridad, criterio y funcionalidad" },
     ],
     learningCards: [
-      { title: "Temas que estoy fortaleciendo", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a nibh vel sem posuere finibus quis eu mauris.", items: ["Arquitectura de componentes", "Buenas practicas de backend", "Optimizacion responsive"] },
-      { title: "Enfoque de crecimiento", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget arcu quis mauris maximus varius a in quam.", items: ["Control de versiones", "Despliegue en la nube", "Documentacion tecnica"] },
-      { title: "Objetivo profesional", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue est sed mauris feugiat, id tristique nibh facilisis.", items: ["Aplicaciones completas", "Interfaces memorables", "Codigo mantenible"] },
+      { title: "Que estoy aprendiendo", text: "Actualmente estoy fortaleciendo mis conocimientos en diseno de interfaces, arquitecturas de software y computacionales, cloud computing y modelos transaccionales de datos para construir sistemas mas robustos y escalables.", items: ["Diseno de interfaces", "Cloud computing", "Modelos transaccionales de datos"] },
+      { title: "Que estoy mejorando", text: "Estoy enfocado en mejorar la calidad de mi codigo mediante buenas practicas de codigo limpio, asi como en el desarrollo de interfaces llamativas que brinden una mejor experiencia al usuario.", items: ["Codigo limpio", "Buenas practicas", "Interfaces llamativas"] },
+      { title: "Hacia donde quiero crecer", text: "Mi objetivo es crecer profesionalmente hasta crear mi propia empresa de software, desarrollando soluciones innovadoras y posicionandome como un referente reconocido a nivel mundial en la industria tecnologica.", items: ["Empresa de software", "Soluciones innovadoras", "Reconocimiento global"] },
     ],
-    contactIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    contactIntro: "Estoy abierto a nuevas oportunidades, colaboraciones y proyectos desafiantes; no dudes en contactarme si buscas compromiso, calidad y un enfoque profesional orientado a resultados.",
     contactItems: [
-      { title: "Correo", detail: "gabrielnarvaez.dev@gmail.com", symbol: "@" },
-      { title: "Telefono", detail: "+57 300 000 0000", symbol: "+" },
-      { title: "Ubicacion", detail: "Colombia, disponible para proyectos academicos y freelance", symbol: "#" },
+      { title: "Correo", detail: "gabrielnarvaez587@gmail.com", symbol: "@" },
+      { title: "Telefono", detail: "3205681399", symbol: "+" },
+      { title: "Ubicacion", detail: "Pasto, Colombia", symbol: "#" },
     ],
     socialLabel: "Redes y portafolio profesional",
     form: {
@@ -155,7 +156,7 @@ const content: Record<Language, PortfolioContent> = {
     },
     footer: {
       bioTitle: "Gabriel Narvaez",
-      bioText: "Portafolio orientado a mostrar desarrollo web, diseño de interfaces y crecimiento constante como futuro profesional full stack.",
+      bioText: "Desarrollador backend apasionado por crear soluciones eficientes, escalables y de alto impacto, combinando tecnologia, creatividad y liderazgo para aportar valor en cada proyecto.",
       sectionsTitle: "Secciones clave",
       contactTitle: "Contacto",
       copyright: "Portafolio academico de Gabriel Narvaez, 2026.",
@@ -173,8 +174,8 @@ const content: Record<Language, PortfolioContent> = {
     darkLabel: "深色模式",
     lightLabel: "浅色模式",
     languageLabel: "语言",
-    heroBadge: "个人作品集",
-    heroLead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.",
+    heroBadge: "后端开发者 | 诗篇 23:1",
+    heroLead: "我是后端网页开发者，具备领导思维和协作导向。我重视团队福祉，并专注于构建高效且可扩展的解决方案。Psalm 23:1: 耶和华是我的牧者，我必不致缺乏。",
     sections: {
       about: "关于我",
       value: "我的优势",
@@ -192,48 +193,48 @@ const content: Record<Language, PortfolioContent> = {
       { number: "24/7", label: "持续学习" },
     ],
     aboutParagraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor in risus posuere luctus a sit amet lorem.",
+      "我是一个高度专注、自律且对每个目标都非常投入的人。当我锁定一个目标时，我会以坚定与持续的努力去实现它，并认真照顾过程中的每一个细节。",
+      "我也是一名创作型歌手和词曲作者，作品已上线多个数字平台。此外，我还曾在帕斯托带领篮球队和校内舞蹈团队，这些经历进一步强化了我的领导力、团队合作与艺术表达能力。",
     ],
     valueItems: [
-      { title: "简洁界面", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere velit sed sem porta, nec efficitur lectus malesuada." },
-      { title: "功能逻辑", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eros a neque faucibus, at faucibus justo faucibus." },
-      { title: "持续改进", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae eros vel justo tristique fermentum in quis odio." },
+      { title: "自律", text: "我在软件开发中保持稳定节奏，专注于编写干净的代码、完成技术目标，并推动每个后端项目顺利落地。" },
+      { title: "条理", text: "我以清晰的方式组织系统与流程，应用良好实践来提升可扩展性、代码可维护性以及团队协作效率。" },
+      { title: "流畅协作", text: "我能快速适应开发流程，与团队高效配合，并保持稳定节奏，让项目以敏捷且有序的方式持续推进。" },
     ],
     projects: [
-      { title: "销售仪表盘", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
-      { title: "创业着陆页", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
-      { title: "预订系统", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
-      { title: "交互式作品集", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "销售仪表盘", description: "面向销售跟踪、关键指标监控和绩效可视化的管理面板，帮助基于清晰且可执行的数据做出决策。", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "创业着陆页", description: "用于清晰、现代且有吸引力地展示价值主张的着陆页，重点关注转化率、视觉结构和响应式适配。", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "预订系统", description: "专注于预订管理的应用，包含 CRUD 操作、信息组织以及面向用户与管理员的流畅体验。", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "交互式作品集", description: "用于展示个人简介、技能与项目的网站，具有吸引人的界面、清晰的导航和学术展示导向。", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
     ],
-    timelineIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    timelineIntro: "我的工作方式建立在清晰规划、纪律性开发以及持续改进每一次交付之上，以实现功能完善、有条理且可扩展的成果。",
     timeline: [
-      { phase: "分析与规划", title: "我先组织项目结构", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lectus ac lacus dapibus, a auctor metus posuere.", tags: ["Wireframes", "UI Architecture", "Planning"] },
-      { phase: "开发", title: "以实用思维构建界面与逻辑", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet lorem non dui tincidunt, sed posuere augue condimentum.", tags: ["React", "Node.js", "APIs"] },
-      { phase: "交付与优化", title: "打磨视觉与功能细节", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque neque et mi molestie, vel maximus lectus rutrum.", tags: ["Responsive", "Visual Testing", "Refactor"] },
+      { phase: "分析与规划", title: "我先组织项目结构", text: "在开发之前先定义目标、结构和优先级，这让我能够更有条理地推进、减少错误，并更清晰地做出技术决策。", tags: ["Wireframes", "UI Architecture", "Planning"] },
+      { phase: "开发", title: "以务实思维构建界面与逻辑", text: "我在开发解决方案时优先考虑功能性、代码整洁和高效协作，使每个模块都清晰、实用且易于维护。", tags: ["React", "Node.js", "APIs"] },
+      { phase: "交付与优化", title: "打磨视觉与功能细节", text: "我会审视每一次成果，优化体验、稳定性和最终呈现，并通过细节调整提升项目整体质量。", tags: ["Responsive", "Visual Testing", "Refactor"] },
     ],
-    skillsIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    skillsIntro: "我的技术栈结合了前端、后端、现代协作工具与设计基础，旨在打造功能完善、可扩展且视觉清晰的数字产品。",
     skills: [
-      { title: "前端", items: ["Angular", "JavaScript", "React", "Next.js", "Vite", "Tailwind CSS", "CSS", "TypeScript"] },
-      { title: "后端", items: ["Node.js", "Python", "MySQL", "SQLite", "Java", "Express.js"] },
-      { title: "工具", items: ["Git and GitHub", "Postman", "VS Code", "Vercel", "Trello", "Notion"] },
-      { title: "设计", items: ["Figma", "Canva", "Wireframing", "Prototyping", "Responsive design", "Visual hierarchy"] },
+      { title: "前端", items: ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "Angular", "响应式设计", "Bootstrap / Tailwind", "API 调用"] },
+      { title: "后端", items: ["Node.js", "Express.js", "REST API", "数据库 (MySQL / MongoDB)", "身份验证 (JWT)", "MVC 架构"] },
+      { title: "工具", items: ["Git & GitHub", "Postman", "Docker（基础）", "VS Code", "npm / yarn", "Linux（基础）"] },
+      { title: "设计", items: ["基础 UI/UX", "Figma", "原型设计", "响应式设计", "可用性原则"] },
     ],
     testimonials: [
-      { title: "项目伙伴", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem eu turpis vestibulum, sed tincidunt neque sodales.", note: "协作能力与技术支持" },
-      { title: "学术评审", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra augue at quam posuere, ac gravida risus porttitor.", note: "整体思维与持续改进" },
-      { title: "模拟客户", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue augue ac ipsum luctus, sed tristique tortor hendrerit.", note: "清晰、判断力与功能性" },
+      { title: "项目伙伴", text: "Gabriel 始终保持专注且善于协作。他不仅推动工作有序前进，也会让团队中的每个人都能更好地发挥自己的价值。", note: "协作能力与技术支持" },
+      { title: "学术评审", text: "他在纪律性、持续改进意识以及技术与视觉层面的结构化表达方面表现突出。", note: "整体思维与持续改进" },
+      { title: "模拟客户", text: "他的作品传达出责任感与清晰度，提出的方案有组织、可落地，并面向真实需求。", note: "清晰、判断力与功能性" },
     ],
     learningCards: [
-      { title: "正在强化的主题", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a nibh vel sem posuere finibus quis eu mauris.", items: ["组件架构", "后端最佳实践", "响应式优化"] },
-      { title: "成长方式", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget arcu quis mauris maximus varius a in quam.", items: ["版本控制", "云端部署", "技术文档"] },
-      { title: "职业目标", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue est sed mauris feugiat, id tristique nibh facilisis.", items: ["完整应用", "令人难忘的界面", "可维护代码"] },
+      { title: "我正在学习什么", text: "目前我正在加强界面设计、软件与计算架构、云计算以及事务型数据模型等方面的知识，目标是构建更稳健、更高可扩展性且更高效的系统。", items: ["界面设计", "云计算", "事务型数据模型"] },
+      { title: "我正在提升什么", text: "我正专注于通过干净代码的良好实践提升代码质量，同时也在加强具有吸引力的界面开发，为用户带来更好的体验。", items: ["干净代码", "良好实践", "更有吸引力的界面"] },
+      { title: "我希望成长到哪里", text: "我的目标是在职业发展中创建自己的软件公司，开发创新型解决方案，并成为全球技术行业中备受认可的标杆人物。", items: ["软件公司", "创新解决方案", "全球认可"] },
     ],
-    contactIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    contactIntro: "我愿意接受新的机会、合作与有挑战性的项目。如果你正在寻找责任感、质量与以结果为导向的专业方法，欢迎联系我。",
     contactItems: [
-      { title: "邮箱", detail: "gabrielnarvaez.dev@gmail.com", symbol: "@" },
-      { title: "电话", detail: "+57 300 000 0000", symbol: "+" },
-      { title: "地点", detail: "哥伦比亚，可参与学术与自由职业项目", symbol: "#" },
+      { title: "邮箱", detail: "gabrielnarvaez587@gmail.com", symbol: "@" },
+      { title: "电话", detail: "3205681399", symbol: "+" },
+      { title: "地点", detail: "哥伦比亚帕斯托", symbol: "#" },
     ],
     socialLabel: "社交链接与专业作品集",
     form: {
@@ -248,18 +249,18 @@ const content: Record<Language, PortfolioContent> = {
       submit: "发送消息",
     },
     footer: {
-      bioTitle: "Gabriel Narvaez",
-      bioText: "该作品集用于展示网页开发、界面设计以及作为未来全栈人才的持续成长。",
+      bioTitle: "Gabriel Narváez",
+      bioText: "热爱后端开发，专注于打造高效、可扩展且具有高影响力的解决方案，并将技术、创造力与领导力结合到每一个项目中。",
       sectionsTitle: "主要部分",
       contactTitle: "联系",
-      copyright: "Gabriel Narvaez 学术作品集，2026。",
+      copyright: "Gabriel Narváez 学术作品集，2026。",
     },
   },
   de: {
     navItems: [
-      { href: "#sobre-mi", label: "Über mich" },
+      { href: "#sobre-mi", label: "?ber mich" },
       { href: "#proyectos", label: "Projekte" },
-      { href: "#habilidades", label: "Fähigkeiten" },
+      { href: "#habilidades", label: "F?higkeiten" },
       { href: "#testimonios", label: "Referenzen" },
       { href: "#aprendizaje", label: "Lernen" },
       { href: "#contactos", label: "Kontakt" },
@@ -267,14 +268,14 @@ const content: Record<Language, PortfolioContent> = {
     darkLabel: "Dunkelmodus",
     lightLabel: "Hellmodus",
     languageLabel: "Sprache",
-    heroBadge: "Persönliches Portfolio",
-    heroLead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.",
+    heroBadge: "Backend-Entwickler | Psalm 23:1",
+    heroLead: "Ich bin Backend-Webentwickler mit F?hrungsmentalit?t und kollaborativem Ansatz. Ich lege Wert auf das Wohl des Teams und entwickle effiziente sowie skalierbare L?sungen. Psalm 23:1: Der Herr ist mein Hirte; mir wird nichts mangeln.",
     sections: {
-      about: "Über mich",
+      about: "?ber mich",
       value: "Mein Mehrwert",
       projects: "Projekte",
       experience: "Erfahrung und Ansatz",
-      skills: "Fähigkeiten",
+      skills: "F?higkeiten",
       testimonials: "Referenzen",
       learning: "Kontinuierliches Lernen",
       contacts: "Kontakt",
@@ -286,50 +287,50 @@ const content: Record<Language, PortfolioContent> = {
       { number: "24/7", label: "Kontinuierliches Lernen" },
     ],
     aboutParagraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor in risus posuere luctus a sit amet lorem.",
+      "Ich zeichne mich dadurch aus, dass ich konzentriert, diszipliniert und jedem Ziel, das ich übernehme, voll verpflichtet bin. Wenn ich mich auf ein Ziel fokussiere, arbeite ich mit Entschlossenheit und Beständigkeit daran, es zu erreichen, und achte dabei auf jedes Detail des Prozesses.",
+      "Ich bin außerdem Singer-Songwriter und Komponist mit musikalischer Laufbahn, deren Musik bereits auf verschiedenen digitalen Plattformen verfügbar ist. Darüber hinaus habe ich Basketballteams in Pasto sowie Tanzgruppen an meiner Institution geleitet und damit Führung, Teamarbeit und künstlerischen Ausdruck weiter gestärkt.",
     ],
     valueItems: [
-      { title: "Klare Interfaces", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere velit sed sem porta, nec efficitur lectus malesuada." },
-      { title: "Funktionale Logik", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eros a neque faucibus, at faucibus justo faucibus." },
-      { title: "Ständige Verbesserung", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae eros vel justo tristique fermentum in quis odio." },
+      { title: "Disziplin", text: "Ich arbeite im Softwareentwicklungsprozess konsequent und fokussiere mich darauf, sauberen Code zu schreiben, technische Ziele zu erreichen und jedes Backend-Projekt sauber umzusetzen." },
+      { title: "Ordnung", text: "Ich strukturiere Systeme und Prozesse klar und wende gute Praktiken an, die Skalierbarkeit, Wartbarkeit des Codes und Effizienz in der Teamarbeit verbessern." },
+      { title: "Flüssige Zusammenarbeit", text: "Ich passe mich Entwicklungsabläufen leicht an, arbeite effektiv mit Teams zusammen und halte ein konstantes Tempo, das Projekte agil und organisiert voranbringt." },
     ],
     projects: [
-      { title: "Verkaufs-Dashboard", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
-      { title: "Startup-Landingpage", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
-      { title: "Reservierungssystem", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
-      { title: "Interaktives Portfolio", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Verkaufs-Dashboard", description: "Administratives Dashboard zur Verfolgung von Verkaufszahlen, zentralen Kennzahlen und Leistungsvisualisierung, um Entscheidungen auf Basis klarer und nutzbarer Daten zu unterstützen.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "Startup-Landingpage", description: "Landingpage, die darauf ausgelegt ist, ein Wertversprechen klar, modern und attraktiv zu präsentieren, mit Fokus auf Conversion, visuelle Struktur und responsives Verhalten.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer flüssigen Erfahrung für Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Interaktives Portfolio", description: "Persönliche Website zur Darstellung des professionellen Profils, der Fähigkeiten und Projekte mit ansprechender Oberfläche, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
     ],
-    timelineIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    timelineIntro: "Mein Arbeitsansatz basiert auf klarer Planung, disziplinierter Entwicklung und kontinuierlicher Verbesserung jeder Lieferung, um funktionale, strukturierte und skalierbare Ergebnisse zu erreichen.",
     timeline: [
-      { phase: "Analyse und Planung", title: "Ich organisiere zuerst die Projektstruktur", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lectus ac lacus dapibus, a auctor metus posuere.", tags: ["Wireframes", "UI-Architektur", "Planung"] },
-      { phase: "Entwicklung", title: "Ich entwickle Interfaces und Logik mit praktischem Fokus", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet lorem non dui tincidunt, sed posuere augue condimentum.", tags: ["React", "Node.js", "APIs"] },
-      { phase: "Lieferung und Feinschliff", title: "Ich optimiere visuelle und funktionale Details", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque neque et mi molestie, vel maximus lectus rutrum.", tags: ["Responsive", "Visuelles Testing", "Refactor"] },
+      { phase: "Analyse und Planung", title: "Ich organisiere zuerst die Projektstruktur", text: "Vor der Entwicklung definiere ich Ziele, Struktur und Prioritäten. So kann ich geordnet vorgehen, Fehler reduzieren und technische Entscheidungen klarer treffen.", tags: ["Wireframes", "UI-Architektur", "Planung"] },
+      { phase: "Entwicklung", title: "Ich baue Interfaces und Logik mit praktischem Fokus", text: "Ich entwickle Lösungen mit Priorität auf Funktionalität, sauberem Code und effektiver Zusammenarbeit, damit jedes Modul klar, nützlich und wartbar bleibt.", tags: ["React", "Node.js", "APIs"] },
+      { phase: "Übergabe und Verbesserung", title: "Ich verfeinere visuelle und funktionale Details", text: "Ich überprüfe jedes Ergebnis, um Nutzererfahrung, Stabilität und finale Präsentation zu optimieren und so die Gesamtqualität des Projekts zu steigern.", tags: ["Responsive", "Visuelles Testing", "Refactor"] },
     ],
-    skillsIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    skillsIntro: "Mein Stack kombiniert Frontend- und Backend-Entwicklung, moderne Arbeitswerkzeuge und Designgrundlagen, um funktionale, skalierbare und visuell klare Produkte zu schaffen.",
     skills: [
-      { title: "Frontend", items: ["Angular", "JavaScript", "React", "Next.js", "Vite", "Tailwind CSS", "CSS", "TypeScript"] },
-      { title: "Backend", items: ["Node.js", "Python", "MySQL", "SQLite", "Java", "Express.js"] },
-      { title: "Werkzeuge", items: ["Git and GitHub", "Postman", "VS Code", "Vercel", "Trello", "Notion"] },
-      { title: "Design", items: ["Figma", "Canva", "Wireframing", "Prototyping", "Responsive Design", "Visuelle Hierarchie"] },
+      { title: "Frontend", items: ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "Angular", "Responsive Design", "Bootstrap / Tailwind", "API-Anbindung"] },
+      { title: "Backend", items: ["Node.js", "Express.js", "REST-APIs", "Datenbanken (MySQL / MongoDB)", "Authentifizierung (JWT)", "MVC-Architektur"] },
+      { title: "Werkzeuge", items: ["Git & GitHub", "Postman", "Docker (Grundlagen)", "VS Code", "npm / yarn", "Linux (Grundlagen)"] },
+      { title: "Design", items: ["UI/UX-Grundlagen", "Figma", "Prototyping", "Responsive Design", "Usability-Prinzipien"] },
     ],
     testimonials: [
-      { title: "Projektpartner", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem eu turpis vestibulum, sed tincidunt neque sodales.", note: "Zusammenarbeit und technischer Support" },
-      { title: "Akademische Bewertung", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra augue at quam posuere, ac gravida risus porttitor.", note: "Ganzheitlicher Ansatz und Verbesserung" },
-      { title: "Simulierter Kunde", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue augue ac ipsum luctus, sed tristique tortor hendrerit.", note: "Klarheit, Urteilskraft und Funktionalität" },
+      { title: "Projektpartner", text: "Gabriel arbeitet fokussiert und kollaborativ. Er sorgt dafür, dass die Arbeit geordnet vorangeht und jedes Teammitglied bestmöglich beitragen kann.", note: "Zusammenarbeit und technische Unterstützung" },
+      { title: "Akademische Bewertung", text: "Er überzeugt durch Disziplin, seinen Wunsch nach kontinuierlicher Verbesserung und seine Fähigkeit, technische wie visuelle Lösungen strukturiert zu präsentieren.", note: "Ganzheitlicher Ansatz und kontinuierliche Verbesserung" },
+      { title: "Simulierter Kunde", text: "Seine Arbeit vermittelt Verbindlichkeit und Klarheit. Die von ihm entwickelten Vorschläge wirken organisiert, funktional und auf reale Bedürfnisse ausgerichtet.", note: "Klarheit, Urteilskraft und Funktionalität" },
     ],
     learningCards: [
-      { title: "Themen, die ich vertiefe", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a nibh vel sem posuere finibus quis eu mauris.", items: ["Komponentenarchitektur", "Backend-Best-Practices", "Responsive Optimierung"] },
-      { title: "Wachstumsansatz", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget arcu quis mauris maximus varius a in quam.", items: ["Versionskontrolle", "Cloud-Deployment", "Technische Dokumentation"] },
-      { title: "Berufliches Ziel", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue est sed mauris feugiat, id tristique nibh facilisis.", items: ["Vollständige Anwendungen", "Einprägsame Interfaces", "Wartbarer Code"] },
+      { title: "Was ich gerade lerne", text: "Derzeit vertiefe ich mein Wissen in Interface-Design, Software- und Rechnerarchitekturen, Cloud Computing und transaktionalen Datenmodellen, um robustere, skalierbarere und effizientere Systeme zu entwickeln.", items: ["Interface-Design", "Cloud Computing", "Transaktionale Datenmodelle"] },
+      { title: "Was ich verbessere", text: "Ich konzentriere mich darauf, die Qualität meines Codes durch Clean-Code-Praktiken zu verbessern und gleichzeitig an auffälligen Interfaces zu arbeiten, die eine bessere Nutzererfahrung bieten.", items: ["Clean Code", "Gute Praktiken", "Auffällige Interfaces"] },
+      { title: "Wohin ich wachsen möchte", text: "Mein Ziel ist es, beruflich so zu wachsen, dass ich mein eigenes Softwareunternehmen gründen, innovative Lösungen entwickeln und weltweit als anerkannte Referenz in der Technologiebranche wahrgenommen werden kann.", items: ["Softwareunternehmen", "Innovative Lösungen", "Globale Anerkennung"] },
     ],
-    contactIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    contactIntro: "Ich bin offen für neue Möglichkeiten, Kooperationen und anspruchsvolle Projekte. Melde dich gern, wenn du Engagement, Qualität und einen professionellen, ergebnisorientierten Ansatz suchst.",
     contactItems: [
-      { title: "E-Mail", detail: "gabrielnarvaez.dev@gmail.com", symbol: "@" },
-      { title: "Telefon", detail: "+57 300 000 0000", symbol: "+" },
-      { title: "Standort", detail: "Kolumbien, verfügbar für akademische und Freelance-Projekte", symbol: "#" },
+      { title: "E-Mail", detail: "gabrielnarvaez587@gmail.com", symbol: "@" },
+      { title: "Telefon", detail: "3205681399", symbol: "+" },
+      { title: "Standort", detail: "Pasto, Kolumbien", symbol: "#" },
     ],
-    socialLabel: "Soziale Netzwerke und professionelles Portfolio",
+    socialLabel: "Soziale Links und professionelles Portfolio",
     form: {
       name: "Name",
       email: "E-Mail",
@@ -342,16 +343,16 @@ const content: Record<Language, PortfolioContent> = {
       submit: "Nachricht senden",
     },
     footer: {
-      bioTitle: "Gabriel Narvaez",
-      bioText: "Portfolio zur Präsentation von Webentwicklung, Interface-Design und stetigem Wachstum als zukünftiger Full-Stack-Profi.",
+      bioTitle: "Gabriel Narváez",
+      bioText: "Backend-Entwickler mit Leidenschaft für effiziente, skalierbare und wirkungsstarke Lösungen, der Technologie, Kreativität und Führung kombiniert, um in jedem Projekt Mehrwert zu schaffen.",
       sectionsTitle: "Wichtige Bereiche",
       contactTitle: "Kontakt",
-      copyright: "Akademisches Portfolio von Gabriel Narvaez, 2026.",
+      copyright: "Akademisches Portfolio von Gabriel Narváez, 2026.",
     },
   },
   en: {
     navItems: [
-      { href: "#sobre-mi", label: "About" },
+      { href: "#sobre-mi", label: "About me" },
       { href: "#proyectos", label: "Projects" },
       { href: "#habilidades", label: "Skills" },
       { href: "#testimonios", label: "Testimonials" },
@@ -361,8 +362,8 @@ const content: Record<Language, PortfolioContent> = {
     darkLabel: "Dark mode",
     lightLabel: "Light mode",
     languageLabel: "Language",
-    heroBadge: "Personal portfolio",
-    heroLead: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, justo ut aliquet viverra, augue risus consequat erat, sed fermentum sem nibh at lorem.",
+    heroBadge: "Backend developer | Psalm 23:1",
+    heroLead: "I am a backend web developer with a leadership mindset and a collaborative approach. I stand out for prioritizing team wellbeing and building efficient, scalable solutions. Psalm 23:1: The Lord is my shepherd; I shall not want.",
     sections: {
       about: "About me",
       value: "What I bring",
@@ -380,48 +381,48 @@ const content: Record<Language, PortfolioContent> = {
       { number: "24/7", label: "Continuous learning" },
     ],
     aboutParagraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat nibh in eros viverra, eu volutpat justo dignissim.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae tortor in risus posuere luctus a sit amet lorem.",
+      "I am known for being highly focused, disciplined, and committed to every goal I take on. When I set my mind on a goal, I work with determination and consistency until I make it real, taking care of every detail throughout the process.",
+      "I am also a singer-songwriter and composer with four months of experience, with music already available on several digital platforms. In addition, I have led basketball teams in Pasto and dance groups at my institution, strengthening my leadership, teamwork, and artistic expression.",
     ],
     valueItems: [
-      { title: "Clean interfaces", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere velit sed sem porta, nec efficitur lectus malesuada." },
-      { title: "Functional logic", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida eros a neque faucibus, at faucibus justo faucibus." },
-      { title: "Constant improvement", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae eros vel justo tristique fermentum in quis odio." },
+      { title: "Discipline", text: "I stay consistent in software development, focusing on writing clean code, meeting technical goals, and carrying every backend project through to proper implementation." },
+      { title: "Order", text: "I structure systems and processes clearly, applying best practices that improve scalability, code maintainability, and efficiency in teamwork." },
+      { title: "Smooth workflow", text: "I adapt easily to development workflows, collaborate effectively with teams, and keep a steady pace that helps projects move forward in an agile and organized way." },
     ],
     projects: [
-      { title: "Sales dashboard", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
-      { title: "Startup landing page", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
-      { title: "Booking system", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
-      { title: "Interactive portfolio", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Sales dashboard", description: "Administrative dashboard focused on sales tracking, key metrics, and performance visualization to support decision-making through clear and actionable data.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "Startup landing page", description: "Landing page designed to present a value proposition in a clear, modern, and attractive way, with focus on conversion, visual structure, and responsive adaptation.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Booking system", description: "Application focused on reservation management with CRUD operations, organized information handling, and a smooth experience for users and administrators.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Interactive portfolio", description: "Personal site designed to showcase professional profile, skills, and projects with an attractive interface, clear navigation, and an academic focus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
     ],
-    timelineIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    timelineIntro: "My work approach is based on clear planning, disciplined development, and continuous improvement in every delivery to achieve functional, organized, and scalable results.",
     timeline: [
-      { phase: "Analysis and planning", title: "I organize the project structure first", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lectus ac lacus dapibus, a auctor metus posuere.", tags: ["Wireframes", "UI architecture", "Planning"] },
-      { phase: "Development", title: "I build interfaces and logic with a practical mindset", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet lorem non dui tincidunt, sed posuere augue condimentum.", tags: ["React", "Node.js", "APIs"] },
-      { phase: "Delivery and polish", title: "I refine visual and functional details", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque neque et mi molestie, vel maximus lectus rutrum.", tags: ["Responsive", "Visual testing", "Refactor"] },
+      { phase: "Analysis and planning", title: "I organize the project structure first", text: "Before development, I define goals, structure, and priorities. This helps me move forward in an organized way, reduce errors, and make technical decisions more clearly.", tags: ["Wireframes", "UI Architecture", "Planning"] },
+      { phase: "Development", title: "I build interfaces and logic with a practical mindset", text: "I build solutions by prioritizing functionality, clean code, and effective collaboration so that every module remains clear, useful, and easy to maintain.", tags: ["React", "Node.js", "APIs"] },
+      { phase: "Delivery and improvement", title: "I refine visual and functional details", text: "I review each result to optimize experience, stability, and final presentation, applying improvements that raise the overall quality of the project.", tags: ["Responsive", "Visual testing", "Refactor"] },
     ],
-    skillsIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    skillsIntro: "My stack combines frontend and backend development, modern work tools, and design foundations focused on building functional, scalable, and visually clear products.",
     skills: [
-      { title: "Frontend", items: ["Angular", "JavaScript", "React", "Next.js", "Vite", "Tailwind CSS", "CSS", "TypeScript"] },
-      { title: "Backend", items: ["Node.js", "Python", "MySQL", "SQLite", "Java", "Express.js"] },
-      { title: "Tools", items: ["Git and GitHub", "Postman", "VS Code", "Vercel", "Trello", "Notion"] },
-      { title: "Design", items: ["Figma", "Canva", "Wireframing", "Prototyping", "Responsive design", "Visual hierarchy"] },
+      { title: "Frontend", items: ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "Angular", "Responsive Design", "Bootstrap / Tailwind", "API consumption"] },
+      { title: "Backend", items: ["Node.js", "Express.js", "REST APIs", "Databases (MySQL / MongoDB)", "Authentication (JWT)", "MVC architecture"] },
+      { title: "Tools", items: ["Git & GitHub", "Postman", "Docker (basic)", "VS Code", "npm / yarn", "Linux (basic)"] },
+      { title: "Design", items: ["Basic UI/UX", "Figma", "Prototyping", "Responsive design", "Usability principles"] },
     ],
     testimonials: [
-      { title: "Project teammate", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem eu turpis vestibulum, sed tincidunt neque sodales.", note: "Collaborative work and technical support" },
-      { title: "Academic review", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra augue at quam posuere, ac gravida risus porttitor.", note: "Holistic approach and constant improvement" },
-      { title: "Simulated client", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue augue ac ipsum luctus, sed tristique tortor hendrerit.", note: "Clarity, judgment, and functionality" },
+      { title: "Project teammate", text: "Gabriel keeps a focused and collaborative attitude. He always looks for ways to move the work forward in an organized way and help every team member contribute effectively.", note: "Collaborative work and technical support" },
+      { title: "Academic review", text: "He stands out for his discipline, his drive for continuous improvement, and his ability to present well-structured solutions both technically and visually.", note: "Holistic thinking and constant improvement" },
+      { title: "Simulated client", text: "His work communicates commitment and clarity. The proposals he develops feel organized, functional, and designed to solve real needs.", note: "Clarity, judgment, and functionality" },
     ],
     learningCards: [
-      { title: "Topics I am strengthening", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a nibh vel sem posuere finibus quis eu mauris.", items: ["Component architecture", "Backend best practices", "Responsive optimization"] },
-      { title: "Growth approach", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget arcu quis mauris maximus varius a in quam.", items: ["Version control", "Cloud deployment", "Technical documentation"] },
-      { title: "Professional goal", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue est sed mauris feugiat, id tristique nibh facilisis.", items: ["Complete applications", "Memorable interfaces", "Maintainable code"] },
+      { title: "What I am learning", text: "I am currently strengthening my knowledge in interface design, software and computer architectures, cloud computing, and transactional data models in order to build more robust, scalable, and efficient systems.", items: ["Interface design", "Cloud computing", "Transactional data models"] },
+      { title: "What I am improving", text: "I am focused on improving the quality of my code through clean code practices, as well as creating eye-catching interfaces that provide a better user experience.", items: ["Clean code", "Best practices", "Eye-catching interfaces"] },
+      { title: "Where I want to grow", text: "My goal is to grow professionally until I create my own software company, developing innovative solutions and becoming a globally recognized reference in the tech industry.", items: ["Software company", "Innovative solutions", "Global recognition"] },
     ],
-    contactIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    contactIntro: "I am open to new opportunities, collaborations, and challenging projects; feel free to contact me if you are looking for commitment, quality, and a professional approach focused on results.",
     contactItems: [
-      { title: "Email", detail: "gabrielnarvaez.dev@gmail.com", symbol: "@" },
-      { title: "Phone", detail: "+57 300 000 0000", symbol: "+" },
-      { title: "Location", detail: "Colombia, available for academic and freelance projects", symbol: "#" },
+      { title: "Email", detail: "gabrielnarvaez587@gmail.com", symbol: "@" },
+      { title: "Phone", detail: "3205681399", symbol: "+" },
+      { title: "Location", detail: "Pasto, Colombia", symbol: "#" },
     ],
     socialLabel: "Social links and professional portfolio",
     form: {
@@ -437,7 +438,7 @@ const content: Record<Language, PortfolioContent> = {
     },
     footer: {
       bioTitle: "Gabriel Narvaez",
-      bioText: "Portfolio focused on showcasing web development, interface design, and constant growth as a future full stack professional.",
+      bioText: "Backend developer passionate about creating efficient, scalable, and high-impact solutions, combining technology, creativity, and leadership to bring value to every project.",
       sectionsTitle: "Key sections",
       contactTitle: "Contact",
       copyright: "Academic portfolio by Gabriel Narvaez, 2026.",
@@ -473,6 +474,7 @@ export default function Home() {
 
   return (
     <div className="portfolio-shell min-h-screen bg-white">
+      <CustomCursor />
       <Header navItems={t.navItems} darkLabel={t.darkLabel} lightLabel={t.lightLabel} languageLabel={t.languageLabel} language={language} onLanguageChange={changeLanguage} />
       <main>
         <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden bg-gray-50 pt-16">
@@ -502,13 +504,13 @@ export default function Home() {
             <SectionTitle title={t.sections.about} />
             <div className="grid gap-12 md:grid-cols-2">
               <div className="reveal-stack space-y-6 text-gray-700">
-                {t.aboutParagraphs.map((paragraph) => (
-                  <p key={paragraph} className="reveal-item">{paragraph}</p>
+                {t.aboutParagraphs.map((paragraph, index) => (
+                  <p key={`${language}-about-${index}`} className="reveal-item">{paragraph}</p>
                 ))}
               </div>
               <div className="stagger-grid grid grid-cols-2 gap-6">
-                {t.stats.map((stat) => (
-                  <article key={stat.label} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.1)]">
+                {t.stats.map((stat, index) => (
+                  <article key={`${language}-stat-${index}`} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.1)]">
                     <div className="mb-2 text-3xl font-bold text-gray-900">{stat.number}</div>
                     <p className="text-sm text-gray-600">{stat.label}</p>
                   </article>
@@ -522,8 +524,8 @@ export default function Home() {
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="scale">
             <SectionTitle title={t.sections.value} />
             <div className="stagger-grid grid gap-6 md:grid-cols-3">
-              {t.valueItems.map((item) => (
-                <article key={item.title} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
+              {t.valueItems.map((item, index) => (
+                <article key={`${language}-value-${index}`} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
                   <h3 className="mb-4 text-xl font-semibold text-gray-900">{item.title}</h3>
                   <p className="text-gray-700">{item.text}</p>
                 </article>
@@ -536,8 +538,8 @@ export default function Home() {
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
             <SectionTitle title={t.sections.projects} />
             <div className="stagger-grid grid gap-8 sm:grid-cols-2">
-              {t.projects.map((project) => (
-                <article key={project.title} className="lift-card reveal-item overflow-hidden rounded-3xl border-2 border-gray-300 bg-white transition duration-300 hover:-translate-y-2 hover:border-gray-800 hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)]">
+              {t.projects.map((project, index) => (
+                <article key={`${language}-project-${index}`} className="lift-card reveal-item overflow-hidden rounded-3xl border-2 border-gray-300 bg-white transition duration-300 hover:-translate-y-2 hover:border-gray-800 hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)]">
                   <div className="aspect-video overflow-hidden border-b-2 border-gray-300 bg-gray-200">
                     <img src={project.image} alt={project.title} className="h-full w-full object-cover transition duration-700 hover:scale-110" />
                   </div>
@@ -545,8 +547,8 @@ export default function Home() {
                     <h3 className="text-xl font-semibold text-gray-900 transition duration-300 hover:text-blue-600">{project.title}</h3>
                     <p className="text-gray-700">{project.description}</p>
                     <div className="flex flex-wrap gap-2 pt-1">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="pill-animate rounded-full border border-gray-400 bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 hover:border-blue-500 hover:bg-blue-500 hover:text-white">{tag}</span>
+                      {project.tags.map((tag, tagIndex) => (
+                        <span key={`${language}-project-${index}-tag-${tagIndex}`} className="pill-animate rounded-full border border-gray-400 bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 hover:border-blue-500 hover:bg-blue-500 hover:text-white">{tag}</span>
                       ))}
                     </div>
                   </div>
@@ -561,15 +563,15 @@ export default function Home() {
             <SectionTitle title={t.sections.experience} />
             <p className="reveal-item mb-10 max-w-3xl text-gray-700">{t.timelineIntro}</p>
             <div className="stagger-grid space-y-4">
-              {t.timeline.map((item) => (
-                <article key={item.phase} className="lift-card reveal-item grid gap-4 rounded-3xl border-2 border-gray-300 bg-gray-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.08)] md:grid-cols-[180px_1fr]">
+              {t.timeline.map((item, index) => (
+                <article key={`${language}-timeline-${index}`} className="lift-card reveal-item grid gap-4 rounded-3xl border-2 border-gray-300 bg-gray-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.08)] md:grid-cols-[180px_1fr]">
                   <div className="pt-1 text-sm font-bold uppercase tracking-[0.12em] text-blue-600">{item.phase}</div>
                   <div>
                     <h3 className="mb-3 text-xl font-semibold text-gray-900">{item.title}</h3>
                     <p className="text-gray-700">{item.text}</p>
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {item.tags.map((tag) => (
-                        <span key={tag} className="pill-animate rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-semibold text-gray-700 hover:border-blue-500 hover:bg-blue-500 hover:text-white">{tag}</span>
+                      {item.tags.map((tag, tagIndex) => (
+                        <span key={`${language}-timeline-${index}-tag-${tagIndex}`} className="pill-animate rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-semibold text-gray-700 hover:border-blue-500 hover:bg-blue-500 hover:text-white">{tag}</span>
                       ))}
                     </div>
                   </div>
@@ -587,12 +589,12 @@ export default function Home() {
             <SectionTitle title={t.sections.skills} />
             <p className="reveal-item mb-10 max-w-3xl text-gray-700">{t.skillsIntro}</p>
             <div className="stagger-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {t.skills.map((category) => (
-                <article key={category.title} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-white p-6 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
+              {t.skills.map((category, index) => (
+                <article key={`${language}-skill-${index}`} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-white p-6 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
                   <h3 className="mb-4 text-lg font-semibold text-gray-900">{category.title}</h3>
                   <ul className="space-y-2 text-gray-700">
-                    {category.items.map((skill) => (
-                      <li key={skill} className="flex items-center gap-3 transition duration-300 hover:translate-x-1 hover:text-blue-600">
+                    {category.items.map((skill, skillIndex) => (
+                      <li key={`${language}-skill-${index}-item-${skillIndex}`} className="flex items-center gap-3 transition duration-300 hover:translate-x-1 hover:text-blue-600">
                         <span className="h-2 w-2 rounded-full bg-blue-500 transition duration-300 hover:scale-150" />
                         <span>{skill}</span>
                       </li>
@@ -608,8 +610,8 @@ export default function Home() {
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="scale">
             <SectionTitle title={t.sections.testimonials} />
             <div className="stagger-grid grid gap-6 md:grid-cols-3">
-              {t.testimonials.map((item) => (
-                <article key={item.title} className="lift-card reveal-item relative rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
+              {t.testimonials.map((item, index) => (
+                <article key={`${language}-testimonial-${index}`} className="lift-card reveal-item relative rounded-3xl border-2 border-gray-300 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
                   <div className="absolute right-5 top-4 text-6xl font-extrabold leading-none text-blue-100 transition duration-300">"</div>
                   <h3 className="mb-4 text-xl font-semibold text-gray-900">{item.title}</h3>
                   <p className="text-gray-700">{item.text}</p>
@@ -624,13 +626,13 @@ export default function Home() {
           <ScrollSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variant="up">
             <SectionTitle title={t.sections.learning} />
             <div className="stagger-grid grid gap-6 md:grid-cols-3">
-              {t.learningCards.map((card) => (
-                <article key={card.title} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-gray-50 p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
+              {t.learningCards.map((card, index) => (
+                <article key={`${language}-learning-${index}`} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 bg-gray-50 p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)]">
                   <h3 className="mb-4 text-xl font-semibold text-gray-900">{card.title}</h3>
                   <p className="text-gray-700">{card.text}</p>
                   <ul className="mt-5 space-y-3 text-gray-700">
-                    {card.items.map((item) => (
-                      <li key={item} className="flex items-start gap-3 transition duration-300 hover:translate-x-1 hover:text-blue-600"><span className="mt-2 h-2 w-2 rounded-full bg-blue-500" /><span>{item}</span></li>
+                    {card.items.map((item, itemIndex) => (
+                      <li key={`${language}-learning-${index}-item-${itemIndex}`} className="flex items-start gap-3 transition duration-300 hover:translate-x-1 hover:text-blue-600"><span className="mt-2 h-2 w-2 rounded-full bg-blue-500" /><span>{item}</span></li>
                     ))}
                   </ul>
                 </article>
@@ -646,8 +648,8 @@ export default function Home() {
               <div className="reveal-stack space-y-8">
                 <p className="reveal-item text-gray-700">{t.contactIntro}</p>
                 <div className="stagger-grid space-y-6 text-gray-700">
-                  {t.contactItems.map((item) => (
-                    <div key={item.title} className="lift-card reveal-item flex items-start gap-4 rounded-3xl border-2 border-transparent p-1 transition duration-300 hover:translate-x-1">
+                  {t.contactItems.map((item, index) => (
+                    <div key={`${language}-contact-${index}`} className="lift-card reveal-item flex items-start gap-4 rounded-3xl border-2 border-transparent p-1 transition duration-300 hover:translate-x-1">
                       <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border-2 border-gray-800 transition duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500 hover:text-white"><span className="text-lg">{item.symbol}</span></div>
                       <div className="pt-2">
                         <p className="font-medium text-gray-900">{item.title}</p>
@@ -659,8 +661,31 @@ export default function Home() {
                 <div className="reveal-stack pt-2">
                   <p className="reveal-item mb-4 text-gray-700">{t.socialLabel}</p>
                   <div className="stagger-grid flex gap-4">
-                    {["GitHub", "LinkedIn", "Twitter"].map((item) => (
-                      <div key={item} className="reveal-item flex h-12 w-12 cursor-pointer items-center justify-center rounded-xl border-2 border-gray-800 text-sm font-semibold transition duration-300 hover:scale-110 hover:rotate-6 hover:border-blue-500 hover:bg-blue-500 hover:text-white">{item.slice(0, 2)}</div>
+                    {[
+                      { label: "GitHub", href: "https://github.com/Gabonarvaezm" },
+                      { label: "LinkedIn", href: null },
+                      { label: "Twitter", href: null },
+                    ].map((item) => (
+                      item.href ? (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={item.label}
+                          className="reveal-item flex h-12 w-12 items-center justify-center rounded-xl border-2 border-gray-800 text-sm font-semibold transition duration-300 hover:scale-110 hover:rotate-6 hover:border-blue-500 hover:bg-blue-500 hover:text-white"
+                        >
+                          {item.label.slice(0, 2)}
+                        </a>
+                      ) : (
+                        <div
+                          key={item.label}
+                          aria-label={item.label}
+                          className="reveal-item flex h-12 w-12 items-center justify-center rounded-xl border-2 border-gray-800 text-sm font-semibold opacity-70 transition duration-300 hover:scale-110 hover:rotate-6 hover:border-blue-500 hover:bg-blue-500 hover:text-white"
+                        >
+                          {item.label.slice(0, 2)}
+                        </div>
+                      )
                     ))}
                   </div>
                 </div>
@@ -708,8 +733,8 @@ export default function Home() {
             <div className="reveal-item">
               <h3 className="mb-3 font-semibold">{t.footer.contactTitle}</h3>
               <ul className="space-y-1 text-sm text-gray-300">
-                {t.contactItems.map((item) => (
-                  <li key={item.title}>{item.detail}</li>
+                {t.contactItems.map((item, index) => (
+                  <li key={`${language}-footer-contact-${index}`}>{item.detail}</li>
                 ))}
               </ul>
             </div>
@@ -720,6 +745,8 @@ export default function Home() {
     </div>
   );
 }
+
+
 
 
 
