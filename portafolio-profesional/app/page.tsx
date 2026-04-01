@@ -27,6 +27,7 @@ type PortfolioContent = {
   };
   stats: Array<{ number: string; label: string }>;
   aboutParagraphs: string[];
+  aboutSpotify: { title: string; cta: string };
   valueItems: Array<{ title: string; text: string }>;
   projects: Array<{ title: string; description: string; tags: string[]; image: string }>;
   timelineIntro: string;
@@ -102,6 +103,10 @@ const content: Record<Language, PortfolioContent> = {
       "Me caracterizo por ser una persona altamente concentrada, disciplinada y comprometida con cada objetivo que asumo. Cuando me enfoco en una meta, trabajo con determinacion y constancia hasta hacerla realidad, cuidando cada detalle del proceso.",
       "Soy cantautor y compositor con musica disponible en plataformas digitales. Tambien he liderado equipos de baloncesto en Pasto y grupos de baile en mi institucion, fortaleciendo liderazgo, trabajo en equipo y expresion artistica.",
     ],
+    aboutSpotify: {
+      title: "Escucha mi perfil de artista en Spotify",
+      cta: "Abrir Spotify",
+    },
     valueItems: [
       { title: "Disciplina", text: "Mantengo constancia en el desarrollo de software, enfocandome en escribir codigo limpio, cumplir objetivos tecnicos y llevar cada proyecto backend hasta su correcta implementacion." },
       { title: "Orden", text: "Estructuro sistemas y procesos de manera clara, aplicando buenas practicas que facilitan la escalabilidad, el mantenimiento del codigo y la eficiencia en el trabajo en equipo." },
@@ -196,6 +201,10 @@ const content: Record<Language, PortfolioContent> = {
       "我是一个高度专注、自律且对每个目标都非常投入的人。当我锁定一个目标时，我会以坚定与持续的努力去实现它，并认真照顾过程中的每一个细节。",
       "我也是一名创作型歌手和词曲作者，作品已上线多个数字平台。此外，我还曾在帕斯托带领篮球队和校内舞蹈团队，这些经历进一步强化了我的领导力、团队合作与艺术表达能力。",
     ],
+    aboutSpotify: {
+      title: "在 Spotify 上收听我的艺术家主页",
+      cta: "打开 Spotify",
+    },
     valueItems: [
       { title: "自律", text: "我在软件开发中保持稳定节奏，专注于编写干净的代码、完成技术目标，并推动每个后端项目顺利落地。" },
       { title: "条理", text: "我以清晰的方式组织系统与流程，应用良好实践来提升可扩展性、代码可维护性以及团队协作效率。" },
@@ -290,6 +299,10 @@ const content: Record<Language, PortfolioContent> = {
       "Ich zeichne mich dadurch aus, dass ich konzentriert, diszipliniert und jedem Ziel, das ich übernehme, voll verpflichtet bin. Wenn ich mich auf ein Ziel fokussiere, arbeite ich mit Entschlossenheit und Beständigkeit daran, es zu erreichen, und achte dabei auf jedes Detail des Prozesses.",
       "Ich bin außerdem Singer-Songwriter und Komponist mit musikalischer Laufbahn, deren Musik bereits auf verschiedenen digitalen Plattformen verfügbar ist. Darüber hinaus habe ich Basketballteams in Pasto sowie Tanzgruppen an meiner Institution geleitet und damit Führung, Teamarbeit und künstlerischen Ausdruck weiter gestärkt.",
     ],
+    aboutSpotify: {
+      title: "Höre dir mein Künstlerprofil auf Spotify an",
+      cta: "Spotify öffnen",
+    },
     valueItems: [
       { title: "Disziplin", text: "Ich arbeite im Softwareentwicklungsprozess konsequent und fokussiere mich darauf, sauberen Code zu schreiben, technische Ziele zu erreichen und jedes Backend-Projekt sauber umzusetzen." },
       { title: "Ordnung", text: "Ich strukturiere Systeme und Prozesse klar und wende gute Praktiken an, die Skalierbarkeit, Wartbarkeit des Codes und Effizienz in der Teamarbeit verbessern." },
@@ -384,6 +397,10 @@ const content: Record<Language, PortfolioContent> = {
       "I am known for being highly focused, disciplined, and committed to every goal I take on. When I set my mind on a goal, I work with determination and consistency until I make it real, taking care of every detail throughout the process.",
       "I am also a singer-songwriter and composer with four months of experience, with music already available on several digital platforms. In addition, I have led basketball teams in Pasto and dance groups at my institution, strengthening my leadership, teamwork, and artistic expression.",
     ],
+    aboutSpotify: {
+      title: "Listen to my artist profile on Spotify",
+      cta: "Open Spotify",
+    },
     valueItems: [
       { title: "Discipline", text: "I stay consistent in software development, focusing on writing clean code, meeting technical goals, and carrying every backend project through to proper implementation." },
       { title: "Order", text: "I structure systems and processes clearly, applying best practices that improve scalability, code maintainability, and efficiency in teamwork." },
@@ -509,12 +526,35 @@ export default function Home() {
                 ))}
               </div>
               <div className="stagger-grid grid grid-cols-2 gap-6">
-                {t.stats.map((stat, index) => (
-                  <article key={`${language}-stat-${index}`} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.1)]">
-                    <div className="mb-2 text-3xl font-bold text-gray-900">{stat.number}</div>
-                    <p className="text-sm text-gray-600">{stat.label}</p>
-                  </article>
-                ))}
+                {t.stats.map((stat, index) => {
+                  if (index === 3) {
+                    return (
+                      <a
+                        key={`${language}-stat-spotify`}
+                        href="https://open.spotify.com/intl-es/artist/0asCsOcP5TLr6ArtffLlXK?si=17cpzDNyTbiCY_IWRyjKUg"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={t.aboutSpotify.cta}
+                        className="lift-card reveal-item group flex min-h-[170px] flex-col items-center justify-center rounded-3xl border-2 border-gray-300 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-[#1DB954] hover:bg-[#1DB954] hover:text-white hover:shadow-[0_20px_45px_rgba(29,185,84,0.28)]"
+                      >
+                        <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-gray-300 bg-gray-100 text-gray-900 transition duration-300 group-hover:border-white/30 group-hover:bg-white/15 group-hover:text-white">
+                          <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+                            <path d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.512 10.512 0 0 0 12 1.5Zm4.818 15.15a.656.656 0 0 1-.903.217 10.77 10.77 0 0 0-5.917-1.597 14.97 14.97 0 0 0-3.07.332.656.656 0 0 1-.266-1.286 16.29 16.29 0 0 1 3.336-.36 12.095 12.095 0 0 1 6.6 1.81.656.656 0 0 1 .22.884Zm1.286-2.87a.82.82 0 0 1-1.13.272 13.57 13.57 0 0 0-7.08-1.84 18.4 18.4 0 0 0-3.577.381.82.82 0 1 1-.319-1.609 20.09 20.09 0 0 1 3.896-.408 15.14 15.14 0 0 1 7.94 2.088.82.82 0 0 1 .27 1.116Zm.111-2.988A16.16 16.16 0 0 0 9.9 8.58a21.47 21.47 0 0 0-4.142.427.984.984 0 1 1-.372-1.932A23.46 23.46 0 0 1 9.9 6.612a18.07 18.07 0 0 1 9.297 2.492.984.984 0 0 1-.982 1.688Z" />
+                          </svg>
+                        </span>
+                        <div className="mb-2 text-3xl font-bold text-gray-900 transition duration-300 group-hover:text-white">Spotify</div>
+                        <p className="text-sm text-gray-600 transition duration-300 group-hover:text-white/90">{t.aboutSpotify.cta}</p>
+                      </a>
+                    );
+                  }
+
+                  return (
+                    <article key={`${language}-stat-${index}`} className="lift-card reveal-item rounded-3xl border-2 border-gray-300 p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_18px_36px_rgba(0,0,0,0.1)]">
+                      <div className="mb-2 text-3xl font-bold text-gray-900">{stat.number}</div>
+                      <p className="text-sm text-gray-600">{stat.label}</p>
+                    </article>
+                  );
+                })}
               </div>
             </div>
           </ScrollSection>
