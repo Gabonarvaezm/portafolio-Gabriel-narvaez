@@ -28,6 +28,7 @@ type PortfolioContent = {
   stats: Array<{ number: string; label: string }>;
   aboutParagraphs: string[];
   aboutSpotify: { title: string; cta: string };
+  aboutYoutube: { title: string; cta: string; message: string };
   valueItems: Array<{ title: string; text: string }>;
   projects: Array<{ title: string; description: string; tags: string[]; image: string }>;
   timelineIntro: string;
@@ -106,6 +107,11 @@ const content: Record<Language, PortfolioContent> = {
     aboutSpotify: {
       title: "Escucha mi perfil de artista en Spotify",
       cta: "Abrir Spotify",
+    },
+    aboutYoutube: {
+      title: "YouTube",
+      cta: "Abrir video",
+      message: "Haz click y mira mis mejores jugadas jugando baloncesto",
     },
     valueItems: [
       { title: "Disciplina", text: "Mantengo constancia en el desarrollo de software, enfocandome en escribir codigo limpio, cumplir objetivos tecnicos y llevar cada proyecto backend hasta su correcta implementacion." },
@@ -205,6 +211,11 @@ const content: Record<Language, PortfolioContent> = {
       title: "在 Spotify 上收听我的艺术家主页",
       cta: "打开 Spotify",
     },
+    aboutYoutube: {
+      title: "YouTube",
+      cta: "????",
+      message: "???????????????",
+    },
     valueItems: [
       { title: "自律", text: "我在软件开发中保持稳定节奏，专注于编写干净的代码、完成技术目标，并推动每个后端项目顺利落地。" },
       { title: "条理", text: "我以清晰的方式组织系统与流程，应用良好实践来提升可扩展性、代码可维护性以及团队协作效率。" },
@@ -303,6 +314,11 @@ const content: Record<Language, PortfolioContent> = {
       title: "Höre dir mein Künstlerprofil auf Spotify an",
       cta: "Spotify öffnen",
     },
+    aboutYoutube: {
+      title: "YouTube",
+      cta: "Video ?ffnen",
+      message: "Klicke hier und sieh dir meine besten Basketball-Spielz?ge an",
+    },
     valueItems: [
       { title: "Disziplin", text: "Ich arbeite im Softwareentwicklungsprozess konsequent und fokussiere mich darauf, sauberen Code zu schreiben, technische Ziele zu erreichen und jedes Backend-Projekt sauber umzusetzen." },
       { title: "Ordnung", text: "Ich strukturiere Systeme und Prozesse klar und wende gute Praktiken an, die Skalierbarkeit, Wartbarkeit des Codes und Effizienz in der Teamarbeit verbessern." },
@@ -400,6 +416,11 @@ const content: Record<Language, PortfolioContent> = {
     aboutSpotify: {
       title: "Listen to my artist profile on Spotify",
       cta: "Open Spotify",
+    },
+    aboutYoutube: {
+      title: "YouTube",
+      cta: "Open video",
+      message: "Click and watch my best basketball highlights",
     },
     valueItems: [
       { title: "Discipline", text: "I stay consistent in software development, focusing on writing clean code, meeting technical goals, and carrying every backend project through to proper implementation." },
@@ -527,6 +548,27 @@ export default function Home() {
               </div>
               <div className="stagger-grid grid grid-cols-2 gap-6">
                 {t.stats.map((stat, index) => {
+                  if (index === 2) {
+                    return (
+                      <a
+                        key={`${language}-stat-youtube`}
+                        href="https://youtu.be/1M-Jk-_WPFQ?si=ykBpBeEjYa7w52SV"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={t.aboutYoutube.cta}
+                        className="youtube-card lift-card reveal-item group flex min-h-[170px] flex-col items-center justify-center rounded-3xl border-2 border-gray-300 bg-white p-6 text-center transition duration-300 hover:-translate-y-2 hover:border-[#dc2626] hover:bg-[#dc2626] hover:text-white hover:shadow-[0_20px_45px_rgba(220,38,38,0.28)]"
+                      >
+                        <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-gray-300 bg-gray-100 text-gray-900 transition duration-300 group-hover:border-white/30 group-hover:bg-white/15 group-hover:text-white">
+                          <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+                            <path d="M23.5 6.2a3.06 3.06 0 0 0-2.15-2.17C19.47 3.5 12 3.5 12 3.5s-7.47 0-9.35.53A3.06 3.06 0 0 0 .5 6.2 32.4 32.4 0 0 0 0 12a32.4 32.4 0 0 0 .5 5.8 3.06 3.06 0 0 0 2.15 2.17C4.53 20.5 12 20.5 12 20.5s7.47 0 9.35-.53a3.06 3.06 0 0 0 2.15-2.17A32.4 32.4 0 0 0 24 12a32.4 32.4 0 0 0-.5-5.8ZM9.6 15.43V8.57L15.82 12Z" />
+                          </svg>
+                        </span>
+                        <div className="mb-2 text-3xl font-bold text-gray-900 transition duration-300 group-hover:text-white">{t.aboutYoutube.title}</div>
+                        <p className="text-sm text-gray-600 transition duration-300 group-hover:text-white/90">{t.aboutYoutube.message}</p>
+                      </a>
+                    );
+                  }
+
                   if (index === 3) {
                     return (
                       <a

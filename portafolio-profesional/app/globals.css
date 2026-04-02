@@ -1727,3 +1727,52 @@ body.theme-dark .portfolio-shell > footer,
 body.theme-dark .portfolio-shell footer {
   background: linear-gradient(180deg, #120404 0%, #050505 100%) !important;
 }
+
+
+html.theme-dark .portfolio-shell .youtube-card,
+body.theme-dark .portfolio-shell .youtube-card {
+  border-color: rgba(220, 38, 38, 0.28) !important;
+}
+
+html.theme-dark .portfolio-shell .youtube-card:hover,
+body.theme-dark .portfolio-shell .youtube-card:hover {
+  border-color: #dc2626 !important;
+  background: #dc2626 !important;
+  box-shadow:
+    0 30px 60px rgba(69, 10, 10, 0.4),
+    0 0 0 1px rgba(220,38,38,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.16) !important;
+}
+
+html.theme-dark .portfolio-shell .youtube-card:hover::before,
+body.theme-dark .portfolio-shell .youtube-card:hover::before,
+html.theme-dark .portfolio-shell .youtube-card:hover::after,
+body.theme-dark .portfolio-shell .youtube-card:hover::after {
+  opacity: 0 !important;
+}
+
+html.theme-dark .portfolio-shell a.youtube-card:hover,
+html.theme-dark .portfolio-shell a.youtube-card:hover.bg-white,
+body.theme-dark .portfolio-shell a.youtube-card:hover,
+body.theme-dark .portfolio-shell a.youtube-card:hover.bg-white {
+  background: #dc2626 !important;
+  background-image: none !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+html.theme-dark .portfolio-shell a.youtube-card:hover span,
+html.theme-dark .portfolio-shell a.youtube-card:hover div,
+html.theme-dark .portfolio-shell a.youtube-card:hover p,
+body.theme-dark .portfolio-shell a.youtube-card:hover span,
+body.theme-dark .portfolio-shell a.youtube-card:hover div,
+body.theme-dark .portfolio-shell a.youtube-card:hover p {
+  color: #ffffff !important;
+}
+
+html.theme-dark .portfolio-shell a.youtube-card:hover > span:first-child,
+body.theme-dark .portfolio-shell a.youtube-card:hover > span:first-child {
+  background: rgba(255,255,255,0.16) !important;
+  border-color: rgba(255,255,255,0.3) !important;
+  color: #ffffff !important;
+}
