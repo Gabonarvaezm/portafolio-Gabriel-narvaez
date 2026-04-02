@@ -7,10 +7,9 @@ export function CustomCursor() {
   const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(hover: none)").matches;
 
-    if (!finePointer || reducedMotion) {
+    if (isTouchDevice) {
       setEnabled(false);
       document.documentElement.classList.remove("cursor-ready", "cursor-visible", "cursor-pressed");
       document.body.classList.remove("cursor-ready", "cursor-visible", "cursor-pressed");
@@ -20,6 +19,11 @@ export function CustomCursor() {
     setEnabled(true);
     document.documentElement.classList.add("cursor-ready", "cursor-visible");
     document.body.classList.add("cursor-ready", "cursor-visible");
+
+    return () => {
+      document.documentElement.classList.remove("cursor-ready", "cursor-visible", "cursor-pressed");
+      document.body.classList.remove("cursor-ready", "cursor-visible", "cursor-pressed");
+    };
   }, []);
 
   useEffect(() => {
@@ -37,19 +41,23 @@ export function CustomCursor() {
     let ringY = mouseY;
     let glowX = mouseX;
     let glowY = mouseY;
+    let dotX = mouseX;
+    let dotY = mouseY;
     let raf = 0;
 
     const interactiveSelector = "a, button, input, textarea, select, label, [role='button'], [data-cursor='interactive']";
 
     const render = () => {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
-      glowX += (mouseX - glowX) * 0.1;
-      glowY += (mouseY - glowY) * 0.1;
+      ringX += (mouseX - ringX) * 0.48;
+      ringY += (mouseY - ringY) * 0.48;
+      glowX += (mouseX - glowX) * 0.32;
+      glowY += (mouseY - glowY) * 0.32;
+      dotX += (mouseX - dotX) * 0.72;
+      dotY += (mouseY - dotY) * 0.72;
 
       cursor.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
       glow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0)`;
-      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0)`;
 
       raf = window.requestAnimationFrame(render);
     };
@@ -63,28 +71,47 @@ export function CustomCursor() {
       document.body.classList.add("cursor-visible");
     };
 
-    const onDown = () => { document.documentElement.classList.add("cursor-pressed"); document.body.classList.add("cursor-pressed"); };
-    const onUp = () => { document.documentElement.classList.remove("cursor-pressed"); document.body.classList.remove("cursor-pressed"); };
-    const onLeave = () => { document.documentElement.classList.remove("cursor-visible"); document.body.classList.remove("cursor-visible"); };
-    const onEnter = () => { document.documentElement.classList.add("cursor-visible"); document.body.classList.add("cursor-visible"); };
+    const onDown = () => {
+      document.documentElement.classList.add("cursor-pressed");
+      document.body.classList.add("cursor-pressed");
+    };
 
-    document.addEventListener("mousemove", onMove);
+    const onUp = () => {
+      document.documentElement.classList.remove("cursor-pressed");
+      document.body.classList.remove("cursor-pressed");
+    };
+
+    const onLeave = () => {
+      document.documentElement.classList.remove("cursor-visible");
+      document.body.classList.remove("cursor-visible");
+    };
+
+    const onEnter = () => {
+      document.documentElement.classList.add("cursor-visible");
+      document.body.classList.add("cursor-visible");
+    };
+
+    document.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("mousemove", onMove, { passive: true });
     document.addEventListener("mousedown", onDown);
     document.addEventListener("mouseup", onUp);
     document.addEventListener("mouseleave", onLeave);
     document.addEventListener("mouseenter", onEnter);
+    window.addEventListener("blur", onLeave);
+    window.addEventListener("focus", onEnter);
 
     raf = window.requestAnimationFrame(render);
 
     return () => {
       window.cancelAnimationFrame(raf);
-      document.documentElement.classList.remove("cursor-visible", "cursor-pressed", "cursor-ready");
-      document.body.classList.remove("cursor-visible", "cursor-pressed", "cursor-ready");
       document.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mousedown", onDown);
       document.removeEventListener("mouseup", onUp);
       document.removeEventListener("mouseleave", onLeave);
       document.removeEventListener("mouseenter", onEnter);
+      window.removeEventListener("blur", onLeave);
+      window.removeEventListener("focus", onEnter);
     };
   }, [enabled]);
 
@@ -93,9 +120,8 @@ export function CustomCursor() {
   return (
     <>
       <div data-cursor-glow className={`custom-cursor-glow${hovering ? " is-hovering" : ""}`} />
-      <div data-cursor-shell className={`custom-cursor${hovering ? " is-hovering" : ""}`}>
-        <span data-cursor-dot className={`custom-cursor-dot${hovering ? " is-hovering" : ""}`} />
-      </div>
+      <div data-cursor-shell className={`custom-cursor${hovering ? " is-hovering" : ""}`} />
+      <div data-cursor-dot className={`custom-cursor-dot${hovering ? " is-hovering" : ""}`} />
     </>
   );
 }

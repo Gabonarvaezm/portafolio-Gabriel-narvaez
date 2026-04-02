@@ -1010,44 +1010,44 @@ body.theme-dark .language-control > div button.bg-blue-600 span:last-child {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 100;
+  z-index: 9999;
   opacity: 0;
   transition: opacity .24s ease, transform .22s ease, width .22s ease, height .22s ease, border-color .22s ease, background-color .22s ease, box-shadow .22s ease;
 }
 
 .custom-cursor-glow {
-  width: 54px;
-  height: 54px;
-  margin-left: -27px;
-  margin-top: -27px;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+  margin-top: -35px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(59,130,246,0.18), rgba(59,130,246,0.02) 62%, transparent 74%);
-  mix-blend-mode: multiply;
-  filter: blur(10px);
-  z-index: 96;
+  background: radial-gradient(circle, rgba(220,38,38,0.24), rgba(220,38,38,0.04) 58%, transparent 76%);
+  filter: blur(12px);
+  z-index: 9997;
 }
 
 .custom-cursor {
-  width: 34px;
-  height: 34px;
-  margin-left: -17px;
-  margin-top: -17px;
-  border-radius: 9999px;
-  border: 1.6px solid rgba(15, 23, 42, 0.58);
-  background: linear-gradient(135deg, rgba(255,255,255,0.46), rgba(255,255,255,0.12));
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255,255,255,0.45);
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  margin-top: -15px;
+  border-radius: 10px;
+  border: 1.8px solid rgba(185, 28, 28, 0.88);
+  background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(254,226,226,0.08));
+  box-shadow: 0 12px 30px rgba(127, 29, 29, 0.2), inset 0 1px 0 rgba(255,255,255,0.34);
+  transform: rotate(45deg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 .custom-cursor-dot {
-  width: 8px;
-  height: 8px;
-  margin-left: -4px;
-  margin-top: -4px;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #2563eb, #60a5fa);
-  box-shadow: 0 0 0 6px rgba(37,99,235,0.08), 0 0 20px rgba(59,130,246,0.34);
+  background: linear-gradient(135deg, #ef4444, #991b1b);
+  box-shadow: 0 0 0 8px rgba(220,38,38,0.12), 0 0 24px rgba(220,38,38,0.34);
 }
 
 .cursor-ready,
@@ -1058,39 +1058,39 @@ body.cursor-ready * {
   cursor: none !important;
 }
 
-.cursor-ready.cursor-visible .custom-cursor-glow,
-.cursor-ready.cursor-visible .custom-cursor,
-.cursor-ready.cursor-visible .custom-cursor-dot,
-body.cursor-ready.cursor-visible .custom-cursor-glow,
-body.cursor-ready.cursor-visible .custom-cursor,
-body.cursor-ready.cursor-visible .custom-cursor-dot {
+.cursor-ready .custom-cursor-glow,
+.cursor-ready .custom-cursor,
+.cursor-ready .custom-cursor-dot,
+body.cursor-ready .custom-cursor-glow,
+body.cursor-ready .custom-cursor,
+body.cursor-ready .custom-cursor-dot {
   opacity: 1;
 }
 
 .custom-cursor.is-hovering {
-  width: 52px;
-  height: 52px;
-  margin-left: -26px;
-  margin-top: -26px;
-  border-color: rgba(37, 99, 235, 0.72);
-  background: linear-gradient(135deg, rgba(191,219,254,0.48), rgba(96,165,250,0.18));
-  box-shadow: 0 18px 36px rgba(37,99,235,0.18), inset 0 1px 0 rgba(255,255,255,0.56);
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  margin-top: -22px;
+  border-color: rgba(239, 68, 68, 0.96);
+  background: linear-gradient(135deg, rgba(254,226,226,0.36), rgba(220,38,38,0.14));
+  box-shadow: 0 18px 38px rgba(127,29,29,0.24), 0 0 0 1px rgba(239,68,68,0.22), inset 0 1px 0 rgba(255,255,255,0.44);
 }
 
 .custom-cursor-dot.is-hovering {
-  width: 12px;
-  height: 12px;
-  margin-left: -6px;
-  margin-top: -6px;
-  box-shadow: 0 0 0 10px rgba(37,99,235,0.12), 0 0 28px rgba(59,130,246,0.46);
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  margin-top: -7px;
+  box-shadow: 0 0 0 12px rgba(220,38,38,0.14), 0 0 30px rgba(220,38,38,0.4);
 }
 
 .custom-cursor-glow.is-hovering {
-  width: 82px;
-  height: 82px;
-  margin-left: -41px;
-  margin-top: -41px;
-  background: radial-gradient(circle, rgba(59,130,246,0.24), rgba(59,130,246,0.04) 56%, transparent 74%);
+  width: 92px;
+  height: 92px;
+  margin-left: -46px;
+  margin-top: -46px;
+  background: radial-gradient(circle, rgba(220,38,38,0.28), rgba(220,38,38,0.05) 56%, transparent 74%);
 }
 
 .cursor-ready.cursor-pressed .custom-cursor {
@@ -1103,33 +1103,32 @@ body.cursor-ready.cursor-visible .custom-cursor-dot {
 
 html.theme-dark .custom-cursor,
 body.theme-dark .custom-cursor {
-  border-color: rgba(148, 197, 255, 0.72);
-  background: linear-gradient(135deg, rgba(15,23,42,0.78), rgba(30,41,59,0.34));
-  box-shadow: 0 14px 34px rgba(2,8,23,0.3), inset 0 1px 0 rgba(191,219,254,0.14);
+  border-color: rgba(248, 113, 113, 0.86);
+  background: linear-gradient(135deg, rgba(18,18,18,0.82), rgba(127,29,29,0.24));
+  box-shadow: 0 14px 34px rgba(0,0,0,0.34), inset 0 1px 0 rgba(254,226,226,0.12);
 }
 
 html.theme-dark .custom-cursor-dot,
 body.theme-dark .custom-cursor-dot {
-  background: linear-gradient(135deg, #93c5fd, #38bdf8);
-  box-shadow: 0 0 0 6px rgba(96,165,250,0.12), 0 0 24px rgba(56,189,248,0.34);
+  background: linear-gradient(135deg, #f87171, #b91c1c);
+  box-shadow: 0 0 0 8px rgba(220,38,38,0.12), 0 0 24px rgba(239,68,68,0.34);
 }
 
 html.theme-dark .custom-cursor-glow,
 body.theme-dark .custom-cursor-glow {
-  background: radial-gradient(circle, rgba(56,189,248,0.22), rgba(56,189,248,0.04) 58%, transparent 74%);
-  mix-blend-mode: screen;
+  background: radial-gradient(circle, rgba(220,38,38,0.24), rgba(220,38,38,0.04) 58%, transparent 74%);
 }
 
 html.theme-dark .custom-cursor.is-hovering,
 body.theme-dark .custom-cursor.is-hovering {
-  border-color: rgba(147,197,253,0.9);
-  background: linear-gradient(135deg, rgba(30,41,59,0.9), rgba(37,99,235,0.22));
-  box-shadow: 0 18px 40px rgba(2,8,23,0.42), 0 0 0 1px rgba(96,165,250,0.2);
+  border-color: rgba(252, 165, 165, 0.96);
+  background: linear-gradient(135deg, rgba(32,10,10,0.92), rgba(220,38,38,0.22));
+  box-shadow: 0 18px 40px rgba(0,0,0,0.42), 0 0 0 1px rgba(248,113,113,0.22);
 }
 
 html.theme-dark .custom-cursor-dot.is-hovering,
 body.theme-dark .custom-cursor-dot.is-hovering {
-  box-shadow: 0 0 0 10px rgba(59,130,246,0.14), 0 0 30px rgba(56,189,248,0.52);
+  box-shadow: 0 0 0 12px rgba(220,38,38,0.14), 0 0 30px rgba(248,113,113,0.44);
 }
 
 @media (pointer: coarse) {
@@ -1775,4 +1774,17 @@ body.theme-dark .portfolio-shell a.youtube-card:hover > span:first-child {
   background: rgba(255,255,255,0.16) !important;
   border-color: rgba(255,255,255,0.3) !important;
   color: #ffffff !important;
+}
+
+
+html.cursor-ready,
+html.cursor-ready body,
+html.cursor-ready a,
+html.cursor-ready button,
+html.cursor-ready input,
+html.cursor-ready textarea,
+html.cursor-ready select,
+html.cursor-ready label,
+html.cursor-ready [role="button"] {
+  cursor: none !important;
 }
