@@ -213,8 +213,8 @@ const content: Record<Language, PortfolioContent> = {
     },
     aboutYoutube: {
       title: "YouTube",
-      cta: "????",
-      message: "???????????????",
+      cta: "打开视频",
+      message: "点击查看我打篮球时最精彩的片段",
     },
     valueItems: [
       { title: "自律", text: "我在软件开发中保持稳定节奏，专注于编写干净的代码、完成技术目标，并推动每个后端项目顺利落地。" },
