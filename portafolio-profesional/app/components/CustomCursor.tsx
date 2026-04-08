@@ -48,12 +48,12 @@ export function CustomCursor() {
     const interactiveSelector = "a, button, input, textarea, select, label, [role='button'], [data-cursor='interactive']";
 
     const render = () => {
-      ringX += (mouseX - ringX) * 0.48;
-      ringY += (mouseY - ringY) * 0.48;
-      glowX += (mouseX - glowX) * 0.32;
-      glowY += (mouseY - glowY) * 0.32;
-      dotX += (mouseX - dotX) * 0.72;
-      dotY += (mouseY - dotY) * 0.72;
+      ringX = mouseX;
+      ringY = mouseY;
+      glowX = mouseX;
+      glowY = mouseY;
+      dotX = mouseX;
+      dotY = mouseY;
 
       cursor.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
       glow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0)`;
@@ -125,4 +125,5 @@ export function CustomCursor() {
     </>
   );
 }
+
 
