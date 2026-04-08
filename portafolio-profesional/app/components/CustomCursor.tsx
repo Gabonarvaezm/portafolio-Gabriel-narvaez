@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function CustomCursor() {
   const [enabled, setEnabled] = useState(false);
   const [hovering, setHovering] = useState(false);
+  const cursorRef = useRef<HTMLDivElement | null>(null);
+  const dotRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(hover: none)").matches;
@@ -27,44 +29,17 @@ export function CustomCursor() {
   }, []);
 
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled || !cursorRef.current || !dotRef.current) return;
 
-    const cursor = document.querySelector<HTMLElement>("[data-cursor-shell]");
-    const glow = document.querySelector<HTMLElement>("[data-cursor-glow]");
-    const dot = document.querySelector<HTMLElement>("[data-cursor-dot]");
-
-    if (!cursor || !glow || !dot) return;
-
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let ringX = mouseX;
-    let ringY = mouseY;
-    let glowX = mouseX;
-    let glowY = mouseY;
-    let dotX = mouseX;
-    let dotY = mouseY;
-    let raf = 0;
-
+    const cursor = cursorRef.current;
+    const dot = dotRef.current;
     const interactiveSelector = "a, button, input, textarea, select, label, [role='button'], [data-cursor='interactive']";
 
-    const render = () => {
-      ringX = mouseX;
-      ringY = mouseY;
-      glowX = mouseX;
-      glowY = mouseY;
-      dotX = mouseX;
-      dotY = mouseY;
-
-      cursor.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
-      glow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0)`;
-      dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0)`;
-
-      raf = window.requestAnimationFrame(render);
-    };
-
     const onMove = (event: MouseEvent) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
+      const { clientX, clientY } = event;
+      cursor.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
+      dot.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
+
       const target = event.target as HTMLElement | null;
       setHovering(Boolean(target?.closest(interactiveSelector)));
       document.documentElement.classList.add("cursor-visible");
@@ -92,7 +67,6 @@ export function CustomCursor() {
     };
 
     document.addEventListener("mousemove", onMove, { passive: true });
-    window.addEventListener("mousemove", onMove, { passive: true });
     document.addEventListener("mousedown", onDown);
     document.addEventListener("mouseup", onUp);
     document.addEventListener("mouseleave", onLeave);
@@ -100,12 +74,8 @@ export function CustomCursor() {
     window.addEventListener("blur", onLeave);
     window.addEventListener("focus", onEnter);
 
-    raf = window.requestAnimationFrame(render);
-
     return () => {
-      window.cancelAnimationFrame(raf);
       document.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mousedown", onDown);
       document.removeEventListener("mouseup", onUp);
       document.removeEventListener("mouseleave", onLeave);
@@ -119,11 +89,8 @@ export function CustomCursor() {
 
   return (
     <>
-      <div data-cursor-glow className={`custom-cursor-glow${hovering ? " is-hovering" : ""}`} />
-      <div data-cursor-shell className={`custom-cursor${hovering ? " is-hovering" : ""}`} />
-      <div data-cursor-dot className={`custom-cursor-dot${hovering ? " is-hovering" : ""}`} />
+      <div ref={cursorRef} className={`custom-cursor${hovering ? " is-hovering" : ""}`} />
+      <div ref={dotRef} className={`custom-cursor-dot${hovering ? " is-hovering" : ""}`} />
     </>
   );
 }
-
-
