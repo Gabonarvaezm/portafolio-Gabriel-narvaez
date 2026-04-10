@@ -762,15 +762,6 @@ export default function Home() {
                           </svg>
                         ),
                       },
-                      {
-                        label: "Twitter",
-                        href: null,
-                        icon: (
-                          <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
-                            <path d="M17.53 3H21l-7.58 8.66L22.5 21h-7.11l-5.57-6.73L3.93 21H.46l8.11-9.27L0 3h7.29l5.03 6.09L17.53 3Zm-1.22 15.93h1.92L6.25 4.97H4.19Z" />
-                          </svg>
-                        ),
-                      },
                     ].map((item) => (
                       item.href ? (
                         <a
