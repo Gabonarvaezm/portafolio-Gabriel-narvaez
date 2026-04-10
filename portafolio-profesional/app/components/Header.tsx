@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -25,7 +25,7 @@ function applyTheme(theme: ThemeMode) {
 const languageOptions: Array<{ value: Language; label: string }> = [
   { value: "es", label: "ESP" },
   { value: "en", label: "ENG" },
-  { value: "zh", label: "中文" },
+  { value: "zh", label: "\u4e2d\u6587" },
   { value: "de", label: "DEU" },
 ];
 
@@ -106,7 +106,7 @@ export function Header({
             >
               <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500">{languageLabel}</span>
               <span className="rounded-md bg-gray-100 px-2 py-1 text-sm text-gray-800">{activeLanguage}</span>
-              <span className={`text-xs text-gray-500 transition ${langOpen ? "rotate-180" : ""}`}>▾</span>
+              <span className={`text-xs text-gray-500 transition ${langOpen ? "rotate-180" : ""}`}>{"\u25be"}</span>
             </button>
 
             {langOpen ? (
@@ -137,15 +137,15 @@ export function Header({
 
           <button
             type="button"
-            aria-label="Cambiar tema"
+            aria-label={mounted && isDark ? lightLabel : darkLabel}
+            title={mounted && isDark ? lightLabel : darkLabel}
             aria-pressed={isDark}
             onClick={toggleTheme}
-            className="flex h-10 min-w-[108px] items-center justify-center gap-2 rounded-xl border-2 border-gray-300 bg-white px-3 text-sm font-semibold text-gray-700 transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-gray-300 bg-white text-sm font-semibold text-gray-700 transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600"
           >
             <span className={`text-base transition-transform duration-300 ${mounted && isDark ? "rotate-0 scale-100" : "rotate-180 scale-95"}`}>
-              {mounted && isDark ? "☀" : "☾"}
+              {mounted && isDark ? "\u2600" : "\u263e"}
             </span>
-            <span>{mounted && isDark ? lightLabel : darkLabel}</span>
           </button>
 
           <button
@@ -201,3 +201,4 @@ export function Header({
     </header>
   );
 }
+
