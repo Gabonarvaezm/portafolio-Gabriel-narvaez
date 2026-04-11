@@ -152,7 +152,7 @@ export const content: Record<Language, PortfolioContent> = {
 
     languageLabel: "Idioma",
 
-    heroBadge: "Desarrollador backend | Salmos 23:1",
+    heroBadge: "Desarrollador FullStack | Salmos 23:1",
 
     heroLead: "Soy desarrollador web backend con mentalidad de liderazgo y enfoque colaborativo. Me destaco por priorizar el bienestar del equipo y construir soluciones eficientes y escalables. Salmos 23:1: El Señor es mi pastor; nada me faltará.",
 
@@ -358,9 +358,9 @@ export const content: Record<Language, PortfolioContent> = {
 
     languageLabel: "??",
 
-    heroBadge: "????? | ?? 23:1",
+    heroBadge: "?????? | ?? 23:1",
 
-    heroLead: "?????????,???????????????????,??????????????????Psalm 23:1: ????????,???????",
+    heroLead: "??????????,???????????????????,?????????????????? Psalm 23:1: ????????,???????",
 
     sections: {
 
@@ -564,7 +564,7 @@ export const content: Record<Language, PortfolioContent> = {
 
     languageLabel: "Sprache",
 
-    heroBadge: "Backend-Entwickler | Psalm 23:1",
+    heroBadge: "FullStack-Entwickler | Psalm 23:1",
 
     heroLead: "Ich bin Backend-Webentwickler mit Führungsmentalität und kollaborativem Ansatz. Ich lege Wert auf das Wohl des Teams und entwickle effiziente sowie skalierbare Lösungen. Psalm 23:1: Der Herr ist mein Hirte; mir wird nichts mangeln.",
 
@@ -770,9 +770,9 @@ export const content: Record<Language, PortfolioContent> = {
 
     languageLabel: "Language",
 
-    heroBadge: "Backend developer | Psalm 23:1",
+    heroBadge: "FullStack developer | Psalm 23:1",
 
-    heroLead: "I am a backend web developer with a leadership mindset and a collaborative approach. I stand out for prioritizing team wellbeing and building efficient, scalable solutions. Psalm 23:1: The Lord is my shepherd; I shall not want.",
+    heroLead: "I am a fullStack web developer with a leadership mindset and a collaborative approach. I stand out for prioritizing team wellbeing and building efficient, scalable solutions. Psalm 23:1: The Lord is my shepherd; I shall not want.",
 
     sections: {
 
