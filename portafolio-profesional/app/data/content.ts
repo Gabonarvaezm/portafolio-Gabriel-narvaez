@@ -264,11 +264,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     testimonials: [
 
-      { title: "Compañero de proyecto", text: "Gabriel mantiene una actitud enfocada y colaborativa. Siempre busca que el trabajo avance con orden y que cada integrante del equipo pueda aportar de la mejor manera.", note: "Trabajo colaborativo y apoyo técnico" },
+      { title: "Javier Narvaez", text: "Gabriel demuestra compromiso, disciplina y una gran capacidad para trabajar en equipo. Su forma de desarrollar soluciones transmite orden, responsabilidad y una visi\u00f3n profesional orientada a resultados reales.", note: "Liderazgo, criterio y enfoque profesional" },
 
-      { title: "Revisión académica", text: "Destaca por su disciplina, su interés por mejorar continuamente y su capacidad para presentar soluciones bien estructuradas tanto en lo técnico como en lo visual.", note: "Enfoque integral y mejora continua" },
+      { title: "Julio Coral", text: "Su desempe\u00f1o destaca por la claridad con la que organiza ideas, propone soluciones funcionales y mantiene una actitud colaborativa durante todo el proceso de trabajo. Es un perfil confiable y constante.", note: "Organizaci\u00f3n, constancia y trabajo colaborativo" },
 
-      { title: "Cliente simulado", text: "Su trabajo transmite compromiso y claridad. Las propuestas que desarrolla se sienten organizadas, funcionales y pensadas para resolver necesidades reales.", note: "Claridad, criterio y funcionalidad" },
+      { title: "Juan Pati\u00f1o", text: "Gabriel proyecta una imagen profesional s\u00f3lida. Se nota su inter\u00e9s por mejorar continuamente, cuidar los detalles t\u00e9cnicos y entregar trabajos que combinan calidad visual, estructura y funcionalidad.", note: "Mejora continua y calidad de entrega" },
 
     ],
 
@@ -470,11 +470,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     testimonials: [
 
-      { title: "\u9879\u76ee\u5408\u4f5c\u8005", text: "Gabriel \u4fdd\u6301\u4e13\u6ce8\u4e14\u5177\u6709\u534f\u4f5c\u7cbe\u795e\u3002\u4ed6\u603b\u662f\u8ba9\u5de5\u4f5c\u6709\u6761\u4e0d\u7d0a\u5730\u5411\u524d\u63a8\u8fdb\uff0c\u5e76\u4fdd\u8bc1\u56e2\u961f\u6bcf\u4e2a\u6210\u5458\u90fd\u80fd\u6709\u6548\u8d21\u732e\u3002", note: "\u534f\u4f5c\u4e0e\u6280\u672f\u652f\u6301" },
+      { title: "Javier Narvaez", text: "Gabriel \u5c55\u73b0\u51fa\u8d23\u4efb\u611f\u3001\u7eaa\u5f8b\u6027\u4ee5\u53ca\u5f88\u5f3a\u7684\u56e2\u961f\u5408\u4f5c\u80fd\u529b\u3002\u4ed6\u5f00\u53d1\u89e3\u51b3\u65b9\u6848\u7684\u65b9\u5f0f\u4f53\u73b0\u51fa\u6761\u7406\u3001\u62c5\u5f53\u4ee5\u53ca\u9762\u5411\u771f\u5b9e\u6210\u679c\u7684\u4e13\u4e1a\u601d\u7ef4\u3002", note: "\u9886\u5bfc\u529b\u3001\u5224\u65ad\u529b\u4e0e\u4e13\u4e1a\u5bfc\u5411" },
 
-      { title: "\u5b66\u672f\u8bc4\u4ef7", text: "\u4ed6\u4ee5\u7eaa\u5f8b\u6027\u3001\u6301\u7eed\u8fdb\u6b65\u7684\u610f\u8bc6\u4ee5\u53ca\u5728\u6280\u672f\u548c\u89c6\u89c9\u4e24\u65b9\u9762\u6e05\u6670\u5448\u73b0\u89e3\u51b3\u65b9\u6848\u7684\u80fd\u529b\u800c\u8131\u9896\u800c\u51fa\u3002", note: "\u5168\u5c40\u601d\u7ef4\u4e0e\u6301\u7eed\u6539\u8fdb" },
+      { title: "Julio Coral", text: "\u4ed6\u7684\u8868\u73b0\u7a81\u51fa\u4e4b\u5904\u5728\u4e8e\u80fd\u591f\u6e05\u6670\u7ec4\u7ec7\u60f3\u6cd5\u3001\u63d0\u51fa\u5b9e\u7528\u65b9\u6848\uff0c\u5e76\u5728\u6574\u4e2a\u5de5\u4f5c\u8fc7\u7a0b\u4e2d\u4fdd\u6301\u534f\u4f5c\u6001\u5ea6\u3002\u4ed6\u662f\u4e00\u4e2a\u53ef\u9760\u4e14\u7a33\u5b9a\u7684\u5408\u4f5c\u5bf9\u8c61\u3002", note: "\u7ec4\u7ec7\u80fd\u529b\u3001\u7a33\u5b9a\u6027\u4e0e\u56e2\u961f\u534f\u4f5c" },
 
-      { title: "\u6a21\u62df\u5ba2\u6237", text: "\u4ed6\u7684\u5de5\u4f5c\u4f20\u8fbe\u51fa\u627f\u8bfa\u611f\u4e0e\u6e05\u6670\u5ea6\u3002\u4ed6\u63d0\u51fa\u7684\u65b9\u6848\u663e\u5f97\u6709\u7ec4\u7ec7\u3001\u5b9e\u7528\uff0c\u5e76\u9762\u5411\u771f\u5b9e\u9700\u6c42\u3002", note: "\u6e05\u6670\u5ea6\u3001\u5224\u65ad\u529b\u4e0e\u529f\u80fd\u6027" },
+      { title: "Juan Pati\u00f1o", text: "Gabriel \u5c55\u73b0\u51fa\u624e\u5b9e\u7684\u4e13\u4e1a\u5f62\u8c61\u3002\u4ed6\u5bf9\u6301\u7eed\u8fdb\u6b65\u3001\u6280\u672f\u7ec6\u8282\u4ee5\u53ca\u517c\u987e\u89c6\u89c9\u8d28\u91cf\u3001\u7ed3\u6784\u4e0e\u529f\u80fd\u6027\u4ea4\u4ed8\u6210\u679c\u7684\u91cd\u89c6\u975e\u5e38\u660e\u663e\u3002", note: "\u6301\u7eed\u63d0\u5347\u4e0e\u4ea4\u4ed8\u8d28\u91cf" },
 
     ],
 
@@ -675,11 +675,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     testimonials: [
 
-      { title: "Projektpartner", text: "Gabriel arbeitet fokussiert und kollaborativ. Er sorgt dafür, dass die Arbeit geordnet vorangeht und jedes Teammitglied bestmöglich beitragen kann.", note: "Zusammenarbeit und technische Unterstützung" },
+      { title: "Javier Narvaez", text: "Gabriel zeigt Engagement, Disziplin und eine starke F\u00e4higkeit zur Teamarbeit. Die Art, wie er L\u00f6sungen entwickelt, vermittelt Struktur, Verantwortung und eine professionelle Ausrichtung auf echte Ergebnisse.", note: "F\u00fchrung, Urteilsverm\u00f6gen und professioneller Fokus" },
 
-      { title: "Akademische Bewertung", text: "Er überzeugt durch Disziplin, seinen Wunsch nach kontinuierlicher Verbesserung und seine Fähigkeit, technische wie visuelle Lösungen strukturiert zu präsentieren.", note: "Ganzheitlicher Ansatz und kontinuierliche Verbesserung" },
+      { title: "Julio Coral", text: "Seine Leistung f\u00e4llt durch die Klarheit auf, mit der er Ideen ordnet, funktionale L\u00f6sungen vorschl\u00e4gt und w\u00e4hrend des gesamten Arbeitsprozesses eine kooperative Haltung beibeh\u00e4lt. Er ist ein verl\u00e4ssliches und konstantes Profil.", note: "Organisation, Best\u00e4ndigkeit und Teamarbeit" },
 
-      { title: "Simulierter Kunde", text: "Seine Arbeit vermittelt Verbindlichkeit und Klarheit. Die von ihm entwickelten Vorschläge wirken organisiert, funktional und auf reale Bedürfnisse ausgerichtet.", note: "Klarheit, Urteilskraft und Funktionalität" },
+      { title: "Juan Pati\u00f1o", text: "Gabriel vermittelt ein solides professionelles Bild. Sein Interesse an kontinuierlicher Verbesserung, technischer Sorgfalt und an Arbeiten, die visuelle Qualit\u00e4t, Struktur und Funktionalit\u00e4t verbinden, ist deutlich erkennbar.", note: "Kontinuierliche Verbesserung und Lieferqualit\u00e4t" },
 
     ],
 
@@ -881,11 +881,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     testimonials: [
 
-      { title: "Project teammate", text: "Gabriel keeps a focused and collaborative attitude. He always looks for ways to move the work forward in an organized way and help every team member contribute effectively.", note: "Collaborative work and technical support" },
+      { title: "Javier Narvaez", text: "Gabriel shows commitment, discipline, and a strong ability to work with others. The way he builds solutions reflects structure, responsibility, and a professional mindset focused on real results.", note: "Leadership, judgment, and professional focus" },
 
-      { title: "Academic review", text: "He stands out for his discipline, his drive for continuous improvement, and his ability to present well-structured solutions both technically and visually.", note: "Holistic thinking and constant improvement" },
+      { title: "Julio Coral", text: "His performance stands out for the clarity with which he organizes ideas, proposes functional solutions, and keeps a collaborative attitude throughout the entire work process. He is a reliable and consistent profile.", note: "Organization, consistency, and teamwork" },
 
-      { title: "Simulated client", text: "His work communicates commitment and clarity. The proposals he develops feel organized, functional, and designed to solve real needs.", note: "Clarity, judgment, and functionality" },
+      { title: "Juan Pati\u00f1o", text: "Gabriel projects a solid professional image. His interest in continuous improvement, technical detail, and delivering work that combines visual quality, structure, and functionality is evident.", note: "Continuous improvement and delivery quality" },
 
     ],
 
