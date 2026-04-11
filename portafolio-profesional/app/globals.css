@@ -1745,3 +1745,137 @@ html.cursor-ready label,
 html.cursor-ready [role="button"] {
   cursor: none !important;
 }
+
+/* Mobile dark menu fixes */
+@media (max-width: 767px) {
+  html.theme-dark header button[aria-label="Abrir menu"],
+  body.theme-dark header button[aria-label="Abrir menu"] {
+    background: rgba(17, 17, 17, 0.96) !important;
+    border-color: rgba(239, 68, 68, 0.24) !important;
+    color: #f5dede !important;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  html.theme-dark header button[aria-label="Abrir menu"] span,
+  body.theme-dark header button[aria-label="Abrir menu"] span {
+    background-color: #f5dede !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden,
+  body.theme-dark header > nav.md\:hidden {
+    background: rgba(10, 10, 10, 0.98) !important;
+    border-top-color: rgba(239, 68, 68, 0.16) !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden > div:first-child,
+  body.theme-dark header > nav.md\:hidden > div:first-child {
+    background: #121212 !important;
+    border-color: rgba(239, 68, 68, 0.18) !important;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22) !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden p,
+  body.theme-dark header > nav.md\:hidden p {
+    color: #fca5a5 !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden button,
+  body.theme-dark header > nav.md\:hidden button {
+    border-color: rgba(239, 68, 68, 0.18) !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden button:not(.bg-blue-600),
+  body.theme-dark header > nav.md\:hidden button:not(.bg-blue-600) {
+    background: #191919 !important;
+    color: #f5dede !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden button:not(.bg-blue-600):hover,
+  body.theme-dark header > nav.md\:hidden button:not(.bg-blue-600):hover {
+    background: rgba(220, 38, 38, 0.12) !important;
+    color: #ffffff !important;
+    border-color: #ef4444 !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden button.bg-blue-600,
+  body.theme-dark header > nav.md\:hidden button.bg-blue-600 {
+    background: linear-gradient(135deg, #991b1b, #ef4444) !important;
+    color: #ffffff !important;
+    border-color: #ef4444 !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden a,
+  body.theme-dark header > nav.md\:hidden a {
+    color: #f5dede !important;
+  }
+
+  html.theme-dark header > nav.md\:hidden a:hover,
+  body.theme-dark header > nav.md\:hidden a:hover {
+    color: #ffffff !important;
+  }
+}
+
+/* Final mobile dark contrast fix */
+@media (max-width: 767px) {
+  html.theme-dark header button[aria-label="Abrir menu"],
+  body.theme-dark header button[aria-label="Abrir menu"] {
+    background: #1a1a1a !important;
+    border: 2px solid #f87171 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.18), 0 14px 30px rgba(0, 0, 0, 0.32) !important;
+  }
+
+  html.theme-dark header button[aria-label="Abrir menu"] span,
+  body.theme-dark header button[aria-label="Abrir menu"] span {
+    background-color: #ffffff !important;
+  }
+
+  html.theme-dark header button[aria-pressed],
+  body.theme-dark header button[aria-pressed] {
+    background: #1a1a1a !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.18), 0 14px 30px rgba(0, 0, 0, 0.32) !important;
+  }
+
+  html.theme-dark header nav[class*="md:hidden"],
+  body.theme-dark header nav[class*="md:hidden"] {
+    background: #090909 !important;
+    border-top: 1px solid rgba(248, 113, 113, 0.22) !important;
+  }
+
+  html.theme-dark header nav[class*="md:hidden"] > div:first-child,
+  body.theme-dark header nav[class*="md:hidden"] > div:first-child {
+    background: linear-gradient(180deg, #181818 0%, #111111 100%) !important;
+    border: 1px solid rgba(248, 113, 113, 0.24) !important;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.34) !important;
+  }
+
+  html.theme-dark header nav[class*="md:hidden"] > div:first-child p,
+  body.theme-dark header nav[class*="md:hidden"] > div:first-child p {
+    color: #fecaca !important;
+  }
+
+  html.theme-dark header nav[class*="md:hidden"] button,
+  body.theme-dark header nav[class*="md:hidden"] button {
+    border: 1px solid rgba(248, 113, 113, 0.2) !important;
+  }
+
+  html.theme-dark header nav[class*="md:hidden"] button:not(.bg-blue-600),
+  body.theme-dark header nav[class*="md:hidden"] button:not(.bg-blue-600) {
+    background: #222222 !important;
+    color: #ffffff !important;
+  }
+
+  html.theme-dark header nav[class*="md:hidden"] button.bg-blue-600,
+  body.theme-dark header nav[class*="md:hidden"] button.bg-blue-600 {
+    background: linear-gradient(135deg, #b91c1c, #ef4444) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
+  }
+
+  html.theme-dark header nav[class*="md:hidden"] a,
+  body.theme-dark header nav[class*="md:hidden"] a {
+    color: #ffffff !important;
+  }
+}
