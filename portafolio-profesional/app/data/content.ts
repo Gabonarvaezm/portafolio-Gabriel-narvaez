@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 export type Language = "es" | "en" | "zh" | "de";
 
@@ -132,7 +132,7 @@ export const content: Record<Language, PortfolioContent> = {
 
     navItems: [
 
-      { href: "#sobre-mi", label: "Sobre mí" },
+      { href: "#sobre-mi", label: "Sobre mÃ­" },
 
       { href: "#proyectos", label: "Proyectos" },
 
@@ -154,11 +154,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     heroBadge: "Desarrollador FullStack | Salmos 23:1",
 
-    heroLead: "Soy desarrollador web backend con mentalidad de liderazgo y enfoque colaborativo. Me destaco por priorizar el bienestar del equipo y construir soluciones eficientes y escalables. Salmos 23:1: El Señor es mi pastor; nada me faltará.",
+    heroLead: "Soy desarrollador web fullStack con mentalidad de liderazgo y enfoque colaborativo. Me destaco por priorizar el bienestar del equipo y construir soluciones eficientes y escalables. Salmos 23:1: El Señor es mi pastor; nada me faltará.",
 
     sections: {
 
-      about: "Sobre mí",
+      about: "Sobre mÃ­",
 
       value: "Lo que aporto",
 
@@ -178,9 +178,9 @@ export const content: Record<Language, PortfolioContent> = {
 
     stats: [
 
-      { number: "12+", label: "Tecnologías dominadas" },
+      { number: "12+", label: "TecnologÃ­as dominadas" },
 
-      { number: "6", label: "Áreas de trabajo" },
+      { number: "6", label: "Ãreas de trabajo" },
 
       { number: "100%", label: "Enfoque responsive" },
 
@@ -190,9 +190,9 @@ export const content: Record<Language, PortfolioContent> = {
 
     aboutParagraphs: [
 
-      "Me caracterizo por ser una persona altamente concentrada, disciplinada y comprometida con cada objetivo que asumo. Cuando me enfoco en una meta, trabajo con determinación y constancia hasta hacerla realidad, cuidando cada detalle del proceso.",
+      "Me caracterizo por ser una persona altamente concentrada, disciplinada y comprometida con cada objetivo que asumo. Cuando me enfoco en una meta, trabajo con determinaciÃ³n y constancia hasta hacerla realidad, cuidando cada detalle del proceso.",
 
-      "Soy cantautor y compositor con música disponible en plataformas digitales. También he liderado equipos de baloncesto en Pasto y grupos de baile en mi institución, fortaleciendo liderazgo, trabajo en equipo y expresión artística.",
+      "Soy cantautor y compositor con mÃºsica disponible en plataformas digitales. TambiÃ©n he liderado equipos de baloncesto en Pasto y grupos de baile en mi instituciÃ³n, fortaleciendo liderazgo, trabajo en equipo y expresiÃ³n artÃ­stica.",
 
     ],
 
@@ -216,23 +216,23 @@ export const content: Record<Language, PortfolioContent> = {
 
     valueItems: [
 
-      { title: "Disciplina", text: "Mantengo constancia en el desarrollo de software, enfocándome en escribir código limpio, cumplir objetivos técnicos y llevar cada proyecto backend hasta su correcta implementación." },
+      { title: "Disciplina", text: "Mantengo constancia en el desarrollo de software, enfocÃ¡ndome en escribir cÃ³digo limpio, cumplir objetivos tÃ©cnicos y llevar cada proyecto backend hasta su correcta implementaciÃ³n." },
 
-      { title: "Orden", text: "Estructuro sistemas y procesos de manera clara, aplicando buenas prácticas que facilitan la escalabilidad, el mantenimiento del código y la eficiencia en el trabajo en equipo." },
+      { title: "Orden", text: "Estructuro sistemas y procesos de manera clara, aplicando buenas prÃ¡cticas que facilitan la escalabilidad, el mantenimiento del cÃ³digo y la eficiencia en el trabajo en equipo." },
 
-      { title: "Trabajo fluido", text: "Me adapto con facilidad a los flujos de desarrollo, colaborando eficazmente con equipos y manteniendo un ritmo constante que permite avanzar proyectos de forma ágil y organizada." },
+      { title: "Trabajo fluido", text: "Me adapto con facilidad a los flujos de desarrollo, colaborando eficazmente con equipos y manteniendo un ritmo constante que permite avanzar proyectos de forma Ã¡gil y organizada." },
 
     ],
 
     projects: [
 
-      { title: "Dashboard de ventas", description: "Panel administrativo orientado al seguimiento de ventas, métricas clave y visualización de rendimiento para apoyar la toma de decisiones con datos claros y accionables.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "Dashboard de ventas", description: "Panel administrativo orientado al seguimiento de ventas, mÃ©tricas clave y visualizaciÃ³n de rendimiento para apoyar la toma de decisiones con datos claros y accionables.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
 
       { title: "Landing para startup", description: "Landing page pensada para presentar una propuesta de valor de forma clara, moderna y atractiva, con enfoque en conversion, estructura visual y adaptacion responsive.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
 
-      { title: "Sistema de reservas", description: "Aplicación enfocada en la gestión de reservas con operaciones CRUD, organización de información y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Sistema de reservas", description: "AplicaciÃ³n enfocada en la gestiÃ³n de reservas con operaciones CRUD, organizaciÃ³n de informaciÃ³n y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
-      { title: "Portafolio interactivo", description: "Sitio personal diseñado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegación clara y enfoque académico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Portafolio interactivo", description: "Sitio personal diseÃ±ado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegaciÃ³n clara y enfoque acadÃ©mico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
     ],
 
@@ -240,33 +240,33 @@ export const content: Record<Language, PortfolioContent> = {
 
     timeline: [
 
-      { phase: "Análisis y planeación", title: "Organizo primero la estructura del proyecto", text: "Defino objetivos, estructura y prioridades antes de desarrollar, lo que me permite avanzar con orden, reducir errores y tomar decisiones técnicas con mayor claridad.", tags: ["Wireframes", "Arquitectura UI", "Planificación"] },
+      { phase: "AnÃ¡lisis y planeaciÃ³n", title: "Organizo primero la estructura del proyecto", text: "Defino objetivos, estructura y prioridades antes de desarrollar, lo que me permite avanzar con orden, reducir errores y tomar decisiones tÃ©cnicas con mayor claridad.", tags: ["Wireframes", "Arquitectura UI", "PlanificaciÃ³n"] },
 
-      { phase: "Desarrollo", title: "Construyo interfaces y lógica con enfoque práctico", text: "Desarrollo soluciones priorizando funcionalidad, limpieza del código y colaboración efectiva, buscando que cada módulo sea claro, útil y fácil de mantener.", tags: ["React", "Node.js", "APIs"] },
+      { phase: "Desarrollo", title: "Construyo interfaces y lÃ³gica con enfoque prÃ¡ctico", text: "Desarrollo soluciones priorizando funcionalidad, limpieza del cÃ³digo y colaboraciÃ³n efectiva, buscando que cada mÃ³dulo sea claro, Ãºtil y fÃ¡cil de mantener.", tags: ["React", "Node.js", "APIs"] },
 
-      { phase: "Entrega y mejora", title: "Pulo detalles visuales y funcionales", text: "Reviso cada resultado para optimizar experiencia, estabilidad y presentación final, aplicando ajustes que eleven la calidad general del proyecto.", tags: ["Responsive", "Testing visual", "Refactor"] },
+      { phase: "Entrega y mejora", title: "Pulo detalles visuales y funcionales", text: "Reviso cada resultado para optimizar experiencia, estabilidad y presentaciÃ³n final, aplicando ajustes que eleven la calidad general del proyecto.", tags: ["Responsive", "Testing visual", "Refactor"] },
 
     ],
 
-    skillsIntro: "Mi stack combina desarrollo frontend, backend, herramientas de trabajo moderno y bases de diseño orientadas a construir productos funcionales, escalables y visualmente claros.",
+    skillsIntro: "Mi stack combina desarrollo frontend, backend, herramientas de trabajo moderno y bases de diseÃ±o orientadas a construir productos funcionales, escalables y visualmente claros.",
 
     skills: [
 
       { title: "Frontend", items: ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "Angular", "Responsive Design", "Bootstrap / Tailwind", "Consumo de APIs"] },
 
-      { title: "Backend", items: ["Node.js", "Express.js", "APIs REST", "Bases de datos (MySQL / MongoDB)", "Autenticación (JWT)", "Arquitectura MVC"] },
+      { title: "Backend", items: ["Node.js", "Express.js", "APIs REST", "Bases de datos (MySQL / MongoDB)", "AutenticaciÃ³n (JWT)", "Arquitectura MVC"] },
 
-      { title: "Herramientas", items: ["Git & GitHub", "Postman", "Docker (básico)", "VS Code", "npm / yarn", "Linux (básico)"] },
+      { title: "Herramientas", items: ["Git & GitHub", "Postman", "Docker (bÃ¡sico)", "VS Code", "npm / yarn", "Linux (bÃ¡sico)"] },
 
-      { title: "Diseño", items: ["UI/UX básico", "Figma", "Prototipado", "Diseño responsive", "Principios de usabilidad"] },
+      { title: "DiseÃ±o", items: ["UI/UX bÃ¡sico", "Figma", "Prototipado", "DiseÃ±o responsive", "Principios de usabilidad"] },
 
     ],
 
     testimonials: [
 
-      { title: "Compañero de proyecto", text: "Gabriel mantiene una actitud enfocada y colaborativa. Siempre busca que el trabajo avance con orden y que cada integrante del equipo pueda aportar de la mejor manera.", note: "Trabajo colaborativo y apoyo técnico" },
+      { title: "CompaÃ±ero de proyecto", text: "Gabriel mantiene una actitud enfocada y colaborativa. Siempre busca que el trabajo avance con orden y que cada integrante del equipo pueda aportar de la mejor manera.", note: "Trabajo colaborativo y apoyo tÃ©cnico" },
 
-      { title: "Revisión académica", text: "Destaca por su disciplina, su interés por mejorar continuamente y su capacidad para presentar soluciones bien estructuradas tanto en lo técnico como en lo visual.", note: "Enfoque integral y mejora continua" },
+      { title: "RevisiÃ³n acadÃ©mica", text: "Destaca por su disciplina, su interÃ©s por mejorar continuamente y su capacidad para presentar soluciones bien estructuradas tanto en lo tÃ©cnico como en lo visual.", note: "Enfoque integral y mejora continua" },
 
       { title: "Cliente simulado", text: "Su trabajo transmite compromiso y claridad. Las propuestas que desarrolla se sienten organizadas, funcionales y pensadas para resolver necesidades reales.", note: "Claridad, criterio y funcionalidad" },
 
@@ -274,11 +274,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     learningCards: [
 
-      { title: "Qué estoy aprendiendo", text: "Actualmente estoy fortaleciendo mis conocimientos en diseño de interfaces, arquitecturas de software y computacionales, cloud computing y modelos transaccionales de datos para construir sistemas más robustos y escalables.", items: ["Diseño de interfaces", "Cloud computing", "Modelos transaccionales de datos"] },
+      { title: "QuÃ© estoy aprendiendo", text: "Actualmente estoy fortaleciendo mis conocimientos en diseÃ±o de interfaces, arquitecturas de software y computacionales, cloud computing y modelos transaccionales de datos para construir sistemas mÃ¡s robustos y escalables.", items: ["DiseÃ±o de interfaces", "Cloud computing", "Modelos transaccionales de datos"] },
 
-      { title: "Qué estoy mejorando", text: "Estoy enfocado en mejorar la calidad de mi código mediante buenas prácticas de código limpio, así como en el desarrollo de interfaces llamativas que brinden una mejor experiencia al usuario.", items: ["Código limpio", "Buenas prácticas", "Interfaces llamativas"] },
+      { title: "QuÃ© estoy mejorando", text: "Estoy enfocado en mejorar la calidad de mi cÃ³digo mediante buenas prÃ¡cticas de cÃ³digo limpio, asÃ­ como en el desarrollo de interfaces llamativas que brinden una mejor experiencia al usuario.", items: ["CÃ³digo limpio", "Buenas prÃ¡cticas", "Interfaces llamativas"] },
 
-      { title: "Hacia dónde quiero crecer", text: "Mi objetivo es crecer profesionalmente hasta crear mi propia empresa de software, desarrollando soluciones innovadoras y posicionándome como un referente reconocido a nivel mundial en la industria tecnológica.", items: ["Empresa de software", "Soluciones innovadoras", "Reconocimiento global"] },
+      { title: "Hacia dÃ³nde quiero crecer", text: "Mi objetivo es crecer profesionalmente hasta crear mi propia empresa de software, desarrollando soluciones innovadoras y posicionÃ¡ndome como un referente reconocido a nivel mundial en la industria tecnolÃ³gica.", items: ["Empresa de software", "Soluciones innovadoras", "Reconocimiento global"] },
 
     ],
 
@@ -288,9 +288,9 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Correo", detail: "gabrielnarvaez587@gmail.com", symbol: "@" },
 
-      { title: "Teléfono", detail: "3205681399", symbol: "+" },
+      { title: "TelÃ©fono", detail: "3205681399", symbol: "+" },
 
-      { title: "Ubicación", detail: "Pasto, Colombia", symbol: "#" },
+      { title: "UbicaciÃ³n", detail: "Pasto, Colombia", symbol: "#" },
 
     ],
 
@@ -310,7 +310,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       emailPlaceholder: "tucorreo@ejemplo.com",
 
-      subjectPlaceholder: "Propuesta de proyecto o contacto académico",
+      subjectPlaceholder: "Propuesta de proyecto o contacto acadÃ©mico",
 
       messagePlaceholder: "Hola Gabriel, vimos tu portafolio y queremos hablar contigo.",
 
@@ -322,13 +322,13 @@ export const content: Record<Language, PortfolioContent> = {
 
       bioTitle: "Gabriel Narvaez",
 
-      bioText: "Desarrollador backend apasionado por crear soluciones eficientes, escalables y de alto impacto, combinando tecnología, creatividad y liderazgo para aportar valor en cada proyecto.",
+      bioText: "Desarrollador backend apasionado por crear soluciones eficientes, escalables y de alto impacto, combinando tecnologÃ­a, creatividad y liderazgo para aportar valor en cada proyecto.",
 
       sectionsTitle: "Secciones clave",
 
       contactTitle: "Contacto",
 
-      copyright: "Portafolio académico de Gabriel Narváez, 2026.",
+      copyright: "Portafolio acadÃ©mico de Gabriel NarvÃ¡ez, 2026.",
 
     },
 
@@ -526,7 +526,7 @@ export const content: Record<Language, PortfolioContent> = {
 
     footer: {
 
-      bioTitle: "Gabriel Narváez",
+      bioTitle: "Gabriel NarvÃ¡ez",
 
       bioText: "??????,???????????????????????,??????????????????????",
 
@@ -534,7 +534,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       contactTitle: "??",
 
-      copyright: "Gabriel Narváez ?????,2026?",
+      copyright: "Gabriel NarvÃ¡ez ?????,2026?",
 
     },
 
@@ -544,11 +544,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     navItems: [
 
-      { href: "#sobre-mi", label: "Über mich" },
+      { href: "#sobre-mi", label: "Ãœber mich" },
 
       { href: "#proyectos", label: "Projekte" },
 
-      { href: "#habilidades", label: "Fähigkeiten" },
+      { href: "#habilidades", label: "FÃ¤higkeiten" },
 
       { href: "#testimonios", label: "Referenzen" },
 
@@ -566,11 +566,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     heroBadge: "FullStack-Entwickler | Psalm 23:1",
 
-    heroLead: "Ich bin Backend-Webentwickler mit Führungsmentalität und kollaborativem Ansatz. Ich lege Wert auf das Wohl des Teams und entwickle effiziente sowie skalierbare Lösungen. Psalm 23:1: Der Herr ist mein Hirte; mir wird nichts mangeln.",
+    heroLead: "Ich bin FullStack-Webentwickler mit Führungsmentalität und kollaborativem Ansatz. Ich lege Wert auf das Wohl des Teams und entwickle effiziente sowie skalierbare Lösungen. Psalm 23:1: Der Herr ist mein Hirte; mir wird nichts mangeln.",
 
     sections: {
 
-      about: "Über mich",
+      about: "Ãœber mich",
 
       value: "Mein Mehrwert",
 
@@ -578,7 +578,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       experience: "Erfahrung und Ansatz",
 
-      skills: "Fähigkeiten",
+      skills: "FÃ¤higkeiten",
 
       testimonials: "Referenzen",
 
@@ -602,17 +602,17 @@ export const content: Record<Language, PortfolioContent> = {
 
     aboutParagraphs: [
 
-      "Ich zeichne mich dadurch aus, dass ich konzentriert, diszipliniert und jedem Ziel, das ich übernehme, voll verpflichtet bin. Wenn ich mich auf ein Ziel fokussiere, arbeite ich mit Entschlossenheit und Beständigkeit daran, es zu erreichen, und achte dabei auf jedes Detail des Prozesses.",
+      "Ich zeichne mich dadurch aus, dass ich konzentriert, diszipliniert und jedem Ziel, das ich Ã¼bernehme, voll verpflichtet bin. Wenn ich mich auf ein Ziel fokussiere, arbeite ich mit Entschlossenheit und BestÃ¤ndigkeit daran, es zu erreichen, und achte dabei auf jedes Detail des Prozesses.",
 
-      "Ich bin außerdem Singer-Songwriter und Komponist mit musikalischer Laufbahn, deren Musik bereits auf verschiedenen digitalen Plattformen verfügbar ist. Darüber hinaus habe ich Basketballteams in Pasto sowie Tanzgruppen an meiner Institution geleitet und damit Führung, Teamarbeit und künstlerischen Ausdruck weiter gestärkt.",
+      "Ich bin auÃŸerdem Singer-Songwriter und Komponist mit musikalischer Laufbahn, deren Musik bereits auf verschiedenen digitalen Plattformen verfÃ¼gbar ist. DarÃ¼ber hinaus habe ich Basketballteams in Pasto sowie Tanzgruppen an meiner Institution geleitet und damit FÃ¼hrung, Teamarbeit und kÃ¼nstlerischen Ausdruck weiter gestÃ¤rkt.",
 
     ],
 
     aboutSpotify: {
 
-      title: "Höre dir mein Künstlerprofil auf Spotify an",
+      title: "HÃ¶re dir mein KÃ¼nstlerprofil auf Spotify an",
 
-      cta: "Spotify öffnen",
+      cta: "Spotify Ã¶ffnen",
 
     },
 
@@ -620,9 +620,9 @@ export const content: Record<Language, PortfolioContent> = {
 
       title: "YouTube",
 
-      cta: "Video öffnen",
+      cta: "Video Ã¶ffnen",
 
-      message: "Klicke hier und sieh dir meine besten Basketball-Spielzüge an",
+      message: "Klicke hier und sieh dir meine besten Basketball-SpielzÃ¼ge an",
 
     },
 
@@ -632,19 +632,19 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Ordnung", text: "Ich strukturiere Systeme und Prozesse klar und wende gute Praktiken an, die Skalierbarkeit, Wartbarkeit des Codes und Effizienz in der Teamarbeit verbessern." },
 
-      { title: "Flüssige Zusammenarbeit", text: "Ich passe mich Entwicklungsabläufen leicht an, arbeite effektiv mit Teams zusammen und halte ein konstantes Tempo, das Projekte agil und organisiert voranbringt." },
+      { title: "FlÃ¼ssige Zusammenarbeit", text: "Ich passe mich EntwicklungsablÃ¤ufen leicht an, arbeite effektiv mit Teams zusammen und halte ein konstantes Tempo, das Projekte agil und organisiert voranbringt." },
 
     ],
 
     projects: [
 
-      { title: "Verkaufs-Dashboard", description: "Administratives Dashboard zur Verfolgung von Verkaufszahlen, zentralen Kennzahlen und Leistungsvisualisierung, um Entscheidungen auf Basis klarer und nutzbarer Daten zu unterstützen.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "Verkaufs-Dashboard", description: "Administratives Dashboard zur Verfolgung von Verkaufszahlen, zentralen Kennzahlen und Leistungsvisualisierung, um Entscheidungen auf Basis klarer und nutzbarer Daten zu unterstÃ¼tzen.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
 
-      { title: "Startup-Landingpage", description: "Landingpage, die darauf ausgelegt ist, ein Wertversprechen klar, modern und attraktiv zu präsentieren, mit Fokus auf Conversion, visuelle Struktur und responsives Verhalten.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Startup-Landingpage", description: "Landingpage, die darauf ausgelegt ist, ein Wertversprechen klar, modern und attraktiv zu prÃ¤sentieren, mit Fokus auf Conversion, visuelle Struktur und responsives Verhalten.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
 
-      { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer flüssigen Erfahrung für Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer flÃ¼ssigen Erfahrung fÃ¼r Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
-      { title: "Interaktives Portfolio", description: "Persönliche Website zur Darstellung des professionellen Profils, der Fähigkeiten und Projekte mit ansprechender Oberfläche, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Interaktives Portfolio", description: "PersÃ¶nliche Website zur Darstellung des professionellen Profils, der FÃ¤higkeiten und Projekte mit ansprechender OberflÃ¤che, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
     ],
 
@@ -652,11 +652,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     timeline: [
 
-      { phase: "Analyse und Planung", title: "Ich organisiere zuerst die Projektstruktur", text: "Vor der Entwicklung definiere ich Ziele, Struktur und Prioritäten. So kann ich geordnet vorgehen, Fehler reduzieren und technische Entscheidungen klarer treffen.", tags: ["Wireframes", "UI-Architektur", "Planung"] },
+      { phase: "Analyse und Planung", title: "Ich organisiere zuerst die Projektstruktur", text: "Vor der Entwicklung definiere ich Ziele, Struktur und PrioritÃ¤ten. So kann ich geordnet vorgehen, Fehler reduzieren und technische Entscheidungen klarer treffen.", tags: ["Wireframes", "UI-Architektur", "Planung"] },
 
-      { phase: "Entwicklung", title: "Ich baue Interfaces und Logik mit praktischem Fokus", text: "Ich entwickle Lösungen mit Priorität auf Funktionalität, sauberem Code und effektiver Zusammenarbeit, damit jedes Modul klar, nützlich und wartbar bleibt.", tags: ["React", "Node.js", "APIs"] },
+      { phase: "Entwicklung", title: "Ich baue Interfaces und Logik mit praktischem Fokus", text: "Ich entwickle LÃ¶sungen mit PrioritÃ¤t auf FunktionalitÃ¤t, sauberem Code und effektiver Zusammenarbeit, damit jedes Modul klar, nÃ¼tzlich und wartbar bleibt.", tags: ["React", "Node.js", "APIs"] },
 
-      { phase: "Übergabe und Verbesserung", title: "Ich verfeinere visuelle und funktionale Details", text: "Ich überprüfe jedes Ergebnis, um Nutzererfahrung, Stabilität und finale Präsentation zu optimieren und so die Gesamtqualität des Projekts zu steigern.", tags: ["Responsive", "Visuelles Testing", "Refactor"] },
+      { phase: "Ãœbergabe und Verbesserung", title: "Ich verfeinere visuelle und funktionale Details", text: "Ich Ã¼berprÃ¼fe jedes Ergebnis, um Nutzererfahrung, StabilitÃ¤t und finale PrÃ¤sentation zu optimieren und so die GesamtqualitÃ¤t des Projekts zu steigern.", tags: ["Responsive", "Visuelles Testing", "Refactor"] },
 
     ],
 
@@ -676,11 +676,11 @@ export const content: Record<Language, PortfolioContent> = {
 
     testimonials: [
 
-      { title: "Projektpartner", text: "Gabriel arbeitet fokussiert und kollaborativ. Er sorgt dafür, dass die Arbeit geordnet vorangeht und jedes Teammitglied bestmöglich beitragen kann.", note: "Zusammenarbeit und technische Unterstützung" },
+      { title: "Projektpartner", text: "Gabriel arbeitet fokussiert und kollaborativ. Er sorgt dafÃ¼r, dass die Arbeit geordnet vorangeht und jedes Teammitglied bestmÃ¶glich beitragen kann.", note: "Zusammenarbeit und technische UnterstÃ¼tzung" },
 
-      { title: "Akademische Bewertung", text: "Er überzeugt durch Disziplin, seinen Wunsch nach kontinuierlicher Verbesserung und seine Fähigkeit, technische wie visuelle Lösungen strukturiert zu präsentieren.", note: "Ganzheitlicher Ansatz und kontinuierliche Verbesserung" },
+      { title: "Akademische Bewertung", text: "Er Ã¼berzeugt durch Disziplin, seinen Wunsch nach kontinuierlicher Verbesserung und seine FÃ¤higkeit, technische wie visuelle LÃ¶sungen strukturiert zu prÃ¤sentieren.", note: "Ganzheitlicher Ansatz und kontinuierliche Verbesserung" },
 
-      { title: "Simulierter Kunde", text: "Seine Arbeit vermittelt Verbindlichkeit und Klarheit. Die von ihm entwickelten Vorschläge wirken organisiert, funktional und auf reale Bedürfnisse ausgerichtet.", note: "Klarheit, Urteilskraft und Funktionalität" },
+      { title: "Simulierter Kunde", text: "Seine Arbeit vermittelt Verbindlichkeit und Klarheit. Die von ihm entwickelten VorschlÃ¤ge wirken organisiert, funktional und auf reale BedÃ¼rfnisse ausgerichtet.", note: "Klarheit, Urteilskraft und FunktionalitÃ¤t" },
 
     ],
 
@@ -688,13 +688,13 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Was ich gerade lerne", text: "Derzeit vertiefe ich mein Wissen in Interface-Design, Software- und Rechnerarchitekturen, Cloud Computing und transaktionalen Datenmodellen, um robustere, skalierbarere und effizientere Systeme zu entwickeln.", items: ["Interface-Design", "Cloud Computing", "Transaktionale Datenmodelle"] },
 
-      { title: "Was ich verbessere", text: "Ich konzentriere mich darauf, die Qualität meines Codes durch Clean-Code-Praktiken zu verbessern und gleichzeitig an auffälligen Interfaces zu arbeiten, die eine bessere Nutzererfahrung bieten.", items: ["Clean Code", "Gute Praktiken", "Auffällige Interfaces"] },
+      { title: "Was ich verbessere", text: "Ich konzentriere mich darauf, die QualitÃ¤t meines Codes durch Clean-Code-Praktiken zu verbessern und gleichzeitig an auffÃ¤lligen Interfaces zu arbeiten, die eine bessere Nutzererfahrung bieten.", items: ["Clean Code", "Gute Praktiken", "AuffÃ¤llige Interfaces"] },
 
-      { title: "Wohin ich wachsen möchte", text: "Mein Ziel ist es, beruflich so zu wachsen, dass ich mein eigenes Softwareunternehmen gründen, innovative Lösungen entwickeln und weltweit als anerkannte Referenz in der Technologiebranche wahrgenommen werden kann.", items: ["Softwareunternehmen", "Innovative Lösungen", "Globale Anerkennung"] },
+      { title: "Wohin ich wachsen mÃ¶chte", text: "Mein Ziel ist es, beruflich so zu wachsen, dass ich mein eigenes Softwareunternehmen grÃ¼nden, innovative LÃ¶sungen entwickeln und weltweit als anerkannte Referenz in der Technologiebranche wahrgenommen werden kann.", items: ["Softwareunternehmen", "Innovative LÃ¶sungen", "Globale Anerkennung"] },
 
     ],
 
-    contactIntro: "Ich bin offen für neue Möglichkeiten, Kooperationen und anspruchsvolle Projekte. Melde dich gern, wenn du Engagement, Qualität und einen professionellen, ergebnisorientierten Ansatz suchst.",
+    contactIntro: "Ich bin offen fÃ¼r neue MÃ¶glichkeiten, Kooperationen und anspruchsvolle Projekte. Melde dich gern, wenn du Engagement, QualitÃ¤t und einen professionellen, ergebnisorientierten Ansatz suchst.",
 
     contactItems: [
 
@@ -724,7 +724,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       subjectPlaceholder: "Projektvorschlag oder akademischer Kontakt",
 
-      messagePlaceholder: "Hallo Gabriel, wir haben dein Portfolio gesehen und möchten mit dir sprechen.",
+      messagePlaceholder: "Hallo Gabriel, wir haben dein Portfolio gesehen und mÃ¶chten mit dir sprechen.",
 
       submit: "Nachricht senden",
 
@@ -732,15 +732,15 @@ export const content: Record<Language, PortfolioContent> = {
 
     footer: {
 
-      bioTitle: "Gabriel Narváez",
+      bioTitle: "Gabriel NarvÃ¡ez",
 
-      bioText: "Backend-Entwickler mit Leidenschaft für effiziente, skalierbare und wirkungsstarke Lösungen, der Technologie, Kreativität und Führung kombiniert, um in jedem Projekt Mehrwert zu schaffen.",
+      bioText: "Backend-Entwickler mit Leidenschaft fÃ¼r effiziente, skalierbare und wirkungsstarke LÃ¶sungen, der Technologie, KreativitÃ¤t und FÃ¼hrung kombiniert, um in jedem Projekt Mehrwert zu schaffen.",
 
       sectionsTitle: "Wichtige Bereiche",
 
       contactTitle: "Kontakt",
 
-      copyright: "Akademisches Portfolio von Gabriel Narváez, 2026.",
+      copyright: "Akademisches Portfolio von Gabriel NarvÃ¡ez, 2026.",
 
     },
 
@@ -953,3 +953,4 @@ export const content: Record<Language, PortfolioContent> = {
   },
 
 };
+
