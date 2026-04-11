@@ -3,16 +3,13 @@
 "use client";
 
 
-
 import { useEffect, useState } from "react";
 
 import { Header } from "./components/Header";
 
 import { CustomCursor } from "./components/CustomCursor";
 
-import { ScrollSection } from "./components/ScrollSection";
 import { content, type Language } from "./data/content";
-import { SectionTitle } from "./components/SectionTitle";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
 import { ValueSection } from "./components/ValueSection";
@@ -29,7 +26,6 @@ export default function Home() {
   const [language, setLanguage] = useState<Language>("es");
 
 
-
   useEffect(() => {
 
     const savedLanguage = window.localStorage.getItem("portfolio-language");
@@ -43,7 +39,6 @@ export default function Home() {
   }, []);
 
 
-
   const changeLanguage = (nextLanguage: Language) => {
 
     setLanguage(nextLanguage);
@@ -53,9 +48,7 @@ export default function Home() {
   };
 
 
-
   const t = content[language];
-
 
 
   return (
@@ -71,17 +64,13 @@ export default function Home() {
         <HeroSection t={t} />
 
 
-
         <AboutSection t={t} language={language} />
-
 
 
         <ValueSection t={t} language={language} />
 
 
-
         <ProjectsSection t={t} language={language} />
-
 
 
         <ExperienceSection t={t} language={language} />
@@ -103,13 +92,6 @@ export default function Home() {
   );
 
 }
-
-
-
-
-
-
-
 
 
 
