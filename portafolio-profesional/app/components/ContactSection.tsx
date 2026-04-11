@@ -157,17 +157,11 @@ export function ContactSection({ t, language }: ContactSectionProps) {
 
                 <div className="reveal-item mb-6">
 
-                  <label className="mb-2 block text-sm text-gray-700">{t.form.subject}</label>
+                  <label className="mb-2 block text-sm text-gray-700">{`${t.form.message} / ${t.form.subject}`}</label>
 
-                  <input type="text" placeholder={t.form.subjectPlaceholder} className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" />
+                  <textarea rows={4} placeholder={t.form.messagePlaceholder} required maxLength={100} onInput={(event) => { const target = event.currentTarget; target.value = target.value.replace(/\s{2,}/g, " ").slice(0, 100); }} onBlur={(event) => { event.currentTarget.value = event.currentTarget.value.trim(); }} className="w-full rounded-2xl border-2 border-gray-300 p-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] invalid:border-red-500 invalid:focus:border-red-500 invalid:focus:shadow-[0_0_0_4px_rgba(239,68,68,0.12)]" />
 
-                </div>
-
-                <div className="reveal-item mb-6">
-
-                  <label className="mb-2 block text-sm text-gray-700">{t.form.message}</label>
-
-                  <textarea rows={5} placeholder={t.form.messagePlaceholder} className="w-full rounded-2xl border-2 border-gray-300 p-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" />
+                  <p className="mt-2 text-xs text-gray-500">100 caracteres maximo</p>
 
                 </div>
 
