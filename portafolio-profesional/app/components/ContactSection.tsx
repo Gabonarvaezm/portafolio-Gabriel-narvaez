@@ -137,13 +137,21 @@ export function ContactSection({ t, language }: ContactSectionProps) {
 
               </div>
 
-              <form onSubmit={(event) => event.preventDefault()} className="lift-card reveal-stack rounded-3xl border-2 border-gray-300 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)] sm:p-8">
+              <form action="https://formsubmit.co/gabrielnarvaez587@gmail.com" method="POST" className="lift-card reveal-stack rounded-3xl border-2 border-gray-300 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_22px_44px_rgba(0,0,0,0.1)] sm:p-8">
+
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio de Gabriel" />
+
+                <input type="hidden" name="_template" value="table" />
+
+                <input type="hidden" name="_autoresponse" value="Gracias por escribir a traves de mi portafolio. Recibi tu mensaje y te respondere lo antes posible." />
+
+                <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
                 <div className="reveal-item mb-6">
 
                   <label className="mb-2 block text-sm text-gray-700">{t.form.name}</label>
 
-                  <input type="text" placeholder={t.form.namePlaceholder} required maxLength={30} autoComplete="name" inputMode="text" pattern="[A-Za-zÀ-ÿÑñ]+(?: [A-Za-zÀ-ÿÑñ]+)*" title="Ingresa un nombre válido, solo letras y un espacio entre palabras." onInput={(event) => { const target = event.currentTarget; target.value = target.value.replace(/[^A-Za-zÀ-ÿÑñ\s]/g, "").replace(/\s{2,}/g, " ").replace(/^\s+/g, "").slice(0, 30); }} onBlur={(event) => { event.currentTarget.value = event.currentTarget.value.trim(); }} className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] invalid:border-red-500 invalid:focus:border-red-500 invalid:focus:shadow-[0_0_0_4px_rgba(239,68,68,0.12)]" />
+                  <input name="name" type="text" placeholder={t.form.namePlaceholder} required maxLength={30} autoComplete="name" inputMode="text" pattern="[A-Za-zÀ-ÿÑñ]+(?: [A-Za-zÀ-ÿÑñ]+)*" title="Ingresa un nombre válido, solo letras y un espacio entre palabras." onInput={(event) => { const target = event.currentTarget; target.value = target.value.replace(/[^A-Za-zÀ-ÿÑñ\s]/g, "").replace(/\s{2,}/g, " ").replace(/^\s+/g, "").slice(0, 30); }} onBlur={(event) => { event.currentTarget.value = event.currentTarget.value.trim(); }} className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] invalid:border-red-500 invalid:focus:border-red-500 invalid:focus:shadow-[0_0_0_4px_rgba(239,68,68,0.12)]" />
 
                 </div>
 
@@ -151,7 +159,7 @@ export function ContactSection({ t, language }: ContactSectionProps) {
 
                   <label className="mb-2 block text-sm text-gray-700">{t.form.email}</label>
 
-                  <input type="email" placeholder={t.form.emailPlaceholder} required maxLength={120} autoComplete="email" inputMode="email" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="Ingresa un correo valido, por ejemplo: nombre@dominio.com" onInput={(event) => { const target = event.currentTarget; target.value = target.value.replace(/\s+/g, "").replace(/[^A-Za-z0-9._%+\-@]/g, "").toLowerCase().slice(0, 120); }} onBlur={(event) => { event.currentTarget.value = event.currentTarget.value.trim().toLowerCase(); }} className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] invalid:border-red-500 invalid:focus:border-red-500 invalid:focus:shadow-[0_0_0_4px_rgba(239,68,68,0.12)]" />
+                  <input name="email" type="email" placeholder={t.form.emailPlaceholder} required maxLength={120} autoComplete="email" inputMode="email" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="Ingresa un correo valido, por ejemplo: nombre@dominio.com" onInput={(event) => { const target = event.currentTarget; target.value = target.value.replace(/\s+/g, "").replace(/[^A-Za-z0-9._%+\-@]/g, "").toLowerCase().slice(0, 120); }} onBlur={(event) => { event.currentTarget.value = event.currentTarget.value.trim().toLowerCase(); }} className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] invalid:border-red-500 invalid:focus:border-red-500 invalid:focus:shadow-[0_0_0_4px_rgba(239,68,68,0.12)]" />
 
                 </div>
 
@@ -159,7 +167,7 @@ export function ContactSection({ t, language }: ContactSectionProps) {
 
                   <label className="mb-2 block text-sm text-gray-700">{`${t.form.message} / ${t.form.subject}`}</label>
 
-                  <textarea rows={4} placeholder={t.form.messagePlaceholder} required maxLength={100} onInput={(event) => { const target = event.currentTarget; target.value = target.value.replace(/\s{2,}/g, " ").slice(0, 100); }} onBlur={(event) => { event.currentTarget.value = event.currentTarget.value.trim(); }} className="w-full rounded-2xl border-2 border-gray-300 p-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] invalid:border-red-500 invalid:focus:border-red-500 invalid:focus:shadow-[0_0_0_4px_rgba(239,68,68,0.12)]" />
+                  <textarea name="message" rows={4} placeholder={t.form.messagePlaceholder} required maxLength={100} onInput={(event) => { const target = event.currentTarget; target.value = target.value.replace(/\s{2,}/g, " ").slice(0, 100); }} onBlur={(event) => { event.currentTarget.value = event.currentTarget.value.trim(); }} className="w-full rounded-2xl border-2 border-gray-300 p-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] invalid:border-red-500 invalid:focus:border-red-500 invalid:focus:shadow-[0_0_0_4px_rgba(239,68,68,0.12)]" />
 
                   <p className="mt-2 text-xs text-gray-500">100 caracteres maximo</p>
 
