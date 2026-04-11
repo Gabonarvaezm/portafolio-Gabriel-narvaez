@@ -151,7 +151,7 @@ export function ContactSection({ t, language }: ContactSectionProps) {
 
                   <label className="mb-2 block text-sm text-gray-700">{t.form.email}</label>
 
-                  <input type="email" placeholder={t.form.emailPlaceholder} className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)]" />
+                  <input type="email" placeholder={t.form.emailPlaceholder} required maxLength={120} autoComplete="email" inputMode="email" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="Ingresa un correo valido, por ejemplo: nombre@dominio.com" onInput={(event) => { const target = event.currentTarget; target.value = target.value.replace(/\s+/g, "").replace(/[^A-Za-z0-9._%+\-@]/g, "").toLowerCase().slice(0, 120); }} onBlur={(event) => { event.currentTarget.value = event.currentTarget.value.trim().toLowerCase(); }} className="h-12 w-full rounded-2xl border-2 border-gray-300 px-3 text-sm transition duration-300 focus:-translate-y-0.5 focus:border-blue-500 focus:outline-none focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] invalid:border-red-500 invalid:focus:border-red-500 invalid:focus:shadow-[0_0_0_4px_rgba(239,68,68,0.12)]" />
 
                 </div>
 
