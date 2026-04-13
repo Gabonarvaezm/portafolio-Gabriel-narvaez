@@ -50,7 +50,7 @@ export type PortfolioContent = {
 
   valueItems: Array<{ title: string; text: string }>;
 
-  projects: Array<{ title: string; description: string; tags: string[]; image: string; url?: string }>;
+  projects: Array<{ title: string; description: string; tags: string[]; image: string; url?: string; imageFit?: "cover" | "contain" }>;
 
   timelineIntro: string;
 
@@ -236,7 +236,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Crust Pizza Co.", description: "Landing Page. Página diseñada para presentar de forma atractiva la identidad de una marca gastronómica, destacando su propuesta visual, productos, promociones y llamados a la acción. El proyecto está enfocado en ofrecer una experiencia moderna, responsive y orientada a conversión para un negocio de comida tipo restaurante o pizzería.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostCSS", "ESLint", "Vercel"], image: "/projects/CrustPizza.png", url: "https://landing-page-two-delta-49.vercel.app/" },
 
-      { title: "Portafolio interactivo", description: "Sitio personal diseñado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegación clara y enfoque académico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Colegio Mentes Creativas", description: "Plataforma Educativa. Aplicación web diseñada para la presentación institucional de un colegio, permitiendo mostrar información académica, servicios educativos y contenido relevante para estudiantes y padres. El proyecto ofrece una experiencia clara y accesible, enfocada en la comunicación efectiva y la identidad digital de la institución.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"], image: "/projects/MentesCreativas.png", url: "https://colegio-mentes-creativas.vercel.app/", imageFit: "contain" }
 
     ],
 
@@ -444,7 +444,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Crust Pizza Co.", description: "品牌着陆页。该页面旨在以富有吸引力的方式展示餐饮品牌形象，突出其视觉提案、产品、促销活动以及行动号召。项目专注于为餐厅或披萨店这类餐饮业务提供现代化、响应式且以转化为导向的体验。", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostCSS", "ESLint", "Vercel"], image: "/projects/CrustPizza.png", url: "https://landing-page-two-delta-49.vercel.app/" },
 
-      { title: "交互式个人作品集", description: "个人网站，用于展示职业形象、技能和项目，具备有吸引力的界面、清晰的导航和学术导向。", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Colegio Mentes Creativas", description: "教育平台。这是一个为学校机构展示而设计的 Web 应用，用于呈现学术信息、教育服务以及面向学生和家长的相关内容。该项目提供清晰、易访问的体验，重点在于高效沟通和学校的数字化形象。", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"], image: "/projects/MentesCreativas.png", url: "https://colegio-mentes-creativas.vercel.app/", imageFit: "contain" }
 
     ],
 
@@ -651,7 +651,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Crust Pizza Co.", description: "Landingpage. Diese Seite wurde entwickelt, um die Identität einer gastronomischen Marke ansprechend zu präsentieren und dabei ihr visuelles Konzept, Produkte, Aktionen und Call-to-Actions hervorzuheben. Das Projekt ist darauf ausgerichtet, eine moderne, responsive und auf Conversion optimierte Erfahrung für ein Restaurant- oder Pizzeriageschäft zu bieten.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostCSS", "ESLint", "Vercel"], image: "/projects/CrustPizza.png", url: "https://landing-page-two-delta-49.vercel.app/" },
 
-      { title: "Interaktives Portfolio", description: "Persönliche Website zur Darstellung des professionellen Profils, der Fähigkeiten und Projekte mit ansprechender Oberfläche, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Colegio Mentes Creativas", description: "Bildungsplattform. Webanwendung für die institutionelle Präsentation einer Schule, mit der akademische Informationen, Bildungsangebote und relevante Inhalte für Schülerinnen, Schüler und Eltern dargestellt werden können. Das Projekt bietet eine klare und zugängliche Erfahrung mit Fokus auf effektive Kommunikation und die digitale Identität der Einrichtung.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"], image: "/projects/MentesCreativas.png", url: "https://colegio-mentes-creativas.vercel.app/", imageFit: "contain" }
 
     ],
 
@@ -859,7 +859,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Crust Pizza Co.", description: "Landing Page. A page designed to present the identity of a food brand in an attractive way, highlighting its visual concept, products, promotions, and calls to action. The project focuses on delivering a modern, responsive, and conversion-oriented experience for a restaurant or pizza business.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostCSS", "ESLint", "Vercel"], image: "/projects/CrustPizza.png", url: "https://landing-page-two-delta-49.vercel.app/" },
 
-      { title: "Interactive portfolio", description: "Personal site designed to showcase professional profile, skills, and projects with an attractive interface, clear navigation, and an academic focus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Colegio Mentes Creativas", description: "Educational Platform. Web application designed for the institutional presentation of a school, allowing academic information, educational services, and relevant content for students and parents to be displayed. The project delivers a clear and accessible experience focused on effective communication and the institution's digital identity.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"], image: "/projects/MentesCreativas.png", url: "https://colegio-mentes-creativas.vercel.app/", imageFit: "contain" }
 
     ],
 

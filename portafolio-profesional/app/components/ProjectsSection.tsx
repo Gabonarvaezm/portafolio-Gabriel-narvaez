@@ -34,7 +34,11 @@ export function ProjectsSection({ t, language }: ProjectsSectionProps) {
                     className="lift-card reveal-item block overflow-hidden rounded-3xl border-2 border-gray-300 bg-white transition duration-300 hover:-translate-y-2 hover:border-gray-800 hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)]"
                   >
                     <div className="aspect-video overflow-hidden border-b-2 border-gray-300 bg-gray-200">
-                      <img src={project.image} alt={project.title} className="h-full w-full object-cover transition duration-700 hover:scale-110" />
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className={`h-full w-full transition duration-700 ${project.imageFit === "contain" ? "object-contain bg-white p-4 hover:scale-[1.03]" : "object-cover hover:scale-110"}`}
+                      />
                     </div>
 
                     <div className="space-y-4 p-6">
