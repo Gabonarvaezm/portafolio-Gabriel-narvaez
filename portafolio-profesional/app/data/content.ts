@@ -228,7 +228,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "GoGebra Ango", description: "Calculadora Multivariable 3D. Aplicación web interactiva para la visualización y análisis de funciones matemáticas en múltiples variables. Permite graficar en 3D, calcular derivadas parciales, gradientes e integrales, facilitando la comprensión de conceptos complejos mediante una experiencia visual dinámica.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "Fresh Cut", description: "Sistema de Citas para Barbería. Aplicación web enfocada en la gestión y reserva de citas en barberías. Permite a los usuarios seleccionar barberos, agendar servicios y elegir el tipo de corte deseado, ofreciendo una experiencia intuitiva y organizada para la administración de citas.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: projectImages[1] },
+      { title: "Fresh Cut", description: "Sistema de Citas para Barbería. Aplicación web enfocada en la gestión y reserva de citas en barberías. Permite a los usuarios seleccionar barberos, agendar servicios y elegir el tipo de corte deseado, ofreciendo una experiencia intuitiva y organizada para la administración de citas.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: "/projects/FresgCut.png", url: "https://fresh-cut-frontend.vercel.app/home" },
 
       { title: "Sistema de reservas", description: "Aplicación enfocada en la gestión de reservas con operaciones CRUD, organización de información y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
@@ -434,7 +434,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "GoGebra Ango", description: "3D 多变量计算器。这是一个用于可视化和分析多元数学函数的交互式 Web 应用。它支持 3D 绘图、偏导数、梯度和积分计算，通过动态视觉体验帮助理解复杂概念。", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "Fresh Cut", description: "理发店预约系统。这是一个面向理发店预约与管理的 Web 应用。用户可以选择理发师、预约服务并选择所需发型，为预约管理提供直观且有组织的体验。", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: projectImages[1] },
+      { title: "Fresh Cut", description: "理发店预约系统。这是一个面向理发店预约与管理的 Web 应用。用户可以选择理发师、预约服务并选择所需发型，为预约管理提供直观且有组织的体验。", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: "/projects/FresgCut.png", url: "https://fresh-cut-frontend.vercel.app/home" },
 
       { title: "预约管理系统", description: "聚焦于预约管理的应用，包含 CRUD 操作、有条理的信息组织，并为用户和管理员提供流畅的使用体验。", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
@@ -639,7 +639,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "GoGebra Ango", description: "3D-Mehrvariablenrechner. Interaktive Webanwendung zur Visualisierung und Analyse mathematischer Funktionen mit mehreren Variablen. Sie ermöglicht 3D-Darstellungen sowie die Berechnung partieller Ableitungen, Gradienten und Integrale und erleichtert so das Verständnis komplexer Konzepte durch eine dynamische visuelle Erfahrung.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "Fresh Cut", description: "Terminbuchungssystem für Barbershops. Webanwendung zur Verwaltung und Reservierung von Terminen in Barbershops. Nutzer können Barbiere auswählen, Leistungen buchen und die gewünschte Schnittart festlegen. So entsteht eine intuitive und organisierte Erfahrung für die Terminverwaltung.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: projectImages[1] },
+      { title: "Fresh Cut", description: "Terminbuchungssystem für Barbershops. Webanwendung zur Verwaltung und Reservierung von Terminen in Barbershops. Nutzer können Barbiere auswählen, Leistungen buchen und die gewünschte Schnittart festlegen. So entsteht eine intuitive und organisierte Erfahrung für die Terminverwaltung.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: "/projects/FresgCut.png", url: "https://fresh-cut-frontend.vercel.app/home" },
 
       { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer flüssigen Erfahrung für Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
@@ -845,7 +845,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "GoGebra Ango", description: "3D Multivariable Calculator. Interactive web application for visualizing and analyzing mathematical functions in multiple variables. It allows 3D graphing, partial derivatives, gradients, and integrals, making complex concepts easier to understand through a dynamic visual experience.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "Fresh Cut", description: "Barbershop Booking System. Web application focused on managing and booking appointments for barbershops. It allows users to select barbers, schedule services, and choose their preferred haircut, delivering an intuitive and organized appointment management experience.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: projectImages[1] },
+      { title: "Fresh Cut", description: "Barbershop Booking System. Web application focused on managing and booking appointments for barbershops. It allows users to select barbers, schedule services, and choose their preferred haircut, delivering an intuitive and organized appointment management experience.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: "/projects/FresgCut.png", url: "https://fresh-cut-frontend.vercel.app/home" },
 
       { title: "Booking system", description: "Application focused on reservation management with CRUD operations, organized information handling, and a smooth experience for users and administrators.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
