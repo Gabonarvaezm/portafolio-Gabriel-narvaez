@@ -29,6 +29,16 @@ export function HeroSection({ t }: HeroSectionProps) {
 
                 <p className="reveal-item mt-6 max-w-xl text-lg leading-relaxed text-gray-100 md:text-xl">{t.heroLead}</p>
 
+                <div className="reveal-item mt-8 flex flex-wrap gap-4">
+                  <a
+                    href="/CV-Gabriel%20Narvaez.pdf"
+                    download="CV-Gabriel-Narvaez.pdf"
+                    className="inline-flex items-center justify-center rounded-2xl border-2 border-red-400 bg-red-600 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-red-700 hover:shadow-[0_18px_35px_rgba(220,38,38,0.35)]"
+                  >
+                    {t.resumeLabel}
+                  </a>
+                </div>
+
               </div>
 
             </ScrollSection>

@@ -18,6 +18,8 @@ export type PortfolioContent = {
 
   heroLead: string;
 
+  resumeLabel: string;
+
   sections: {
 
     about: string;
@@ -155,6 +157,8 @@ export const content: Record<Language, PortfolioContent> = {
     heroBadge: "Desarrollador FullStack | Salmos 23:1",
 
     heroLead: "Soy desarrollador web fullStack con mentalidad de liderazgo y enfoque colaborativo. Me destaco por priorizar el bienestar del equipo y construir soluciones eficientes y escalables. Salmos 23:1: El Se\u00f1or es mi pastor; nada me faltar\u00e1.",
+
+    resumeLabel: "Descargar hoja de vida",
 
     sections: {
 
@@ -362,6 +366,8 @@ export const content: Record<Language, PortfolioContent> = {
 
     heroLead: "\u6211\u662f\u5168\u6808\u7f51\u9875\u5f00\u53d1\u8005\uff0c\u5177\u5907\u9886\u5bfc\u601d\u7ef4\u548c\u534f\u4f5c\u578b\u5de5\u4f5c\u65b9\u5f0f\u3002\u6211\u6ce8\u91cd\u56e2\u961f\u798f\u7949\uff0c\u81f4\u529b\u4e8e\u6784\u5efa\u9ad8\u6548\u4e14\u53ef\u6269\u5c55\u7684\u89e3\u51b3\u65b9\u6848\u3002\u8bd7\u7bc7 23:1\uff1a\u8036\u548c\u534e\u662f\u6211\u7684\u7267\u8005\uff0c\u6211\u5fc5\u4e0d\u81f4\u7f3a\u4e4f\u3002",
 
+    resumeLabel: "\u4e0b\u8f7d\u6211\u7684\u7b80\u5386",
+
     sections: {
 
       about: "\u5173\u4e8e\u6211",
@@ -566,6 +572,8 @@ export const content: Record<Language, PortfolioContent> = {
     heroBadge: "FullStack-Entwickler | Psalm 23:1",
 
     heroLead: "Ich bin FullStack-Webentwickler mit F\u00fchrungsmentalit\u00e4t und kollaborativem Ansatz. Ich lege Wert auf das Wohl des Teams und entwickle effiziente sowie skalierbare L\u00f6sungen. Psalm 23:1: Der Herr ist mein Hirte; mir wird nichts mangeln.",
+
+    resumeLabel: "Lebenslauf herunterladen",
 
     sections: {
 
@@ -772,6 +780,8 @@ export const content: Record<Language, PortfolioContent> = {
     heroBadge: "FullStack Developer | Psalm 23:1",
 
     heroLead: "I am a fullStack web developer with a leadership mindset and a collaborative approach. I stand out for prioritizing team well-being and building efficient, scalable solutions. Psalm 23:1: The Lord is my shepherd; I shall not want.",
+
+    resumeLabel: "Download resume",
 
     sections: {
 
