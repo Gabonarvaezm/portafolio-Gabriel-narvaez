@@ -48,7 +48,7 @@ export type PortfolioContent = {
 
   valueItems: Array<{ title: string; text: string }>;
 
-  projects: Array<{ title: string; description: string; tags: string[]; image: string }>;
+  projects: Array<{ title: string; description: string; tags: string[]; image: string; url?: string }>;
 
   timelineIntro: string;
 
@@ -226,13 +226,13 @@ export const content: Record<Language, PortfolioContent> = {
 
     projects: [
 
-      { title: "Dashboard de ventas", description: "Panel administrativo orientado al seguimiento de ventas, métricas clave y visualización de rendimiento para apoyar la toma de decisiones con datos claros y accionables.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "GoGebra Ango", description: "Calculadora Multivariable 3D. Aplicaci\u00f3n web interactiva para la visualizaci\u00f3n y an\u00e1lisis de funciones matem\u00e1ticas en m\u00faltiples variables. Permite graficar en 3D, calcular derivadas parciales, gradientes e integrales, facilitando la comprensi\u00f3n de conceptos complejos mediante una experiencia visual din\u00e1mica.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
       { title: "Landing para startup", description: "Landing page pensada para presentar una propuesta de valor de forma clara, moderna y atractiva, con enfoque en conversion, estructura visual y adaptacion responsive.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
 
-      { title: "Sistema de reservas", description: "Aplicación enfocada en la gestión de reservas con operaciones CRUD, organización de información y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Sistema de reservas", description: "Aplicaci?n enfocada en la gesti?n de reservas con operaciones CRUD, organizaci?n de informaci?n y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
-      { title: "Portafolio interactivo", description: "Sitio personal diseñado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegación clara y enfoque académico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Portafolio interactivo", description: "Sitio personal dise?ado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegaci?n clara y enfoque acad?mico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
     ],
 
@@ -432,13 +432,13 @@ export const content: Record<Language, PortfolioContent> = {
 
     projects: [
 
-      { title: "\u9500\u552e\u4eea\u8868\u76d8", description: "\u9762\u5411\u9500\u552e\u8ddf\u8e2a\u3001\u5173\u952e\u6307\u6807\u548c\u6027\u80fd\u53ef\u89c6\u5316\u7684\u7ba1\u7406\u9762\u677f\uff0c\u5e2e\u52a9\u57fa\u4e8e\u6e05\u6670\u53ef\u884c\u7684\u6570\u636e\u505a\u51fa\u51b3\u7b56\u3002", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "GoGebra Ango", description: "\u4e09\u7ef4\u591a\u53d8\u91cf\u8ba1\u7b97\u5668\u3002\u7528\u4e8e\u53ef\u89c6\u5316\u548c\u5206\u6790\u591a\u53d8\u91cf\u6570\u5b66\u51fd\u6570\u7684\u4ea4\u4e92\u5f0f\u7f51\u9875\u5e94\u7528\u3002\u5b83\u652f\u6301\u4e09\u7ef4\u7ed8\u56fe\u3001\u504f\u5bfc\u6570\u3001\u68af\u5ea6\u548c\u79ef\u5206\u8ba1\u7b97\uff0c\u901a\u8fc7\u52a8\u6001\u7684\u89c6\u89c9\u4f53\u9a8c\u5e2e\u52a9\u7406\u89e3\u590d\u6742\u6982\u5ff5\u3002", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "\u521d\u521b\u516c\u53f8\u7740\u9646\u9875", description: "\u7528\u4e8e\u6e05\u6670\u3001\u73b0\u4ee3\u4e14\u6709\u5438\u5f15\u529b\u5730\u5c55\u793a\u4ef7\u503c\u4e3b\u5f20\u7684\u7740\u9646\u9875\uff0c\u6ce8\u91cd\u8f6c\u5316\u3001\u89c6\u89c9\u7ed3\u6784\u4e0e\u54cd\u5e94\u5f0f\u8868\u73b0\u3002", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "???????", description: "????????????????????????????????????????", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
 
-      { title: "\u9884\u7ea6\u7cfb\u7edf", description: "\u4e13\u6ce8\u4e8e\u9884\u7ea6\u7ba1\u7406\u7684\u5e94\u7528\uff0c\u5305\u542b CRUD \u64cd\u4f5c\u3001\u6709\u5e8f\u7684\u4fe1\u606f\u7ba1\u7406\uff0c\u4e3a\u7528\u6237\u548c\u7ba1\u7406\u5458\u63d0\u4f9b\u6d41\u7545\u4f53\u9a8c\u3002", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "????", description: "????????????? CRUD ?????????????????????????", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
-      { title: "\u4ea4\u4e92\u5f0f\u4f5c\u54c1\u96c6", description: "\u7528\u4e8e\u5c55\u793a\u4e2a\u4eba\u4e13\u4e1a\u80cc\u666f\u3001\u6280\u80fd\u548c\u9879\u76ee\u7684\u4e2a\u4eba\u7f51\u7ad9\uff0c\u5177\u6709\u5438\u5f15\u529b\u5f3a\u7684\u754c\u9762\u3001\u6e05\u6670\u5bfc\u822a\u548c\u5b66\u672f\u5b9a\u4f4d\u3002", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "??????", description: "??????????????????????????????????????????", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
     ],
 
@@ -637,13 +637,13 @@ export const content: Record<Language, PortfolioContent> = {
 
     projects: [
 
-      { title: "Verkaufs-Dashboard", description: "Administratives Dashboard zur Verfolgung von Verkaufszahlen, zentralen Kennzahlen und Leistungsvisualisierung, um Entscheidungen auf Basis klarer und nutzbarer Daten zu unterstützen.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "GoGebra Ango", description: "3D-Mehrvariablenrechner. Interaktive Webanwendung zur Visualisierung und Analyse mathematischer Funktionen mit mehreren Variablen. Sie erm\u00f6glicht 3D-Darstellungen sowie die Berechnung partieller Ableitungen, Gradienten und Integrale und erleichtert so das Verst\u00e4ndnis komplexer Konzepte durch eine dynamische visuelle Erfahrung.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "Startup-Landingpage", description: "Landingpage, die darauf ausgelegt ist, ein Wertversprechen klar, modern und attraktiv zu präsentieren, mit Fokus auf Conversion, visuelle Struktur und responsives Verhalten.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Startup-Landingpage", description: "Landingpage, die darauf ausgelegt ist, ein Wertversprechen klar, modern und attraktiv zu pr?sentieren, mit Fokus auf Conversion, visuelle Struktur und responsives Verhalten.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
 
-      { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer flüssigen Erfahrung für Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer fl?ssigen Erfahrung f?r Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
-      { title: "Interaktives Portfolio", description: "Persönliche Website zur Darstellung des professionellen Profils, der Fähigkeiten und Projekte mit ansprechender Oberfläche, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Interaktives Portfolio", description: "Pers?nliche Website zur Darstellung des professionellen Profils, der F?higkeiten und Projekte mit ansprechender Oberfl?che, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
     ],
 
@@ -843,7 +843,7 @@ export const content: Record<Language, PortfolioContent> = {
 
     projects: [
 
-      { title: "Sales dashboard", description: "Administrative dashboard focused on sales tracking, key metrics, and performance visualization to support decision-making through clear and actionable data.", tags: ["React", "Charts", "Responsive UI"], image: projectImages[0] },
+      { title: "GoGebra Ango", description: "3D Multivariable Calculator. Interactive web application for visualizing and analyzing mathematical functions in multiple variables. It allows 3D graphing, partial derivatives, gradients, and integrals, making complex concepts easier to understand through a dynamic visual experience.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
       { title: "Startup landing page", description: "Landing page designed to present a value proposition in a clear, modern, and attractive way, with focus on conversion, visual structure, and responsive adaptation.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
 
