@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { ScrollSection } from "./ScrollSection";
 import { SectionTitle } from "./SectionTitle";
 import type { Language, PortfolioContent } from "../data/content";
@@ -8,6 +11,12 @@ type ContactSectionProps = {
 };
 
 export function ContactSection({ t, language }: ContactSectionProps) {
+  const [nextUrl, setNextUrl] = useState("");
+
+  useEffect(() => {
+    setNextUrl(`${window.location.origin}/gracias`);
+  }, []);
+
   return (
         <section id="contactos" className="bg-gray-50 py-24">
 
@@ -144,6 +153,10 @@ export function ContactSection({ t, language }: ContactSectionProps) {
                 <input type="hidden" name="_template" value="table" />
 
                 <input type="hidden" name="_autoresponse" value="Gracias por escribir a traves de mi portafolio. Recibi tu mensaje y te respondere lo antes posible." />
+
+                <input type="hidden" name="_captcha" value="false" />
+
+                <input type="hidden" name="_next" value={nextUrl} />
 
                 <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
