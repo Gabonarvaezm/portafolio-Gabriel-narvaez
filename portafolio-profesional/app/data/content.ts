@@ -226,13 +226,13 @@ export const content: Record<Language, PortfolioContent> = {
 
     projects: [
 
-      { title: "GoGebra Ango", description: "Calculadora Multivariable 3D. Aplicaci\u00f3n web interactiva para la visualizaci\u00f3n y an\u00e1lisis de funciones matem\u00e1ticas en m\u00faltiples variables. Permite graficar en 3D, calcular derivadas parciales, gradientes e integrales, facilitando la comprensi\u00f3n de conceptos complejos mediante una experiencia visual din\u00e1mica.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
+      { title: "GoGebra Ango", description: "Calculadora Multivariable 3D. Aplicación web interactiva para la visualización y análisis de funciones matemáticas en múltiples variables. Permite graficar en 3D, calcular derivadas parciales, gradientes e integrales, facilitando la comprensión de conceptos complejos mediante una experiencia visual dinámica.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "Landing para startup", description: "Landing page pensada para presentar una propuesta de valor de forma clara, moderna y atractiva, con enfoque en conversion, estructura visual y adaptacion responsive.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Fresh Cut", description: "Sistema de Citas para Barbería. Aplicación web enfocada en la gestión y reserva de citas en barberías. Permite a los usuarios seleccionar barberos, agendar servicios y elegir el tipo de corte deseado, ofreciendo una experiencia intuitiva y organizada para la administración de citas.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: projectImages[1] },
 
-      { title: "Sistema de reservas", description: "Aplicaci?n enfocada en la gesti?n de reservas con operaciones CRUD, organizaci?n de informaci?n y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Sistema de reservas", description: "Aplicación enfocada en la gestión de reservas con operaciones CRUD, organización de información y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
-      { title: "Portafolio interactivo", description: "Sitio personal dise?ado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegaci?n clara y enfoque acad?mico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Portafolio interactivo", description: "Sitio personal diseñado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegación clara y enfoque académico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
     ],
 
@@ -432,13 +432,13 @@ export const content: Record<Language, PortfolioContent> = {
 
     projects: [
 
-      { title: "GoGebra Ango", description: "\u4e09\u7ef4\u591a\u53d8\u91cf\u8ba1\u7b97\u5668\u3002\u7528\u4e8e\u53ef\u89c6\u5316\u548c\u5206\u6790\u591a\u53d8\u91cf\u6570\u5b66\u51fd\u6570\u7684\u4ea4\u4e92\u5f0f\u7f51\u9875\u5e94\u7528\u3002\u5b83\u652f\u6301\u4e09\u7ef4\u7ed8\u56fe\u3001\u504f\u5bfc\u6570\u3001\u68af\u5ea6\u548c\u79ef\u5206\u8ba1\u7b97\uff0c\u901a\u8fc7\u52a8\u6001\u7684\u89c6\u89c9\u4f53\u9a8c\u5e2e\u52a9\u7406\u89e3\u590d\u6742\u6982\u5ff5\u3002", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
+      { title: "GoGebra Ango", description: "3D 多变量计算器。这是一个用于可视化和分析多元数学函数的交互式 Web 应用。它支持 3D 绘图、偏导数、梯度和积分计算，通过动态视觉体验帮助理解复杂概念。", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "???????", description: "????????????????????????????????????????", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Fresh Cut", description: "理发店预约系统。这是一个面向理发店预约与管理的 Web 应用。用户可以选择理发师、预约服务并选择所需发型，为预约管理提供直观且有组织的体验。", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: projectImages[1] },
 
-      { title: "????", description: "????????????? CRUD ?????????????????????????", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "预约管理系统", description: "聚焦于预约管理的应用，包含 CRUD 操作、有条理的信息组织，并为用户和管理员提供流畅的使用体验。", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
-      { title: "??????", description: "??????????????????????????????????????????", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "交互式个人作品集", description: "个人网站，用于展示职业形象、技能和项目，具备有吸引力的界面、清晰的导航和学术导向。", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
     ],
 
@@ -637,13 +637,13 @@ export const content: Record<Language, PortfolioContent> = {
 
     projects: [
 
-      { title: "GoGebra Ango", description: "3D-Mehrvariablenrechner. Interaktive Webanwendung zur Visualisierung und Analyse mathematischer Funktionen mit mehreren Variablen. Sie erm\u00f6glicht 3D-Darstellungen sowie die Berechnung partieller Ableitungen, Gradienten und Integrale und erleichtert so das Verst\u00e4ndnis komplexer Konzepte durch eine dynamische visuelle Erfahrung.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
+      { title: "GoGebra Ango", description: "3D-Mehrvariablenrechner. Interaktive Webanwendung zur Visualisierung und Analyse mathematischer Funktionen mit mehreren Variablen. Sie ermöglicht 3D-Darstellungen sowie die Berechnung partieller Ableitungen, Gradienten und Integrale und erleichtert so das Verständnis komplexer Konzepte durch eine dynamische visuelle Erfahrung.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "Startup-Landingpage", description: "Landingpage, die darauf ausgelegt ist, ein Wertversprechen klar, modern und attraktiv zu pr?sentieren, mit Fokus auf Conversion, visuelle Struktur und responsives Verhalten.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Fresh Cut", description: "Terminbuchungssystem für Barbershops. Webanwendung zur Verwaltung und Reservierung von Terminen in Barbershops. Nutzer können Barbiere auswählen, Leistungen buchen und die gewünschte Schnittart festlegen. So entsteht eine intuitive und organisierte Erfahrung für die Terminverwaltung.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: projectImages[1] },
 
-      { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer fl?ssigen Erfahrung f?r Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer flüssigen Erfahrung für Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
-      { title: "Interaktives Portfolio", description: "Pers?nliche Website zur Darstellung des professionellen Profils, der F?higkeiten und Projekte mit ansprechender Oberfl?che, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
+      { title: "Interaktives Portfolio", description: "Persönliche Website zur Darstellung des professionellen Profils, der Fähigkeiten und Projekte mit ansprechender Oberfläche, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
     ],
 
@@ -845,7 +845,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "GoGebra Ango", description: "3D Multivariable Calculator. Interactive web application for visualizing and analyzing mathematical functions in multiple variables. It allows 3D graphing, partial derivatives, gradients, and integrals, making complex concepts easier to understand through a dynamic visual experience.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Canvas API"], image: "/projects/geogebra-ango.png", url: "https://geogebra-ango-8o6axq3fy-gabriel-narvaezs-projects-7e5d0e5e.vercel.app/" },
 
-      { title: "Startup landing page", description: "Landing page designed to present a value proposition in a clear, modern, and attractive way, with focus on conversion, visual structure, and responsive adaptation.", tags: ["Vite", "Tailwind", "SEO base"], image: projectImages[1] },
+      { title: "Fresh Cut", description: "Barbershop Booking System. Web application focused on managing and booking appointments for barbershops. It allows users to select barbers, schedule services, and choose their preferred haircut, delivering an intuitive and organized appointment management experience.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: projectImages[1] },
 
       { title: "Booking system", description: "Application focused on reservation management with CRUD operations, organized information handling, and a smooth experience for users and administrators.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
 
