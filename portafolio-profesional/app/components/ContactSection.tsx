@@ -73,7 +73,7 @@ export function ContactSection({ t, language }: ContactSectionProps) {
 
                         label: "LinkedIn",
 
-                        href: null,
+                        href: "https://www.linkedin.com/in/gabriel-narvaez-943b80323?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
 
                         icon: (
 
