@@ -230,7 +230,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Fresh Cut", description: "Sistema de Citas para Barbería. Aplicación web enfocada en la gestión y reserva de citas en barberías. Permite a los usuarios seleccionar barberos, agendar servicios y elegir el tipo de corte deseado, ofreciendo una experiencia intuitiva y organizada para la administración de citas.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: "/projects/FresgCut.png", url: "https://fresh-cut-frontend.vercel.app/home" },
 
-      { title: "Sistema de reservas", description: "Aplicación enfocada en la gestión de reservas con operaciones CRUD, organización de información y una experiencia fluida para usuarios y administradores.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Crust Pizza Co.", description: "Landing Page. Página diseñada para presentar de forma atractiva la identidad de una marca gastronómica, destacando su propuesta visual, productos, promociones y llamados a la acción. El proyecto está enfocado en ofrecer una experiencia moderna, responsive y orientada a conversión para un negocio de comida tipo restaurante o pizzería.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostCSS", "ESLint", "Vercel"], image: projectImages[2] },
 
       { title: "Portafolio interactivo", description: "Sitio personal diseñado para mostrar perfil profesional, habilidades y proyectos con una interfaz visualmente atractiva, navegación clara y enfoque académico.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
@@ -436,7 +436,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Fresh Cut", description: "理发店预约系统。这是一个面向理发店预约与管理的 Web 应用。用户可以选择理发师、预约服务并选择所需发型，为预约管理提供直观且有组织的体验。", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: "/projects/FresgCut.png", url: "https://fresh-cut-frontend.vercel.app/home" },
 
-      { title: "预约管理系统", description: "聚焦于预约管理的应用，包含 CRUD 操作、有条理的信息组织，并为用户和管理员提供流畅的使用体验。", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Crust Pizza Co.", description: "品牌着陆页。该页面旨在以富有吸引力的方式展示餐饮品牌形象，突出其视觉提案、产品、促销活动以及行动号召。项目专注于为餐厅或披萨店这类餐饮业务提供现代化、响应式且以转化为导向的体验。", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostCSS", "ESLint", "Vercel"], image: projectImages[2] },
 
       { title: "交互式个人作品集", description: "个人网站，用于展示职业形象、技能和项目，具备有吸引力的界面、清晰的导航和学术导向。", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
@@ -641,7 +641,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Fresh Cut", description: "Terminbuchungssystem für Barbershops. Webanwendung zur Verwaltung und Reservierung von Terminen in Barbershops. Nutzer können Barbiere auswählen, Leistungen buchen und die gewünschte Schnittart festlegen. So entsteht eine intuitive und organisierte Erfahrung für die Terminverwaltung.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: "/projects/FresgCut.png", url: "https://fresh-cut-frontend.vercel.app/home" },
 
-      { title: "Reservierungssystem", description: "Anwendung zur Verwaltung von Reservierungen mit CRUD-Operationen, strukturierter Informationsverwaltung und einer flüssigen Erfahrung für Nutzer und Administratoren.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Crust Pizza Co.", description: "Landingpage. Diese Seite wurde entwickelt, um die Identität einer gastronomischen Marke ansprechend zu präsentieren und dabei ihr visuelles Konzept, Produkte, Aktionen und Call-to-Actions hervorzuheben. Das Projekt ist darauf ausgerichtet, eine moderne, responsive und auf Conversion optimierte Erfahrung für ein Restaurant- oder Pizzeriageschäft zu bieten.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostCSS", "ESLint", "Vercel"], image: projectImages[2] },
 
       { title: "Interaktives Portfolio", description: "Persönliche Website zur Darstellung des professionellen Profils, der Fähigkeiten und Projekte mit ansprechender Oberfläche, klarer Navigation und akademischem Fokus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
@@ -847,7 +847,7 @@ export const content: Record<Language, PortfolioContent> = {
 
       { title: "Fresh Cut", description: "Barbershop Booking System. Web application focused on managing and booking appointments for barbershops. It allows users to select barbers, schedule services, and choose their preferred haircut, delivering an intuitive and organized appointment management experience.", tags: ["Angular", "TypeScript", "Tailwind CSS", "PostCSS", "RxJS", "Angular Router", "Angular Forms", "Vercel"], image: "/projects/FresgCut.png", url: "https://fresh-cut-frontend.vercel.app/home" },
 
-      { title: "Booking system", description: "Application focused on reservation management with CRUD operations, organized information handling, and a smooth experience for users and administrators.", tags: ["Node.js", "MySQL", "CRUD"], image: projectImages[2] },
+      { title: "Crust Pizza Co.", description: "Landing Page. A page designed to present the identity of a food brand in an attractive way, highlighting its visual concept, products, promotions, and calls to action. The project focuses on delivering a modern, responsive, and conversion-oriented experience for a restaurant or pizza business.", tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostCSS", "ESLint", "Vercel"], image: projectImages[2] },
 
       { title: "Interactive portfolio", description: "Personal site designed to showcase professional profile, skills, and projects with an attractive interface, clear navigation, and an academic focus.", tags: ["HTML", "CSS", "UI Design"], image: projectImages[3] },
 
