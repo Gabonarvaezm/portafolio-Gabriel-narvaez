@@ -1925,3 +1925,36 @@ body.theme-dark .portfolio-shell .profile-card:hover {
     0 0 108px rgba(239, 68, 68, 0.22),
     0 36px 72px rgba(0, 0, 0, 0.62) !important;
 }
+
+
+.portfolio-shell .skill-item-text {
+  color: #4b5563 !important;
+}
+
+.portfolio-shell .skill-item:hover .skill-item-text {
+  color: #111827 !important;
+}
+
+.portfolio-shell .skill-icon-badge {
+  background: #ffffff !important;
+}
+
+html.theme-dark .portfolio-shell .skill-item:hover,
+body.theme-dark .portfolio-shell .skill-item:hover {
+  background: rgba(127, 29, 29, 0.2) !important;
+}
+
+html.theme-dark .portfolio-shell .skill-item-text,
+body.theme-dark .portfolio-shell .skill-item-text {
+  color: #d1d5db !important;
+}
+
+html.theme-dark .portfolio-shell .skill-item:hover .skill-item-text,
+body.theme-dark .portfolio-shell .skill-item:hover .skill-item-text {
+  color: #ffffff !important;
+}
+
+html.theme-dark .portfolio-shell .skill-icon-badge,
+body.theme-dark .portfolio-shell .skill-icon-badge {
+  background: rgba(10, 10, 10, 0.92) !important;
+}
