@@ -35,7 +35,12 @@ export function HeroSection({ t }: HeroSectionProps) {
                     download="CV-Gabriel-Narvaez.pdf"
                     className="inline-flex items-center justify-center rounded-2xl border-2 border-red-400 bg-red-600 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-red-700 hover:shadow-[0_18px_35px_rgba(220,38,38,0.35)]"
                   >
-                    {t.resumeLabel}
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-4 w-4">
+                      <path d="M12 4v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                      <path d="m8.5 10.5 3.5 3.5 3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M5 18.5h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                    <span>{t.resumeLabel}</span>
                   </a>
                 </div>
 

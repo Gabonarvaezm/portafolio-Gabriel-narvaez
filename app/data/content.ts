@@ -158,7 +158,7 @@ export const content: Record<Language, PortfolioContent> = {
 
     heroLead: "Soy desarrollador web fullStack con mentalidad de liderazgo y enfoque colaborativo. Me destaco por priorizar el bienestar del equipo y construir soluciones eficientes y escalables. Salmos 23:1: El Se\u00f1or es mi pastor; nada me faltar\u00e1.",
 
-    resumeLabel: "Descargar hoja de vida",
+    resumeLabel: "Descargar CV",
 
     sections: {
 
@@ -573,7 +573,7 @@ export const content: Record<Language, PortfolioContent> = {
 
     heroLead: "Ich bin FullStack-Webentwickler mit F\u00fchrungsmentalit\u00e4t und kollaborativem Ansatz. Ich lege Wert auf das Wohl des Teams und entwickle effiziente sowie skalierbare L\u00f6sungen. Psalm 23:1: Der Herr ist mein Hirte; mir wird nichts mangeln.",
 
-    resumeLabel: "Lebenslauf herunterladen",
+    resumeLabel: "CV herunterladen",
 
     sections: {
 
@@ -781,7 +781,7 @@ export const content: Record<Language, PortfolioContent> = {
 
     heroLead: "I am a fullStack web developer with a leadership mindset and a collaborative approach. I stand out for prioritizing team well-being and building efficient, scalable solutions. Psalm 23:1: The Lord is my shepherd; I shall not want.",
 
-    resumeLabel: "Download resume",
+    resumeLabel: "Download CV",
 
     sections: {
 
