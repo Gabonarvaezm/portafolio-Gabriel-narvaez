@@ -144,7 +144,7 @@ export function Header({
             className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-gray-300 bg-white text-sm font-semibold text-gray-700 transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600"
           >
             <span className={`text-base transition-transform duration-300 ${mounted && isDark ? "rotate-0 scale-100" : "rotate-180 scale-95"}`}>
-              {mounted && isDark ? "\u2600" : "\u263e"}
+              {mounted && isDark ? "☀" : "☽"}
             </span>
           </button>
 
